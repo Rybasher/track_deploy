@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Track</title>
+    <!-- Font Awesome -->
+{#    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">#}
+{#    <!-- Bootstrap core CSS -->#}
+{#    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">#}
+{#    <!-- Material Design Bootstrap -->#}
+{#    <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">#}
+{#    <!-- Your custom styles (optional) -->#}
+{#    <link href="{% static 'css/style.css' %}" rel="stylesheet">#}
+{#    <link rel="stylesheet" href="css/style_about.css">#}
+{#    <link rel="stylesheet" href="css/style_pr_list.css">#}
+    <style>
+        li{
+            padding-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<header>
+        <nav>
+            <ul style="display:flex;">
+                <li>some</li>
+                <li>some</li>
+                <li>some</li>
+                <li>some</li>
+            </ul>
+        </nav>
+    </header>
+<main>
+    {% block content %}
+
+{% endblock %}
+
+</main>
+
+</body>
+</html>
