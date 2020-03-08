@@ -3,7 +3,7 @@ from .models import *
 # Create your views here.
 
 
-def post_list(request):
+def posts_list(request):
     posts = Post.objects.all()
     context = {
         'posts': posts,
