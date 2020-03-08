@@ -14,7 +14,9 @@
   <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
   <!-- Your custom styles (optional) -->
     <link rel="stylesheet" href="{% static 'css/style_base.css' %}">
+{% block style %}
 
+{% endblock %}
 </head>
 <body>
 <header>
@@ -64,5 +66,55 @@
     
     {% endblock %}
 </main>
+<footer class="mt-5 pr-5 ">
+    <section>
+      <div class="row">
+        <div class="col-sm-4" style="position:relative; left: 50px">
+          <h3>
+            КОНТАКТЫ
+          </h3>
+          <ul class="d-block">
+            <li><p class="font-weight-bold">+38 (098) 721-22-71</p></li>
+            <li><p class="font-weight-bold">+38 (095) 489-32-04</p></li>
+            <li><p  class="font-weight-bold">м. Сарни, вул.Грушевського,1</p></li>
+            <li><p class="font-weight-bold">treksarni@ukr.net</p></li>
+          </ul>
+        </div>
+        <div class="col-sm-4">
+          <h3>
+            МЕНЮ
+          </h3>
+
+          <ul class="d-block menu">
+            <li><a href="" class="font-weight-bold">О НАС</a></li>
+            <li><a href="" class="font-weight-bold">НОВОСТИ</a></li>
+            <li><a href="" class="font-weight-bold">ДОСТАВКА И ОПЛАТА</a></li>
+            <li><a href="" class="font-weight-bold">КОНТАКТЫ</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>
+            ОПАТА
+          </h3>
+          <ul class="d-flex">
+            <li class="pr-5"><i class="fab fa-cc-visa"></i></li>
+            <li><i class="fab fa-cc-mastercard"></i></li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+    <section class="w-100 danger-color">
+      <div class="text-center py-3 danger-color" style="position: relative; left: 48px;"><p class="white-text">Зроблено компанією<a href="https://mdbootstrap.com/"> PROLOG</a></p>
+
+      </div>
+    </section>
+
+
+
+
+
+
+  </footer>
 </body>
 </html>

@@ -1,0 +1,7 @@
+ .news_detail{
+    width: 90%;
+    margin-left: 60px;
+}
+.news_detail p{
+    font-weight: normal;
+}

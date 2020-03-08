@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Новость
+{% endblock %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'blog/news_details.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="page d-flex" style="margin-left: 60px;">
+        <a href="" class="red-text"><p style="word-spacing: 5px">Главная    /   </p></a>
+        <a href="{% url  'blog:posts_list' %}"><p class="red-text" style="word-spacing: 3px">&nbsp Новости /</p></a>
+        <p class="red-text font-weight-bold">&nbsp;Новость</p>
+    </div>
+    <section class="news_detail">
+        <h3 class="h3">{{ post.title }}</h3>
+        {% if post.image_two and post.content_two %}
+
+            <div class="row">
+            <div class="col-md-6">
+                <p class="font-weight-normal" style="text-align: justify">
+                    {{ post.content }}
+                </p>
+                {% if post.image_one %}
+                    <img src="{{ post.image_one.url }}" class="img-fluid" alt="">
+                {% endif %}
+            </div>
+
+        <div class="col-md-6">
+                    <img src="{{ post.image_two.url }}" class="img-fluid" alt="">
+
+                    <p class="font-weight-normal" style="text-align: justify; padding-top: 40px;">{{ post.content_two }}</p>
+        </div>
+        </div>
+            {% else %}
+            <div class="row">
+            <div class="col-md-6">
+
+                {% if post.image_one %}
+                    <img src="{{ post.image_one.url }}" class="img-fluid" alt="">
+                {% endif %}
+            </div>
+
+             <div class="col-md-6">
+             {% if post.content %}
+             <p class="font-weight-normal" style="text-align: justify">{{ post.content }}</p>
+             {% endif %}
+
+                 {% if post.content_two %}
+                    <p class="font-weight-normal" style="text-align: justify; padding-top: 40px;">{{ post.content_two }}</p>
+                 {% endif %}
+
+        </div>
+        </div>
+        {% endif %}
+
+
+    </section>
+{% endblock %}
