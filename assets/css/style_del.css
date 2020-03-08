@@ -1,0 +1,38 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.road{
+    width: 100%;
+    height: 300px;
+    background-image: url('../img/del/road.png');
+    background-position: center;
+
+}
+
+.first-slide{
+    width: 30%;
+}
+.second-slide{
+    width: 70%;
+}
+.first-slide p{
+
+}
+
+@media screen and (max-width: 1060px){
+    .road{
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width: 660px){
+    .delivery{
+        display: block;
+    }
+    .img-fluid{
+        display: none;
+    }
+
+}

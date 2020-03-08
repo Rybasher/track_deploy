@@ -1,0 +1,63 @@
+*{
+    padding: 0;
+    margin: 0;
+
+}
+li{
+    list-style: none;
+    position: relative;
+}
+.left-container{
+    float: left;
+
+}
+.right-container{
+    float: left;
+    width: 70%;
+}
+
+.NavMenuUl{
+    display: block;
+}
+.NavMenuUl ul{
+    display: none;
+}
+.NavMenuUl li:hover ul{
+    display: block;
+}
+.NavMenuUl ul{
+    padding-top: 20px;
+    position: relative;
+    left: -80px;
+}
+.NavMenuUl li{
+    padding-top: 10px;
+}
+.navCat{
+    display: block;
+
+}
+.navCat ul{
+    display: none;
+}
+.navCat li:hover ul{
+    display: block;
+}
+.navCat ul{
+    padding-top: 20px;
+    position: relative;
+    left: -80px;
+}
+.products{
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+.product{
+    width: 110%;
+}
+
+
+
+
