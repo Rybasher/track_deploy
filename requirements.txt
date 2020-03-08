@@ -1,4 +1,4 @@
 Django
 pillow
 easy-thumbnails
-django-clenup
+django-cleanup
