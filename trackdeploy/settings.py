@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'easy_thumbnails',
-    'django_cleanup'
+    'django_cleanup',
     'blog.apps.BlogConfig'
 ]
 
