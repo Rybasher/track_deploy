@@ -24,7 +24,7 @@ class CategoryForm(ModelForm):
 class ManufacturerForm(ModelForm):
     class Meta:
         model = Manufacturer
-        fields = {'title', 'category'}
+        fields = ('title', 'category', 'country')
 
     def clean_slug(self):
         new_slug = self.cleaned_data['slug'].lower()

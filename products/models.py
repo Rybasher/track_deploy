@@ -61,6 +61,7 @@ class Product(models.Model):
 class Manufacturer(models.Model):
     title = models.CharField(max_length=50)
     slug = models.SlugField(max_length=50, unique=True, blank=True)
+    country = models.CharField(max_length=50, blank=True, verbose_name='Страна производителя')
     category = models.ForeignKey('Category', related_name='manufactures', on_delete=models.CASCADE)
 
     def get_absolute_url(self):

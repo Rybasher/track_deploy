@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load bootstrap4 %}
 {% load static %}
+{% load i18n %}
 {% block style %}
     <style>
     .main-sections{
@@ -120,14 +121,16 @@ footer a{
     </style>
 {% endblock %}
 {% block content %}
+
+
        <section class="main-sections">
       <div class="container">
         <div class="row">
           <div class="col-md-8">
-            <h1 class="h1" style="font-weight: bold; line-height: 1.2em">НОВЫЕ ПОСТУПЛЕНИЯ ЗАПЧАСТЕЙ В КАТЕГОРИИ ЯПОНСКИХ ПРОИЗВОДИТЕЛЕЙ</h1>
+            <h1 class="h1" style="font-weight: bold; line-height: 1.2em">{% trans "НОВЫЕ ПОСТУПЛЕНИЯ ЗАПЧАСТЕЙ В КАТЕГОРИИ ЯПОНСКИХ ПРОИЗВОДИТЕЛЕЙ" %}</h1>
             <div style="margin-top: 80px; padding-right: 15px;">
-              <a class="btn btn-danger" style="width: 200px;">ПЕРЕЙТИ</a>
-              <a class="btn btn-black" style="position:relative;left: -16px;"><i class="fas fa-arrow-right"></i></a></div>
+              <a class="btn btn-danger" style="width: 200px;" href="{% url 'products:japan_products' %}">{% trans "ПЕРЕЙТИ" %}</a>
+              <a class="btn btn-black" style="position:relative;left: -16px;" href="{% url 'products:japan_products' %}"><i class="fas fa-arrow-right"></i></a></div>
 
           </div>
           <div class="col-md-2 main-banner" style="margin-right: 40px;">
@@ -138,53 +141,54 @@ footer a{
     </section>
     <!--CATEGORIES-->
     <section>
-      <h2 style="padding-left: 65px;" class="h2">КАТЕГОРИИ</h2>
+      <h2 style="padding-left: 65px;" class="h2">{% trans "КАТЕГОРИИ" %}</h2>
       <div style="padding-left: 75px" class="mt-5">
         <div class="row categories"  >
           <div class="cols">
-            <h3 class="h3">Запчасти</h3>
+            <h3 class="h3">{% trans 'Запчасти' %}</h3>
               <ul>
-                <li><i class="fas fa-check red-text"></i><p>Мотор</p></li>
-                <li><i class="fas fa-check red-text"></i><p>Електрика</p></li>
-                <li><i class="fas fa-check red-text"></i><p>Тормоза</p></li>
-                <li><i class="fas fa-check red-text"></i><p>Кузов</p></li>
-                <li><i class="fas fa-check red-text"></i><p>Покрышки</p></li>
+                <li><i class="fas fa-check red-text"></i><p>{% trans 'Мотор' %} </p></li>
+                <li><i class="fas fa-check red-text"></i><p>{% trans 'Електрика' %}</p></li>
+                <li><i class="fas fa-check red-text"></i><p>{% trans 'Тормоза' %}</p></li>
+                <li><i class="fas fa-check red-text"></i><p>{% trans 'Кузов' %}</p></li>
+                <li><i class="fas fa-check red-text"></i><p>{% trans 'Покрышки' %}</p></li>
 
-                <li><a href=""><p style="color: red; border-bottom: 1px solid red;">Більше товарів</p></a></li>
+                <li><a href="{% url 'products:product_list' %}"><p style="color: red; border-bottom: 1px solid red;">{% trans 'Більше товарів' %}</p></a></li>
               </ul>
           </div>
           <div class="cols">
-            <h3 class="h3">Масла, фільтра</h3>
+            <h3 class="h3">{% trans 'Масла, фільтра' %}</h3>
             <ul>
-              <li><i class="fas fa-check red-text"></i><p>Воздушні фільтра</p></li>
-              <li><i class="fas fa-check red-text"></i><p>Масляні фітльтра</p></li>
-              <li><i class="fas fa-check red-text"></i><p>Моторні масла</p></li>
-              <li><i class="fas fa-check red-text"></i><p>Охолоджуюча рідина</p></li>
-              <li><i class="fas fa-check red-text"></i><p>Мастила</p></li>
+              <li><i class="fas fa-check red-text"></i><p>{% trans 'Воздушні фільтра' %}</p></li>
+              <li><i class="fas fa-check red-text"></i><p>{% trans 'Масляні фітльтра' %}</p></li>
+              <li><i class="fas fa-check red-text"></i><p>{% trans 'Моторні масла' %}</p></li>
+              <li><i class="fas fa-check red-text"></i><p>{% trans 'Охолоджуюча рідина' %}</p></li>
+              <li><i class="fas fa-check red-text"></i><p>{% trans 'Мастила' %}</p></li>
 
-              <li><a href="#"><p style="color: red; border-bottom: 1px solid red;">Більше товарів</p></a></li>
+              <li><a href="{% url 'products:product_list' %}"><p style="color: red; border-bottom: 1px solid red;">{% trans 'Більше товарів' %}</p></a></li>
             </ul>
           </div>
           <div class="cols">
-            <h3 class="h3">Аксесуари</h3>
+            <h3 class="h3">{% trans 'Аксесуари' %}</h3>
             <ul>
-              <li><i class="fas fa-check red-text"></i><p>Диски</p></li>
-              <li><i class="fas fa-check red-text"></i><p>Захист рук</p></li>
-              <li><i class="fas fa-check red-text"></i><p>Підігрув ручки</p></li>
-              <li><i class="fas fa-check red-text"></i><p>Лебідки</p></li>
+              <li><i class="fas fa-check red-text"></i><p>{% trans 'Диски' %}</p></li>
+              <li><i class="fas fa-check red-text"></i><p>{% trans 'Захист рук' %}</p></li>
+              <li><i class="fas fa-check red-text"></i><p>{% trans 'Підігрув ручки' %}</p></li>
+              <li><i class="fas fa-check red-text"></i><p>{% trans 'Лебідки' %}</p></li>
               <li><p></p></li>
-              <li style="padding-top: 23px;"><a href=""><p style="color: red; border-bottom: 1px solid red;">Більше товарів</p></a></li>
+              <li style="padding-top: 23px;"><a href="{% url 'products:product_list' %}"><p style="color: red; border-bottom: 1px solid red;">{% trans 'Більше товарів' %}</p></a></li>
             </ul>
           </div>
           <div class="cols">
-            <h3 class="h3">Різне</h3>
+            <h3 class="h3">{% trans 'Різне' %}</h3>
             <ul>
-              <li><i class="fas fa-check red-text"></i><p>Каністри</p></li>
-              <li><i class="fas fa-check red-text"></i><p>Окуляри</p></li>
-              <li><i class="fas fa-check red-text"></i><p>Уніформа</p></li>
-              <li><i class="fas fa-check red-text"></i><p>Fenix</p></li>
+              <li><i class="fas fa-check red-text"></i><p>{% trans 'Каністри' %}</p></li>
+              <li><i class="fas fa-check red-text"></i><p>{% trans 'Окуляри' %}</p></li>
+              <li><i class="fas fa-check red-text"></i><p>{% trans 'Уніформа' %}</p></li>
+              <li><i class="fas fa-check red-text"></i><p>{% trans 'Fenix' %}</p></li>
               <li><p></p></li>
-              <li style="padding-top: 23px;"><a href=""><p style="color: red; border-bottom: 1px solid red;">Більше товарів</p></a></li>
+              <li style="padding-top: 23px;"><a href="{% url 'products:product_list' %}">
+                  <p style="color: red; border-bottom: 1px solid red;">{% trans 'Більше товарів' %}</p></a></li>
 
             </ul>
           </div>
@@ -193,7 +197,7 @@ footer a{
     </section>
     <!--ПРОДУКТЫ-->
     <section>
-      <h2 class="h2" style="padding-left: 65px; padding-top: 90px">ПОПУЛЯРНЫЕ ТОВАРЫ</h2>
+      <h2 class="h2" style="padding-left: 65px; padding-top: 90px">{% trans 'НОВЫЕ ТОВАРЫ' %}</h2>
 
     <div style="padding-left: 75px" class="mt-5">
       <div class="products">
@@ -205,13 +209,13 @@ footer a{
 
                         <p><small>{{ product.manufacturer.category.title }}</small></p>
                         <p class="font-weight-bold">{{ product.title }}</p>
-                        <p>{{ product.price }} грн</p>
+                        <p>{{ product.price }} {% trans 'грн' %}</p>
                         <form action="{% url "cart:cart_add" product.id %}" method="post" style="margin-right: 10px;">
                             {% csrf_token %}
                             <div style="display: none">
                                 {{ cart_product_form }}
                             </div>
-                     <button class="btn btn-danger w-100 " type="submit">В КОРЗИНУ <i class="fas fa-shopping-cart white-text"></i></button>
+                     <button class="btn btn-danger w-100 " type="submit">{% trans 'В КОРЗИНУ' %} <i class="fas fa-shopping-cart white-text"></i></button>
                         </form>
                 </div>
                 {% endfor %}
@@ -226,28 +230,28 @@ footer a{
     <section class="bg-primary w-100" style="margin-top: 70px;" >
       <div class="cont" style="padding-left: 70px;">
         <div class="spares" style="" >
-          <div class="spare-text"><h1 class="h1 white-text mt-5">ПОДБЕРЁМ НУЖНЫЕ ЗАПЧАСТИ ИМЕННО ДЛЯ ВАШЕЙ СИТУАЦИИ</h1></div>
+          <div class="spare-text"><h1 class="h1 white-text mt-5">{% trans 'ПОДБЕРЁМ НУЖНЫЕ ЗАПЧАСТИ ИМЕННО ДЛЯ ВАШЕЙ СИТУАЦИИ' %}</h1></div>
           <div class="spare-form">
             <div class="form">
               <form action="" method="post">
                   {% csrf_token %}
                 <div>
-                  <label for="name" style="padding-right: 100px;" class="white-text">ВАШЕ ИМЯ</label>
-                  <label for="number" class="white-text">ВАШ ТЕЛЕФОН</label>
+                  <label for="name" style="padding-right: 100px;" class="white-text">{% trans 'ВАШЕ ИМЯ' %}</label>
+                  <label for="number" class="white-text">{% trans 'ВАШ ТЕЛЕФОН' %}</label>
 
                   <br>
                   {{ form.name }}
                   {{ form.phone }}
                 </div>
                 <div>
-                  <label for="model_one" style="padding-right: 120px;" class="white-text">МОДЕЛЬ</label>
-                  <label for="model_two" class="white-text">МОДЕЛЬ</label>
+                  <label for="model_one" style="padding-right: 120px;" class="white-text">{% trans 'МОДЕЛЬ' %}</label>
+                  <label for="model_two" class="white-text">{% trans 'МОДЕЛЬ' %}</label>
 
                   <br>
                   {{ form.model_one }}
                   {{ form.model_two }}
                 </div>
-                <button class="btn btn-danger" style="position: relative; left: -5px; top: 10px;" type="submit">ПОДОБРАТЬ</button>
+                <button class="btn btn-danger" style="position: relative; left: -5px; top: 10px;" type="submit">{% trans 'ПОДОБРАТЬ' %}</button>
 
 
 

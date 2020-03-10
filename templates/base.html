@@ -1,7 +1,9 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -12,8 +14,9 @@
   <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
   <!-- Material Design Bootstrap -->
   <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
-  <!-- Your custom styles (optional) -->
     <link rel="stylesheet" href="{% static 'css/style_base.css' %}">
+  <!-- Your custom styles (optional) -->
+
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -23,32 +26,45 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+<style>
+
+
+    </style>
 {% block style %}
 
 {% endblock %}
 </head>
 <body>
+
 <header>
     <div class="header-container">
       <div class="logo">
-        <img src="{% static 'img/index/logo.PNG' %}" alt="logo">
+          <a href="{% url 'spare:home_page' %}"><img src="{% static 'img/index/logo.PNG' %}" alt="logo"></a>
       </div>
       <input type="checkbox" id="menu-checkbox">
       <nav role="navigation" class="navbar-nav">
         <label for="menu-checkbox" class="toggle-button" data-open="Menu" data-close="Close" onclick>
          </label>
         <ul class="main-menu">
-          <li>
-            <i class="fas fa-language"></i>
-            <p>UKR RUS ENG</p>
 
+        <li style="display: flex" class="languages">
+            <i class="fas fa-language"></i>
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+            {% for language in languages %}
+                <a href="/{{ language.code }}/" class="black-text" {% if language.code == LANGUAGE_CODE %}
+                   class="selected" style="font-size: 16px; font-weight: bold;" {% endif %}>{{ language.code }}</a>
+            {% endfor %}
           </li>
-          <li><a href="{% url 'products:product_list' %}">КАТАЛОГ</a></li>
-          <li><a href="{% url 'blog:about' %}">О НАС</a></li>
-          <li><a href="{% url 'blog:posts_list' %}">НОВИНКИ</a></li>
-          <li><a href="{% url 'blog:delivery' %}">ДОСТАВКА И ОПЛАТА</a></li>
-          <li><a href="{% url 'contacts:contact_create' %}">КОНТАКТЫ</a></li>
-          <li style="padding-top: 10px"><input type="text" class="q"></li>
+          <li><a href="{% url 'products:product_list' %}">{% trans 'КАТАЛОГ' %}</a></li>
+          <li><a href="{% url 'blog:about' %}">{% trans 'О НАС' %}</a></li>
+          <li><a href="{% url 'blog:posts_list' %}">{% trans 'НОВИНКИ' %}</a></li>
+          <li><a href="{% url 'blog:delivery' %}">{% trans 'ДОСТАВКА И ОПЛАТА' %}</a></li>
+          <li><a href="{% url 'contacts:contact_create' %}">{% trans 'КОНТАКТЫ' %}</a></li>
+          <li style="padding-top: 10px">
+              <form action="{% url 'products:product_list' %}">
+                        <input type="text" name="search" style="border: none;border-bottom: 1px solid black;" class="search"> </form>
 
 
             <li class="text-center">
@@ -80,7 +96,7 @@
 
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title w-100" id="myModalLabel">Корзина</h4>
+        <h4 class="modal-title w-100" id="myModalLabel">{% trans 'Корзина' %}</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -89,12 +105,12 @@
                 <table class="table" >
   <thead class="red">
     <tr>
-      <th scope="col">Image</th>
-      <th scope="col">Product</th>
-      <th scope="col">Quantity</th>
-      <th scope="col">Remove</th>
-      <th scope="col">Unit price</th>
-      <th scope="col">Price</th>
+      <th scope="col">{% trans 'Image' %}</th>
+      <th scope="col">{% trans 'Product' %}</th>
+      <th scope="col">{% trans 'Quantity' %}</th>
+      <th scope="col">{% trans 'Remove' %}</th>
+      <th scope="col">{% trans 'Unit price' %}</th>
+      <th scope="col">{% trans 'Price' %}</th>
     </tr>
   </thead>
   <tbody>
@@ -111,7 +127,7 @@
                     </td>
                     <td>{{ product.title }}</td>
                     <td>{{ item.quantity }}</td>
-                    <td><a href="{% url 'cart:cart_remove' product.id %}">Remove</a></td>
+                    <td><a href="{% url 'cart:cart_remove' product.id %}">{% trans 'Remove' %}</a></td>
                     <td class="num">{{ item.price }}</td>
                     <td class="num">{{ item.total_price }}</td>
                 </tr>
@@ -120,13 +136,13 @@
 
   </tbody>
 </table>
-      <h3>Товаров в корзине: {{ cart.len}}</h3>
-      <h3>Общая сумма: {{ cart.get_total_price}} грн</h3>
+      <h3>{% trans 'Товаров в корзине' %}: {{ cart.len}}</h3>
+      <h3>{% trans 'Общая сумма' %}: {{ cart.get_total_price}} {% trans 'грн' %}</h3>
 
       </div>
       <div class="modal-footer">
-        <a href="{% url "products:product_list" %}" class="btn btn-light">Continue Shopping</a>
-        <a href="{% url 'orders:order_create' %}" class="btn">Checkout</a>
+        <a href="{% url "products:product_list" %}" class="btn btn-light">{% trans 'Continue Shopping' %}</a>
+        <a href="{% url 'orders:order_create' %}" class="btn">{% trans 'Checkout' %}</a>
       </div>
     </div>
   </div>
@@ -141,30 +157,30 @@
       <div class="row">
         <div class="col-sm-4" style="position:relative; left: 50px">
           <h3>
-            КОНТАКТЫ
+            {% trans 'КОНТАКТЫ' %}
           </h3>
           <ul class="d-block">
             <li><p class="font-weight-bold">+38 (098) 721-22-71</p></li>
             <li><p class="font-weight-bold">+38 (095) 489-32-04</p></li>
-            <li><p  class="font-weight-bold">м. Сарни, вул.Грушевського,1</p></li>
+            <li><p  class="font-weight-bold">{% trans 'м. Сарни, вул.Грушевського,1' %}</p></li>
             <li><p class="font-weight-bold">treksarni@ukr.net</p></li>
           </ul>
         </div>
         <div class="col-sm-4">
           <h3>
-            МЕНЮ
+            {% trans 'МЕНЮ' %}
           </h3>
 
           <ul class="d-block menu">
-            <li><a href="" class="font-weight-bold">О НАС</a></li>
-            <li><a href="" class="font-weight-bold">НОВОСТИ</a></li>
-            <li><a href="" class="font-weight-bold">ДОСТАВКА И ОПЛАТА</a></li>
-            <li><a href="" class="font-weight-bold">КОНТАКТЫ</a></li>
+            <li><a href="" class="font-weight-bold">{% trans 'О НАС' %}</a></li>
+            <li><a href="" class="font-weight-bold">{% trans 'НОВОСТИ' %}</a></li>
+            <li><a href="" class="font-weight-bold">{% trans 'ДОСТАВКА И ОПЛАТА' %}</a></li>
+            <li><a href="" class="font-weight-bold">{% trans 'КОНТАКТЫ' %}</a></li>
           </ul>
         </div>
         <div class="col">
           <h3>
-            ОПАТА
+            {% trans 'ОПЛАТА' %}
           </h3>
           <ul class="d-flex">
             <li class="pr-5"><i class="fab fa-cc-visa"></i></li>
@@ -175,7 +191,7 @@
 
     </section>
     <section class="w-100 danger-color">
-      <div class="text-center py-3 danger-color" style="position: relative; left: 48px;"><p class="white-text">Зроблено компанією<a href="https://mdbootstrap.com/"> PROLOG</a></p>
+      <div class="text-center py-3 danger-color" style="position: relative; left: 48px;"><p class="white-text">{% trans 'Зроблено компанією' %}<a href="https://mdbootstrap.com/"> PROLOG</a></p>
 
       </div>
     </section>

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load bootstrap4 %}
 {% load static %}
 {% block style %}
@@ -7,15 +8,15 @@
 {% block content %}
     <!--Section: Contact v.1-->
 <div class="page d-flex" style="margin-left: 60px;">
-        <p class="red-text" style="word-spacing: 5px">Главная    /   </p>
+        <p class="red-text" style="word-spacing: 5px">{% trans "Главная" %}    /   </p>
 
-        <p class="red-text font-weight-bold" style="word-spacing: 3px">&nbsp;Контакты</p>
+        <p class="red-text font-weight-bold" style="word-spacing: 3px">&nbsp;{% trans "Контакты" %}</p>
     </div>
     <!--Section: Contact v.1-->
     <section class="section pb-5">
 
         <!--Section heading-->
-        <h2 class="section-heading h1 pt-4" style="margin-left: 60px;">КОНТАКТЫ</h2>
+        <h2 class="section-heading h1 pt-4" style="margin-left: 60px;">{% trans "КОНТАКТЫ" %}</h2>
         <!--Section description-->
 
         <div class="row" style="margin-left: 47px">
@@ -30,12 +31,12 @@
                         <!--Header-->
                         <div class="text-left h-75" >
                             <div>
-                                <h3>Aдрес</h3>
-                                <p>М.Сарни, ул Грушевского,1</p>
-                                <p>Украина</p>
+                                <h3>{% trans "Aдресс" %}</h3>
+                                <p>{% trans "М.Сарни, ул Грушевского,1" %}</p>
+                                <p>{% trans "Украина" %}</p>
                             </div>
                             <div class="text-left">
-                                <h3>ТЕЛ/ФАКС:</h3>
+                                <h3>{% trans "ТЕЛ/ФАКС" %}:</h3>
                                 <p>+38(098) 721-22-71</p>
                                 <p>+38(095) 489-32-04</p>
                             </div>
@@ -46,7 +47,7 @@
 
                             </div>
                             <div class="form-header accent-1">
-                                <h3></i>Зв’язок з нами</h3>
+                                <h3>{% trans "Зв’язок з нами" %}</h3>
                             </div>
                         </div>
 
@@ -74,7 +75,7 @@
                         </div>
 
                         <div class="text-center mt-4">
-                            <button class="btn btn-danger w-75" type="submit">Submit</button>
+                            <button class="btn btn-danger w-75" type="submit">{% trans "Submit" %}</button>
                         </div>
                         </form>
 

@@ -18,9 +18,13 @@ from django.urls import path, include
 # from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 from django.conf import settings
+from django.utils.translation import gettext_lazy as _
 from django.conf.urls import handler404, handler403, handler500
+from django.conf.urls.i18n import i18n_patterns
 
-urlpatterns = [
+urlpatterns = i18n_patterns(
+      path('i18n/set_language', include('django.conf.urls.i18n')),
+      path(_('admin/'), admin.site.urls),
       path('', include('spare.urls')),
       path('', include('blog.urls')),
       path('', include('cart.urls')),
@@ -28,8 +32,9 @@ urlpatterns = [
       path('', include('payments.urls')),
       path('', include('products.urls')),
       path('', include('contacts.urls')),
-      path('admin/', admin.site.urls),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
 
 
 # if settings.DEBUG:

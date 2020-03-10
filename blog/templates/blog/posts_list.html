@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
 {% block style %}
     <link rel="stylesheet" href="{% static 'blog/style.css' %}">
 {% endblock %}
 {% block content %}
      <div class="page d-flex" style="margin-left: 60px;">
-        <p class="red-text" style="word-spacing: 5px">Главная    /   </p>
+        <p class="red-text" style="word-spacing: 5px">{% trans 'Главная' %}    /   </p>
 
-        <p class="red-text font-weight-bold" style="word-spacing: 3px">&nbsp Новости</p>
+        <p class="red-text font-weight-bold" style="word-spacing: 3px">&nbsp {% trans 'Новости' %}</p>
     </div>
       <section>
         <div class="news">
@@ -29,6 +30,6 @@
                 </div>
     </section>
    {% if user.is_authenticated %}
-        <a href="{% url 'blog:add' %}" class="btn btn-danger" style="margin-left: 60px;">Add post</a>
+        <a href="{% url 'blog:add' %}" class="btn btn-danger" style="margin-left: 60px;">{% trans 'Add post' %}</a>
     {% endif %}
 {% endblock %}

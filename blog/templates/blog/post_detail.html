@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
 {% block title %}
-    Новость
+    {% trans 'Новость' %}
 {% endblock %}
 {% block style %}
     <link rel="stylesheet" href="{% static 'blog/news_details.css' %}">
@@ -9,9 +10,9 @@
 
 {% block content %}
     <div class="page d-flex" style="margin-left: 60px;">
-        <a href="" class="red-text"><p style="word-spacing: 5px">Главная    /   </p></a>
-        <a href="{% url  'blog:posts_list' %}"><p class="red-text" style="word-spacing: 3px">&nbsp Новости /</p></a>
-        <p class="red-text font-weight-bold">&nbsp;Новость</p>
+        <a href="" class="red-text"><p style="word-spacing: 5px">{% trans 'Главная' %}    /   </p></a>
+        <a href="{% url  'blog:posts_list' %}"><p class="red-text" style="word-spacing: 3px">&nbsp {% trans 'Новости' %} /</p></a>
+        <p class="red-text font-weight-bold">&nbsp;{% trans 'Новость' %}</p>
     </div>
     <section class="news_detail">
         <h3 class="h3">{{ post.title }}</h3>
@@ -58,8 +59,8 @@
 
     </section>
     {% if user.is_authenticated %}
-        <a href="{% url 'blog:edit' pk=post.id %}" class="btn btn-danger" style="margin-left: 60px;">Edit post</a>
-        <a href="{% url 'blog:delete' pk=post.id %}" class="btn btn-danger" style="margin-left: 60px;">Delete post</a>
+        <a href="{% url 'blog:edit' pk=post.id %}" class="btn btn-danger" style="margin-left: 60px;">{% trans 'Edit post' %}</a>
+        <a href="{% url 'blog:delete' pk=post.id %}" class="btn btn-danger" style="margin-left: 60px;">{% trans 'Delete post' %}</a>
     {% endif %}
 
 {% endblock %}

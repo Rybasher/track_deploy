@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
 {% block style %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -37,9 +38,9 @@
 {% block content %}
 
      <div class="page d-flex ml-5">
-        <p class="red-text" style="word-spacing: 5px">Главная    /   </p>
+        <p class="red-text" style="word-spacing: 5px">{% trans 'Главная' %}    /   </p>
 
-        <p class="red-text font-weight-bold" style="word-spacing: 3px">&nbsp;О нас</p>
+        <p class="red-text font-weight-bold" style="word-spacing: 3px">&nbsp;{% trans 'О нас' %}</p>
     </div>
 <section>
     <div class="banner">
@@ -47,40 +48,40 @@
             class="white-text">TRACK</h1>
         <div style="width: 75%"><h3 class="h3 white-text" style="position: relative; left: 50px; padding-top: 20px;
             font-size: 20pt">
-            Ми мережа магазинів "Трек" в Рівненській області.
-            "Трек" на ринку більше 12 років, через це ми володіємо  великим досвідом і якісним товаром,
-            клієнт - це наша першочергова задача.</h3></div>
+            {% trans 'Ми мережа магазинів "Трек" в Рівненській області.' %}
+            {% trans '"Трек" на ринку більше 12 років, через це ми володіємо  великим досвідом і якісним товаром,' %}
+            {% trans 'клієнт - це наша першочергова задача' %}.</h3></div>
 
     </div>
 
 </section>
     <section class="mb-5" style="position: relative; margin-left: 40px; top: 40px;">
-        <h3 class="h3">Для клиентов предлагаем:</h3>
+        <h3 class="h3">{% trans 'Для клиентов предлагаем' %}:</h3>
         <div class="all_offers d-flex">
 
             <div class="offers">
 
-                <h3 class="mt-5 h3" style="font-size: 16pt;">1. Немалый спектр товаров пожарного оборудования:</h3>
-                <p class="font-weight-normal">- Мотопомпы;</p>
-                <p class="font-weight-normal">-Генераторы и их комплектующие;</p>
-                <p class="font-weight-normal">-Шланги пожарные (отечественного и зарубежного производства);</p>
-                <p class="font-weight-normal">- Рукава заборные;</p>
-                <p class="font-weight-normal">- Гайки на шланги и рукава;</p>
-                <p class="font-weight-normal">-Шайбы;</p>
-                <p class="font-weight-normal">-Хомуты усиленые;</p>
-                <p class="font-weight-normal">-Шрайбера;</p>
-                <p class="font-weight-normal">-Тычки;</p>
+                <h3 class="mt-5 h3" style="font-size: 16pt;">1. {% trans 'Немалый спектр товаров пожарного оборудования' %}:</h3>
+                <p class="font-weight-normal">- {% trans 'Мотопомпы' %};</p>
+                <p class="font-weight-normal">-{% trans 'Генераторы и их комплектующие' %};</p>
+                <p class="font-weight-normal">-{% trans 'Шланги пожарные (отечественного и зарубежного производства)' %};</p>
+                <p class="font-weight-normal">- {% trans 'Рукава заборные' %};</p>
+                <p class="font-weight-normal">- {% trans 'Гайки на шланги и рукава' %};</p>
+                <p class="font-weight-normal">-{% trans 'Шайбы' %};</p>
+                <p class="font-weight-normal">-{% trans 'Хомуты усиленые' %};</p>
+                <p class="font-weight-normal">-{% trans 'Шрайбера' %};</p>
+                <p class="font-weight-normal">-{% trans 'Тычки' %};</p>
             </div>
             <div class="offers_two">
-                <h3 class="mt-5 h3" style="font-size: 16pt;">2. Запчасти к отечественным автомобилям:</h3>
-                <p>Предлагаем все, начиная от брелков к ключам и наклеек на машины и мотоциклы, заканчивая резиной и рессорами.</p>
-                <h3 class="h3" style="font-size: 16pt;">3. Запчасти к мототехнике:</h3>
-                <p>Для скутеров и мотоциклов (отечественного и китайского производства).</p>
-                <h3 class="h3" style="font-size: 16pt;">4. Различные масла как для мото, квадро техники, так и для автомобилей двух и четырехтактные​.</h3>
-                <h3 class="h3" style="font-size: 16pt;">5. Запчасти  к отечественным и китайским тракторам</h3>
-                <h3 class="h3" style="font-size: 16pt;">6. Фонари и прожекторы: ручные, налобные, подводные, (лампочные и светодиодные, для освещения малой и большой территории).</h3>
-                <h3 class="h3" style="font-size: 16pt;">7. Флешки, модуляторы, брелки, ключи для ремонта авто, лопаты.</h3>
-                <h3 class="h3" style="font-size: 16pt;">8. Сапоги, временщики и различные костюмы, куртки камуфляжные.
+                <h3 class="mt-5 h3" style="font-size: 16pt;">2. {% trans 'Запчасти к отечественным автомобилям' %}:</h3>
+                <p>{% trans 'Предлагаем все, начиная от брелков к ключам и наклеек на машины и мотоциклы, заканчивая резиной и рессорами' %}.</p>
+                <h3 class="h3" style="font-size: 16pt;">3. {% trans 'Запчасти к мототехнике' %}:</h3>
+                <p>{% trans 'Для скутеров и мотоциклов (отечественного и китайского производства).' %}</p>
+                <h3 class="h3" style="font-size: 16pt;">4. {% trans 'Различные масла как для мото, квадро техники, так и для автомобилей двух и четырехтактные​' %}.</h3>
+                <h3 class="h3" style="font-size: 16pt;">5. {% trans 'Запчасти  к отечественным и китайским тракторам' %}</h3>
+                <h3 class="h3" style="font-size: 16pt;">6. {% trans 'Фонари и прожекторы: ручные, налобные, подводные, (лампочные и светодиодные, для освещения малой и большой территории)' %}.</h3>
+                <h3 class="h3" style="font-size: 16pt;">7. {% trans 'Флешки, модуляторы, брелки, ключи для ремонта авто, лопаты' %}.</h3>
+                <h3 class="h3" style="font-size: 16pt;">8. {% trans 'Сапоги, временщики и различные костюмы, куртки камуфляжные.' %}
                 </h3>
 
             </div>

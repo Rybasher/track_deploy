@@ -1,4 +1,5 @@
-{% extends 'products/base_products.html' %}
+{% extends 'base.html' %}
+{% load i18n %}
 {% load bootstrap4 %}
 {% load static %}
 {% block style %}
@@ -24,9 +25,10 @@
 {% block content %}
 
     <div class="page d-flex" style="margin-left: 60px;">
-        <p class="red-text" style="word-spacing: 5px">Главная    /   </p>
+        <a href="{% url 'spare:home_page' %}"><p class="red-text" style="word-spacing: 5px">{% trans "Главная" %} / </p></a>
+        <a href="{% url 'products:product_list' %}"><p class="red-text" style="word-spacing: 5px">&nbsp;{% trans "Каталог" %}</p></a>
 
-        <p class="red-text font-weight-bold" style="word-spacing: 3px">&nbsp;Доставка</p>
+        <p class="red-text font-weight-bold" style="word-spacing: 3px">&nbsp;/ {{ product.title }}</p>
     </div>
     <div class="container dark-grey-text mt-5 ">
         <div class="row wow fadeIn ">
@@ -92,41 +94,41 @@
             </div>
             <div class="col-md-4 mb-4">
                 <h3 class="h3 black-text">{{ product.manufacturer.category.title }}</h3>
-                <p><small>article</small></p>
+                <p><small>{% trans "" %}</small></p>
 
                 <hr class="hr-dark w-50">
                 {% if product.available %}
-
+article
                 {% endif %}
-                <p class="font-weight-normal black-text"><i class="fas fa-check-circle"></i> Є в наявності &nbsp;{{ product.available }}</p>
+                <p class="font-weight-normal black-text"><i class="fas fa-check-circle"></i>{% trans "Є в наявності" %}  &nbsp;{{ product.available }}</p>
                 {% if product.fuel %}
-                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text">Вид пального:</b> &nbsp;{{ product.fuel }}</p>
+                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text">{% trans "Вид пального" %}:</b> &nbsp;{{ product.fuel }}</p>
                 {% endif %}
                 {% if product.rated_power %}
-                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text">Номінальна потужність:</b> &nbsp;{{ product.rated_power }}</p>
+                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text">{% trans "Номінальна потужність" %}:</b> &nbsp;{{ product.rated_power }}</p>
                 {% endif %}
                 {% if product.max_power %}
-                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text">Максимальна потужність: &nbsp;</b>{{ product.max_power }}</p>
+                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text">{% trans "Максимальна потужність" %}: &nbsp;</b>{{ product.max_power }}</p>
                 {% endif %}
                 {% if product.launch_sys %}
-                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text">Система пуску: &nbsp;</b>{{ product.launch_sys }}</p>
+                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text">{% trans "Система пуску" %}: &nbsp;</b>{{ product.launch_sys }}</p>
                 {% endif %}
 
                 {% if product.engine %}
-                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text">Тип двигуна:</b> &nbsp;{{ product.engine }}</p>
+                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text">{% trans "Тип двигуна" %}:</b> &nbsp;{{ product.engine }}</p>
                 {% endif %}
                 {% if product.weight %}
-                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text">Вага:</b> &nbsp;{{ product.weight }}</p>
+                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text">{% trans "Вага" %}:</b> &nbsp;{{ product.weight }}</p>
                 {% endif %}
                 {% if product.price %}
-                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text pr-2">Цена: &nbsp;{{ product.price }}</b>грн</p>
+                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text pr-2">{% trans "Цена" %}: &nbsp;{{ product.price }}</b>грн</p>
                 {% endif %}
 
                 <form action="{% url "cart:cart_add" product.id %}" method="post" class="d-flex justify-content-left">
                             <div style="display: none">{{ cart_product_form }}</div>
                             {% csrf_token %}
                             <button type="submit" class="btn btn-danger btn-md my-0 p" style="width: 180px">
-                               Add to Card <i class="fas fa-shopping-cart white-text"></i>
+                               {% trans "Add to Card" %} <i class="fas fa-shopping-cart white-text"></i>
                          </button>
                     </form>
 
@@ -141,9 +143,9 @@
     <div class="properties" style="margin-left: 60px;">
         <nav>
             <ul class="propertiesUl">
-                <li onclick="myFunction()" id="desc" ><p style="font-size: 16pt;font-weight: normal; padding-right: 10px;">ОПИСАНИЕ</p></li>
-                <li onclick="myFunction1()" id="otz"><p style="font-size: 16pt;font-weight: normal; padding-right: 10px;">ОТЗЫВЫ</p></li>
-                <li onclick="myFunction2()" id="prop"><p style="font-size: 16pt;font-weight: normal">ХАРАКТЕРИСТИКИ</p></li>
+                <li onclick="myFunction()" id="desc" ><p style="font-size: 16pt;font-weight: normal; padding-right: 10px;">{% trans "ОПИСАНИЕ" %}</p></li>
+                <li onclick="myFunction1()" id="otz"><p style="font-size: 16pt;font-weight: normal; padding-right: 10px;">{% trans "ОТЗЫВЫ" %}</p></li>
+                <li onclick="myFunction2()" id="prop"><p style="font-size: 16pt;font-weight: normal">{% trans "ХАРАКТЕРИСТИКИ" %}</p></li>
             </ul>
         </nav>
         <div class="description" style="width: 400px; padding-top: 20px; padding-left: 10px;">
@@ -155,23 +157,23 @@
             <div id='second' style="display: none;width: 900px" >
 
                 <div class="col-md-4">
-                    <h4>Новый комментарий</h4>
+                    <h4>{% trans "Новый комментарий" %}</h4>
                         <form action="" method="post">
                             {% csrf_token %}
                             {%  bootstrap_form form layput='horizontal' %}
-                            <button class="btn btn-danger w-100" type="submit">ДОБАВИТЬ</button>
+                            <button class="btn btn-danger w-100" type="submit">{% trans "ДОБАВИТЬ" %}</button>
                         </form>
                 </div>
             <div class="col-md-5">
             <div class="card-body">
                     {% if new_comment %}
                         <div class="alert alert-success" role="alert">
-                          Your comment is awaiting moderation
+                          {% trans "Your comment is add" %}
                         </div>
                         {% else %}
                     {% endif %}
                             </div>
-                            <p id='third' style="display: none" >som text</p>
+                <p id='third' style="display: none" >{% trans "som text" %}</p>
 
                 </div>
                 {% if comments %}
@@ -188,7 +190,7 @@
                         </div>
 
                     {% endfor %}
-                    <div class="show_hide_list btn btn-danger w-100">Смотреть все</div>
+                    <div class="show_hide_list btn btn-danger w-100">{% trans "Смотреть все" %}</div>
 
                     </div>
 
@@ -251,7 +253,7 @@
         <hr>
         <div class="row d-flex justify-content-start wow fadeIn" style="margin-left: 60px;">
             <div class="col-md-6 text-left">
-                <h4 class="my-4 h4">НОВИНКИ</h4>
+                <h4 class="my-4 h4">{% trans "НОВИНКИ" %}</h4>
 
             </div>
         </div>

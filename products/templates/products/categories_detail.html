@@ -1,4 +1,5 @@
-{% extends 'products/base_products.html' %}
+{% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
 {% block style %}
     <link rel="stylesheet" href="{% static 'products/style.css' %}">
@@ -6,9 +7,9 @@
 {% block content %}
 
     <div class="page d-flex" style="margin-left: 60px;">
-        <p class="red-text" style="word-spacing: 5px">Главная    / </p>
+        <p class="red-text" style="word-spacing: 5px">{% trans 'Главная' %}    / </p>
 
-        <p class="red-text" style="word-spacing: 3px">&nbsp;Каталог /  </p>
+        <p class="red-text" style="word-spacing: 3px">&nbsp;{% trans 'Каталог' %} /  </p>
         <p class="red-text font-weight-bold" style="word-spacing: 3px">&nbsp;{{ category.title }}</p>
     </div>
 
@@ -17,34 +18,34 @@
         <div class="col-sm-3" style="margin-left: 60px">
             <ul class="nav flex-column">
                 <li class="nav-item pl-2 bg-danger">
-                    <h3 class="h3 white-text pt-2">ФИЛЬТР</h3></li>
+                    <h3 class="h3 white-text pt-2">{% trans 'ФИЛЬТР' %}</h3></li>
                 <li class="nav-item pl-2 pt-4">
-                    <h3 class="h3" style="font-size: 16pt">ПРОИЗВОДИТЕЛЬ</h3>
+                    <h3 class="h3" style="font-size: 16pt">{% trans 'ПРОИЗВОДИТЕЛЬ' %}</h3>
                 </li>
                 <li class="nav-item pl-2 pt-2">
-                    <h3 class="h3" style="font-size: 16pt">ТИП ЗАПЧАСТИ</h3>
+                    <h3 class="h3" style="font-size: 16pt">{% trans 'ТИП ЗАПЧАСТИ' %}</h3>
                 </li>
                 <li class="nav-item pl-2 pt-2">
                     <form action="" method="post">
 
                         <input type="checkbox" id="tree" value="First" name="First">
-                        <label for="tree" style="font-size: 16pt">First</label>
+                        <label for="tree" style="font-size: 16pt">{% trans 'Аналог' %}</label>
                         <br>
 
                         <input type="checkbox" id="four" value="First" name="First">
-                        <label for="four" style="font-size: 16pt">Second</label>
+                        <label for="four" style="font-size: 16pt">{% trans 'Оригинал' %}</label>
 
                     </form>
                 </li>
                 <li class="nav-item pl-2 pt-2">
-                    <h3 class="h3" style="font-size: 16pt">ЦЕНА</h3>
+                    <h3 class="h3" style="font-size: 16pt">{% trans 'ЦЕНА' %}</h3>
                 </li>
                 <li class="nav-item pl-2 pt-2">
                     <form action="" method="post">
                         <input type="text" placeholder="от" style="width: 167px;">
                         <input type="text" placeholder="до" style="width: 167px;">
                         <button type="submit" class="btn btn-danger w-100" style="position:relative; left: -7px;">
-                            SEARCH</button>
+                            {% trans 'SEARCH' %}</button>
                     </form>
                 </li>
 
@@ -93,7 +94,7 @@
                             </div>
 
 
-                     <button class="btn btn-danger">В КОРЗИНУ <i class="fas fa-shopping-cart white-text"></i></button>
+                     <button class="btn btn-danger">{% trans 'В КОРЗИНУ' %} <i class="fas fa-shopping-cart white-text"></i></button>
                         </form>
                 </div>
                 {% endfor %}

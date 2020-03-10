@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
+from spare.views import *
 from .views import *
 
 app_name = "products"
@@ -7,6 +8,7 @@ app_name = "products"
 urlpatterns = [
     path('katalog/', product_list, name='product_list'),
     path('product/<str:slug>/', product_detail, name="product_detail"),
+    path('japan_products/', japan_products, name='japan_products'),
     # path('product/<str:slug>/edit/', product.edit)
     path('add_product/', ProductCreateView.as_view(), name='add_product'),
     path('category/<str:slug>/', category_detail, name="category_detail"),
