@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django_cleanup',
     'bootstrap4',
     'blog.apps.BlogConfig',
+    'contacts.apps.ContactsConfig'
 
 ]
 

@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'contacts/style.css' %}">
+{% endblock %}
+{% block content %}
+    <!--Section: Contact v.1-->
+<div class="page d-flex" style="margin-left: 60px;">
+        <p class="red-text" style="word-spacing: 5px">Главная    /   </p>
+
+        <p class="red-text font-weight-bold" style="word-spacing: 3px">&nbsp;Контакты</p>
+    </div>
+    <!--Section: Contact v.1-->
+    <section class="section pb-5">
+
+        <!--Section heading-->
+        <h2 class="section-heading h1 pt-4" style="margin-left: 60px;">КОНТАКТЫ</h2>
+        <!--Section description-->
+
+        <div class="row" style="margin-left: 47px">
+
+            <!--Grid column-->
+            <div class="col-lg-5 mb-4">
+
+                <!--Form with header-->
+                <div class="card">
+
+                    <div class="card-body">
+                        <!--Header-->
+                        <div class="text-left h-75" >
+                            <div>
+                                <h3>Aдрес</h3>
+                                <p>М.Сарни, ул Грушевского,1</p>
+                                <p>Украина</p>
+                            </div>
+                            <div class="text-left">
+                                <h3>ТЕЛ/ФАКС:</h3>
+                                <p>+38(098) 721-22-71</p>
+                                <p>+38(095) 489-32-04</p>
+                            </div>
+
+                            <div>
+                                <h3>EMAIL:</h3>
+                                <p>info@treck.com.ua</p>
+
+                            </div>
+                            <div class="form-header accent-1">
+                                <h3></i>Зв’язок з нами</h3>
+                            </div>
+                        </div>
+
+                        <!--Body-->
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <div class="md-form">
+                            <i class="fas fa-user prefix grey-text"></i>
+
+                            {{ form.name }}
+                                <label for="form-name">Your name</label>
+
+                        </div>
+
+                        <div class="md-form">
+                            <i class="fas fa-envelope prefix grey-text"></i>
+                            {{ form.email }}
+                            <label for="form-email">Your email</label>
+                        </div>
+
+                        <div class="md-form">
+                            <i class="fas fa-pencil-alt prefix grey-text"></i>
+                            {{ form.content }}
+                            <label for="form-text">Icon Prefix</label>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <button class="btn btn-danger w-75" type="submit">Submit</button>
+                        </div>
+                        </form>
+
+
+                    </div>
+
+                </div>
+                <!--Form with header-->
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-7" style="position:relative; left: -10px;">
+
+                <!--Google map-->
+                <div id="map-container-google-11" class="z-depth-1-half map-container-6" style="height: 755px">
+                    <iframe src="https://maps.google.com/maps?q=new%20delphi&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                            frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+
+                <br>
+                <!--Buttons-->
+
+                </div>
+
+            </div>
+            <!--Grid column-->
+
+
+
+    </section>
+          <!--Body-->
+
+
+
+
+
+
+
+
+    <!--Grid column-->
+
+    <!--Grid column-->
+
+      <!--Buttons-->
+
+
+
+<!--Section: Contact v.1-->
+{% endblock %}
