@@ -1,0 +1,287 @@
+{% extends 'products/base_products.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{% block style %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.loupe.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'styles/zoomple.css' %}">
+
+
+<style>
+        .nav ul{
+            display: none;
+        }
+        .nav li:hover ul{
+            display: block;
+        }
+        .comments .comment:nth-child(n+5){display:none;}
+        .show_hide_list{cursor:pointer;background:grey;}
+
+    </style>
+{% endblock %}
+
+{% block content %}
+
+    <div class="page d-flex" style="margin-left: 60px;">
+        <p class="red-text" style="word-spacing: 5px">Главная    /   </p>
+
+        <p class="red-text font-weight-bold" style="word-spacing: 3px">&nbsp;Доставка</p>
+    </div>
+    <div class="container dark-grey-text mt-5 ">
+        <div class="row wow fadeIn ">
+            <div class="col-md-8 mb-5">
+            <div class="row">
+                <div class="photos col-md-2" style="display:table;position: relative;">
+                    {% if product.image_two %}
+                        <img src="{{ product.image_two.url }}" onclick="tryImage(this);" width="90" height="90"
+                         style="display:table-cell; border: 1px solid black; margin-bottom: 10px;">
+                    {% endif %}
+                    {% if product.image_three %}
+                        <img src="{{ product.image_three.url }}" onclick="tryImage(this);" width="90" height="90"
+                         style="display:table-cell; border: 1px solid black; margin-bottom: 10px;">
+                    {% endif %}
+                    {% if product.image_four %}
+                        <img src="{{ product.image_four.url }}" onclick="tryImage(this);" width="90" height="90"
+                         style="display:table-cell; border: 1px solid black; margin-bottom: 10px;">
+                    {% endif %}
+                    {% if product.image_five %}
+                        <img src="{{ product.image_five.url }}" onclick="tryImage(this);" width="90" height="90"
+                         style="display:table-cell; border: 1px solid black; margin-bottom: 10px;">
+                    {% endif %}
+                    {% if product.image_six %}
+                        <img src="{{ product.image_six.url }}" onclick="tryImage(this);" width="90" height="90"
+                         style="display:table-cell; border: 1px solid black; margin-bottom: 10px;">
+                    {% endif %}
+                    {% if product.image_seven %}
+                        <img src="{{ product.image_seven.url }}" onclick="tryImage(this);" width="90" height="90"
+                         style="display:table-cell; border: 1px solid black; margin-bottom: 10px;">
+                    {% endif %}
+                {% if product.image %}
+                        <img src="{{ product.image.url }}" onclick="tryImage(this);" width="90" height="90"
+                         style="display:table-cell; border: 1px solid black; margin-bottom: 10px;">
+                    {% endif %}
+
+
+                </div>
+                <div class="col">
+                    {% if product.image %}
+                        <img id="expandedImg" src="{{ product.image.url }}" style="width:550px; height: 400px; border: 1px solid black">
+                        <div id="imgtext"></div>
+                    {% endif %}
+
+
+
+
+                </div>
+
+            </div>
+                <script>
+                    function tryImage(imgs) {
+                        let expandImg = document.getElementById("expandedImg");
+                        let imgText = document.getElementById("imgtext");
+                        expandImg.src = imgs.src;
+                        imgText.innerHTML = imgs.alt;
+                        expandImg.parentElement.style.display = "block";
+                    }
+                </script>
+
+
+
+
+            </div>
+            <div class="col-md-4 mb-4">
+                <h3 class="h3 black-text">{{ product.manufacturer.category.title }}</h3>
+                <p><small>article</small></p>
+
+                <hr class="hr-dark w-50">
+                {% if product.available %}
+
+                {% endif %}
+                <p class="font-weight-normal black-text"><i class="fas fa-check-circle"></i> Є в наявності &nbsp;{{ product.available }}</p>
+                {% if product.fuel %}
+                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text">Вид пального:</b> &nbsp;{{ product.fuel }}</p>
+                {% endif %}
+                {% if product.rated_power %}
+                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text">Номінальна потужність:</b> &nbsp;{{ product.rated_power }}</p>
+                {% endif %}
+                {% if product.max_power %}
+                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text">Максимальна потужність: &nbsp;</b>{{ product.max_power }}</p>
+                {% endif %}
+                {% if product.launch_sys %}
+                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text">Система пуску: &nbsp;</b>{{ product.launch_sys }}</p>
+                {% endif %}
+
+                {% if product.engine %}
+                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text">Тип двигуна:</b> &nbsp;{{ product.engine }}</p>
+                {% endif %}
+                {% if product.weight %}
+                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text">Вага:</b> &nbsp;{{ product.weight }}</p>
+                {% endif %}
+                {% if product.price %}
+                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text pr-2">Цена: &nbsp;{{ product.price }}</b>грн</p>
+                {% endif %}
+
+                <form action="{% url "cart:cart_add" product.id %}" method="post" class="d-flex justify-content-left">
+                            <div style="display: none">{{ cart_product_form }}</div>
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger btn-md my-0 p" style="width: 180px">
+                               Add to Card <i class="fas fa-shopping-cart white-text"></i>
+                         </button>
+                    </form>
+
+
+
+                </div>
+
+
+
+                </div>
+            </div>
+    <div class="properties" style="margin-left: 60px;">
+        <nav>
+            <ul class="propertiesUl">
+                <li onclick="myFunction()" id="desc" ><p style="font-size: 16pt;font-weight: normal; padding-right: 10px;">ОПИСАНИЕ</p></li>
+                <li onclick="myFunction1()" id="otz"><p style="font-size: 16pt;font-weight: normal; padding-right: 10px;">ОТЗЫВЫ</p></li>
+                <li onclick="myFunction2()" id="prop"><p style="font-size: 16pt;font-weight: normal">ХАРАКТЕРИСТИКИ</p></li>
+            </ul>
+        </nav>
+        <div class="description" style="width: 400px; padding-top: 20px; padding-left: 10px;">
+
+            <p id='first' style="display: block; text-align: justify; font-weight: normal; font-size: 14pt">
+                {{ product.content }}
+            </p>
+
+            <div id='second' style="display: none;width: 900px" >
+
+                <div class="col-md-4">
+                    <h4>Новый комментарий</h4>
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            {%  bootstrap_form form layput='horizontal' %}
+                            <button class="btn btn-danger w-100" type="submit">ДОБАВИТЬ</button>
+                        </form>
+                </div>
+            <div class="col-md-5">
+            <div class="card-body">
+                    {% if new_comment %}
+                        <div class="alert alert-success" role="alert">
+                          Your comment is awaiting moderation
+                        </div>
+                        {% else %}
+                    {% endif %}
+                            </div>
+                            <p id='third' style="display: none" >som text</p>
+
+                </div>
+                {% if comments %}
+                    <div class="comments">
+                    {% for comment in comments %}
+                        <div class="comment" style="padding: 10px;">
+                          <p class="font-weight-bold">
+                            {{ comment.author }}
+                            <span class=" text-muted font-weight-normal">
+                              {{ comment.created_at }}
+                            </span>
+                          </p>
+                          {{ comment.content | linebreaks }}
+                        </div>
+
+                    {% endfor %}
+                    <div class="show_hide_list btn btn-danger w-100">Смотреть все</div>
+
+                    </div>
+
+                {% endif %}
+            </div>
+            <script>
+                jQuery(document).ready(function($){
+                if($('.comments').find('.comment').length > 5){
+                $('.show_hide_list').click(function(){
+                $('.comments .comment:nth-child(n+6)').slideToggle('');
+                $(this).toggleClass('opnd_g');
+                if($(this).hasClass('opnd_g')){
+                $(this).html('Скрыть');}
+                else {$(this).html('Смотреть все');}
+                });
+                }else{$('.show_hide_list').hide();}
+                });
+            </script>
+
+
+            </div>
+    <script>
+        function myFunction() {
+            document.getElementById("second").style.display = "none";
+            document.getElementById("third").style.display = "none";
+            document.getElementById("first").style.display = "block";
+            document.getElementById("prop").style.borderBottom = "none";
+            document.getElementById("prop").style.fontWeight = "normal";
+            document.getElementById("otz").style.borderBottom = "none";
+            document.getElementById("otz").style.fontWeight = "normal";
+            document.getElementById("desc").style.borderBottom = "1px solid black";
+            document.getElementById("desc").style.fontWeight = "bold";
+        }
+        function myFunction1() {
+            document.getElementById("first").style.display = "none";
+            document.getElementById("third").style.display = "none";
+            document.getElementById("second").style.display = "flex";
+            document.getElementById("otz").style.borderBottom = "1px solid black";
+            document.getElementById("otz").style.fontWeight = "block";
+            document.getElementById("desc").style.borderBottom = "none";
+            document.getElementById("desc").style.fontWeight = "normal";
+            document.getElementById("prop").style.borderBottom = "none";
+            document.getElementById("prop").style.fontWeight = "normal";
+        }
+        function myFunction2() {
+            document.getElementById("first").style.display = "none";
+            document.getElementById("second").style.display = "none";
+            document.getElementById("third").style.display = "block";
+            document.getElementById("prop").style.borderBottom = "1px solid black";
+            document.getElementById("prop").style.fontWeight = "bold";
+            document.getElementById("desc").style.borderBottom = "none";
+            document.getElementById("desc").style.fontWeight = "normal";
+            document.getElementById("otz").style.borderBottom = "none";
+            document.getElementById("otz").style.fontWeight = "normal";
+        }
+    </script>
+
+
+
+        <hr>
+        <div class="row d-flex justify-content-start wow fadeIn" style="margin-left: 60px;">
+            <div class="col-md-6 text-left">
+                <h4 class="my-4 h4">НОВИНКИ</h4>
+
+            </div>
+        </div>
+
+
+        <div class="row wow rollIn" style="margin-left: 50px">
+
+         {% for product in products %}
+            <div class="col-sm-2">
+
+                    <div class="product text-center">
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" width="180" height="180" alt="" style="border:1px solid black">
+                    {% endif %}
+
+                        <p><small>{{ product.manufacturer.category.title }}</small></p>
+                        <p class="font-weight-bold">{{ product.title }}</p>
+                        <p>{{ product.price }} грн</p>
+                         <form action="{% url "cart:cart_add" product.id %}" method="post" class="d-flex justify-content-left">
+                            <div style="display: none">{{ cart_product_form }}</div>
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger btn-md my-0 p" style="width: 180px">
+                               Add to Card <i class="fas fa-shopping-cart white-text"></i>
+                         </button>
+                    </form>
+                </div>
+            </div>
+                {% endfor %}
+
+
+
+
+{% endblock %}

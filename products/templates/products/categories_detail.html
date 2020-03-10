@@ -1,0 +1,118 @@
+{% extends 'products/base_products.html' %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'products/style.css' %}">
+{% endblock %}
+{% block content %}
+
+    <div class="page d-flex" style="margin-left: 60px;">
+        <p class="red-text" style="word-spacing: 5px">Главная    / </p>
+
+        <p class="red-text" style="word-spacing: 3px">&nbsp;Каталог /  </p>
+        <p class="red-text font-weight-bold" style="word-spacing: 3px">&nbsp;{{ category.title }}</p>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-3" style="margin-left: 60px">
+            <ul class="nav flex-column">
+                <li class="nav-item pl-2 bg-danger">
+                    <h3 class="h3 white-text pt-2">ФИЛЬТР</h3></li>
+                <li class="nav-item pl-2 pt-4">
+                    <h3 class="h3" style="font-size: 16pt">ПРОИЗВОДИТЕЛЬ</h3>
+                </li>
+                <li class="nav-item pl-2 pt-2">
+                    <h3 class="h3" style="font-size: 16pt">ТИП ЗАПЧАСТИ</h3>
+                </li>
+                <li class="nav-item pl-2 pt-2">
+                    <form action="" method="post">
+
+                        <input type="checkbox" id="tree" value="First" name="First">
+                        <label for="tree" style="font-size: 16pt">First</label>
+                        <br>
+
+                        <input type="checkbox" id="four" value="First" name="First">
+                        <label for="four" style="font-size: 16pt">Second</label>
+
+                    </form>
+                </li>
+                <li class="nav-item pl-2 pt-2">
+                    <h3 class="h3" style="font-size: 16pt">ЦЕНА</h3>
+                </li>
+                <li class="nav-item pl-2 pt-2">
+                    <form action="" method="post">
+                        <input type="text" placeholder="от" style="width: 167px;">
+                        <input type="text" placeholder="до" style="width: 167px;">
+                        <button type="submit" class="btn btn-danger w-100" style="position:relative; left: -7px;">
+                            SEARCH</button>
+                    </form>
+                </li>
+
+                <li class="nav-item pl-2 pt-2 mt-4 bg-danger">
+                    <h3 class="h3 white-text">{{ category.title }}</h3>
+                </li>
+                {% for category in categories %}
+                    <li class="nav-item pl-2 pt-2 pb-4">
+                        <h3 class="h3"><a href="{{ category.get_absolute_url }}" class="black-text">
+                            {{ category.title }}</a></h3>
+                    <ul class="nav flex-column pt-3" style="position:relative; left: -120px; top: 20px;">
+                        {% for man in category.manufactures.all %}
+                            <li class="nav-item text-dark">
+                            <a href="{{ man.get_absolute_url }}" class="nav-link-two black-text font-weight-bold">
+                                {{ man.title }}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+
+                    </li>
+
+                {% endfor %}
+
+
+
+            </ul>
+        </div>
+
+        <div class="col-lg-8">
+            <div class="row wow fadeIn">
+                {% for manufacturer in category.manufactures.all %}
+                {% for product in manufacturer.products.all %}
+                    <div class="product text-center  pb-4">
+                    {% if product.image %}
+                        <a href="{{ product.get_absolute_url }}"><img src="{{ product.image.url }}" width="200" height="200" alt="" style="border:1px solid black"></a>
+                    {% endif %}
+
+                        <p><small>{{ product.manufacturer.category.title }}</small></p>
+                        <p class="font-weight-bold">{{ product.title }}</p>
+                        <p>{{ product.price }} грн</p>
+                        <form action="{% url "cart:cart_add" product.id %}" method="post">
+                            {% csrf_token %}
+                            <div style="display: none">
+                                {{ cart_product_form }}
+                            </div>
+
+
+                     <button class="btn btn-danger">В КОРЗИНУ <i class="fas fa-shopping-cart white-text"></i></button>
+                        </form>
+                </div>
+                {% endfor %}
+            {% endfor %}
+
+                <div class="col-lg-3 col-md-4 mb-4">
+
+                    </div>
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+{% endblock %}

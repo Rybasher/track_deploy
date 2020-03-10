@@ -3,3 +3,4 @@ pillow
 easy_thumbnails
 django-cleanup
 django-bootstrap4
+braintree==3.45.0

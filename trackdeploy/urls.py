@@ -21,9 +21,14 @@ from django.conf import settings
 from django.conf.urls import handler404, handler403, handler500
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('blog.urls')),
-    path('', include('contacts.urls'))
+      path('', include('spare.urls')),
+      path('', include('blog.urls')),
+      path('', include('cart.urls')),
+      path('', include('orders.urls')),
+      path('', include('payments.urls')),
+      path('', include('products.urls')),
+      path('', include('contacts.urls')),
+      path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

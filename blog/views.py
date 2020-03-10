@@ -7,6 +7,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseForbidden
 from django.http import HttpResponse
+from cart.cart import Cart
 
 # Create your views here.
 
@@ -21,27 +22,35 @@ def error_403(request, exception):
 
 def about(request):
     # cart = Cart(request)
-    return render(request, 'blog/about.html')
+    cart = Cart(request)
+    context = {'cart': cart}
+    return render(request, 'blog/about.html', context)
 
 
 def delivery(request):
     # cart = Cart(request)
-    return render(request, 'blog/delivery.html')
+    cart = Cart(request)
+    context = {'cart': cart}
+    return render(request, 'blog/delivery.html', context)
 
 
 def posts_list(request):
     posts = Post.objects.all()
+    cart = Cart(request)
     context = {
         'posts': posts,
+        'cart': cart
     }
     return render(request, 'blog/posts_list.html', context)
 
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
+    cart = Cart(request)
     # cart = Cart(request)
     context = {
-        'post': post
+        'post': post,
+        'cart': cart
     }
     return render(request, 'blog/post_detail.html', context)
 

@@ -54,23 +54,23 @@
                         <form action="" method="post">
                             {% csrf_token %}
                             <div class="md-form">
-                            <i class="fas fa-user prefix grey-text"></i>
+                                <i class="fas fa-user prefix grey-text"></i>
 
-                            {{ form.name }}
-                                <label for="form-name">Your name</label>
+                                {{ form.name }}
+
 
                         </div>
 
                         <div class="md-form">
                             <i class="fas fa-envelope prefix grey-text"></i>
                             {{ form.email }}
-                            <label for="form-email">Your email</label>
+
                         </div>
 
                         <div class="md-form">
                             <i class="fas fa-pencil-alt prefix grey-text"></i>
                             {{ form.content }}
-                            <label for="form-text">Icon Prefix</label>
+
                         </div>
 
                         <div class="text-center mt-4">

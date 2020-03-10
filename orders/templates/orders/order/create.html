@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+
+
+    <section>
+    <div class="container">
+     <h1 class="h1">Checkout</h1>
+        <div class="row">
+        <div class="col-md-5">
+            <form action="." method="post" class="order-form">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+        <input type="submit" class="btn btn-danger" value="Place order">
+        {% csrf_token %}
+    </form>
+        </div>
+            <div class="col">
+                <h3 class="h3">Your order</h3>
+                <div  style="display:block;">
+                    {% for item in cart %}
+
+                        <p class="font-weight-normal"> {{ item.quantity }}: {{ item.product }} - <span>{{ item.total_price }} грн </span></p>
+
+
+                        <br>
+                    {% endfor %}
+
+                </div>
+                <p class="font-weight-normal">Total: {{ cart.get_total_price }} грн </p>
+                    </div>
+        </div>
+    </div>
+    </section>
+
+
+
+{% endblock %}

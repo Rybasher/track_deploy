@@ -14,6 +14,15 @@
   <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
   <!-- Your custom styles (optional) -->
     <link rel="stylesheet" href="{% static 'css/style_base.css' %}">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 {% block style %}
 
 {% endblock %}
@@ -34,7 +43,7 @@
             <p>UKR RUS ENG</p>
 
           </li>
-          <li><a href="#">КАТАЛОГ</a></li>
+          <li><a href="{% url 'products:product_list' %}">КАТАЛОГ</a></li>
           <li><a href="{% url 'blog:about' %}">О НАС</a></li>
           <li><a href="{% url 'blog:posts_list' %}">НОВИНКИ</a></li>
           <li><a href="{% url 'blog:delivery' %}">ДОСТАВКА И ОПЛАТА</a></li>
@@ -48,9 +57,10 @@
 
             </li>
           <li style="padding-left: 10px;">
-            <a href="#"><i class="fas fa-shopping-cart"></i>
-              <span class="">(0 items)</span>
-            </a>
+            <a href="" data-toggle="modal" data-target="#centralModalSm"><i class="fas fa-shopping-cart"></i>
+                      <span class="">{{ cart.len }}{% if cart.len == 1 %} item {% else %} items{% endif %}
+                      </span>
+                    </a>
           </li>
 
 
@@ -61,6 +71,66 @@
       </nav>
     </div>
   </header>
+<div class="modal fade" id="centralModalSm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+
+  <!-- Change class .modal-sm to change the size of the modal -->
+  <div class="modal-dialog modal-lg" role="document">
+
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title w-100" id="myModalLabel">Корзина</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+                <table class="table" >
+  <thead class="red">
+    <tr>
+      <th scope="col">Image</th>
+      <th scope="col">Product</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Remove</th>
+      <th scope="col">Unit price</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for item in cart %}
+
+            {% with product=item.product %}
+                <tr style="border-bottom: 1px solid black">
+                    <td>
+                        <a href="{{ product.get_absolute_url }}">
+                            {% if product.image %}
+                            <img src="{{ product.image.url }}" alt="" width="90" height="90">
+                            {% endif %}
+                        </a>
+                    </td>
+                    <td>{{ product.title }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td><a href="{% url 'cart:cart_remove' product.id %}">Remove</a></td>
+                    <td class="num">{{ item.price }}</td>
+                    <td class="num">{{ item.total_price }}</td>
+                </tr>
+            {% endwith %}
+        {% endfor %}
+
+  </tbody>
+</table>
+      <h3>Товаров в корзине: {{ cart.len}}</h3>
+      <h3>Общая сумма: {{ cart.get_total_price}} грн</h3>
+
+      </div>
+      <div class="modal-footer">
+        <a href="{% url "products:product_list" %}" class="btn btn-light">Continue Shopping</a>
+        <a href="{% url 'orders:order_create' %}" class="btn">Checkout</a>
+      </div>
+    </div>
+  </div>
+</div>
 <main>
     {% block content %}
     

@@ -9,10 +9,9 @@ class ContactCreate(forms.Form):
     email = forms.EmailField(max_length=50)
     content = forms.CharField(widget=forms.Textarea)
 
-    name.widget.attrs.update({'class': 'form-control', 'id': 'form-name'})
-    email.widget.attrs.update({'class': 'form-control', 'id': 'form-email'})
-    content.widget.attrs.update({'class': 'form-control md-textarea', 'id': 'form-text', 'rows': '3'})
-
+    name.widget.attrs.update({'class': 'form-control', 'id': 'form-name', 'placeholder': 'name'})
+    email.widget.attrs.update({'class': 'form-control', 'id': 'form-email', 'placeholder': 'email'})
+    content.widget.attrs.update({'class': 'form-control md-textarea', 'id': 'form-text', 'rows': '3', 'placeholder': 'message'})
 
     def save(self):
         new_contact = Contact.objects.create(

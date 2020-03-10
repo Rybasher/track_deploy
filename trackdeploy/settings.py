@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from braintree import Configuration, Environment
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -41,7 +42,13 @@ INSTALLED_APPS = [
     'django_cleanup',
     'bootstrap4',
     'blog.apps.BlogConfig',
-    'contacts.apps.ContactsConfig'
+    'contacts.apps.ContactsConfig',
+    'spare.apps.SpareConfig',
+    'products.apps.ProductsConfig',
+    'cart.apps.CartConfig',
+    'orders.apps.OrdersConfig',
+    'payments.apps.PaymentsConfig'
+
 
 ]
 
@@ -142,4 +149,19 @@ THUMBNAIL_ALIASES = {
     },
 }
 THUMBNAIL_BASEDIR = 'thumbnails'
+
+CART_SESSION_ID = 'cart'
+
+BRAINTREE_MERCHANT_ID = '4kxxbbhmmpwhfsxk'  # ID продавца.
+BRAINTREE_PUBLIC_KEY = 'byncwh5cskytjhpt' # Публичный ключ.
+BRAINTREE_PRIVATE_KEY = '932fc7a5d3515d799016477599326117' # Секретный ключ.
+
+
+Configuration.configure(
+    Environment.Sandbox,
+    BRAINTREE_MERCHANT_ID,
+    BRAINTREE_PUBLIC_KEY,
+    BRAINTREE_PRIVATE_KEY
+)
+
 

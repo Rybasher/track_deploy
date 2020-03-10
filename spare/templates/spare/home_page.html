@@ -1,0 +1,270 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{% block style %}
+    <style>
+    .main-sections{
+        margin-top: 110px;
+
+
+}
+.main-banner{
+    position: relative;
+    bottom: 80px;
+    right: 190px;
+}
+
+.categories{
+    width: 100%;
+    /*display: flex;*/
+
+    /*margin: 0 auto;*/
+    justify-content: left;
+    padding-left: 9px;
+}
+.categories .cols{
+    float: left;
+    width: 20%;
+    border: 1px solid black;
+    margin-right: 48px;
+
+}
+.categories .cols h3{
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.categories .cols ul{
+    display: block;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+.categories .cols p{
+    padding-left: 10px;
+    font-weight: bold;
+}
+.products{
+    width: 100%;
+    margin: 0 auto; /* расположить по середине */
+    display: flex; /* расположить блоки */
+
+
+    position: relative;
+    left: -10px;
+
+
+}
+.product{
+    margin-right: 18px;
+}
+
+
+.spares{
+    width: 100%;
+    margin: 0 auto; /* расположить по середине */
+    display: flex; /* расположить блоки */
+    position: relative;
+    left: -20px;
+    height: 350px;
+}
+.spare-text{
+    width: 35%;
+}
+.spare-form{
+    position: relative;
+    background: black;
+    width: 45%;
+    left: 130px;
+    height: 370px;
+    top: -20px;
+    transform: skew(30deg, 0deg);
+    -webkit-transform:skewX(30deg);
+    -moz-transform:skewX(30deg);
+    -ms-transform:skewX(30deg);
+    -o-transform:skewX(30deg);
+
+
+
+
+    /*display: block;*/
+    /*width: 200px;*/
+    /*padding-top: -2px;*/
+    /*width: 65%;*/
+}
+
+.spare-form .form{
+    position: relative;
+    left: 80px;
+    top: 60px;
+    -webkit-transform:skewX(-30deg);
+    -moz-transform:skewX(-30deg);
+    -ms-transform:skewX(-30deg);
+    -o-transform:skewX(-30deg);
+    transform:skewX(-30deg);
+}
+.spare-img{
+    height: 370px;
+    top: -20px;
+    position: relative;
+    left: 20px;
+    background: black;
+    width: 35%;
+}
+footer a{
+    color: black;
+
+}
+.menu li{
+    padding-bottom: 15px;
+}
+
+    </style>
+{% endblock %}
+{% block content %}
+       <section class="main-sections">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <h1 class="h1" style="font-weight: bold; line-height: 1.2em">НОВЫЕ ПОСТУПЛЕНИЯ ЗАПЧАСТЕЙ В КАТЕГОРИИ ЯПОНСКИХ ПРОИЗВОДИТЕЛЕЙ</h1>
+            <div style="margin-top: 80px; padding-right: 15px;">
+              <a class="btn btn-danger" style="width: 200px;">ПЕРЕЙТИ</a>
+              <a class="btn btn-black" style="position:relative;left: -16px;"><i class="fas fa-arrow-right"></i></a></div>
+
+          </div>
+          <div class="col-md-2 main-banner" style="margin-right: 40px;">
+            <img src="{% static 'img/index/X10_orange1.png' %}" alt="">
+          </div>
+        </div>
+        </div>
+    </section>
+    <!--CATEGORIES-->
+    <section>
+      <h2 style="padding-left: 65px;" class="h2">КАТЕГОРИИ</h2>
+      <div style="padding-left: 75px" class="mt-5">
+        <div class="row categories"  >
+          <div class="cols">
+            <h3 class="h3">Запчасти</h3>
+              <ul>
+                <li><i class="fas fa-check red-text"></i><p>Мотор</p></li>
+                <li><i class="fas fa-check red-text"></i><p>Електрика</p></li>
+                <li><i class="fas fa-check red-text"></i><p>Тормоза</p></li>
+                <li><i class="fas fa-check red-text"></i><p>Кузов</p></li>
+                <li><i class="fas fa-check red-text"></i><p>Покрышки</p></li>
+
+                <li><a href=""><p style="color: red; border-bottom: 1px solid red;">Більше товарів</p></a></li>
+              </ul>
+          </div>
+          <div class="cols">
+            <h3 class="h3">Масла, фільтра</h3>
+            <ul>
+              <li><i class="fas fa-check red-text"></i><p>Воздушні фільтра</p></li>
+              <li><i class="fas fa-check red-text"></i><p>Масляні фітльтра</p></li>
+              <li><i class="fas fa-check red-text"></i><p>Моторні масла</p></li>
+              <li><i class="fas fa-check red-text"></i><p>Охолоджуюча рідина</p></li>
+              <li><i class="fas fa-check red-text"></i><p>Мастила</p></li>
+
+              <li><a href="#"><p style="color: red; border-bottom: 1px solid red;">Більше товарів</p></a></li>
+            </ul>
+          </div>
+          <div class="cols">
+            <h3 class="h3">Аксесуари</h3>
+            <ul>
+              <li><i class="fas fa-check red-text"></i><p>Диски</p></li>
+              <li><i class="fas fa-check red-text"></i><p>Захист рук</p></li>
+              <li><i class="fas fa-check red-text"></i><p>Підігрув ручки</p></li>
+              <li><i class="fas fa-check red-text"></i><p>Лебідки</p></li>
+              <li><p></p></li>
+              <li style="padding-top: 23px;"><a href=""><p style="color: red; border-bottom: 1px solid red;">Більше товарів</p></a></li>
+            </ul>
+          </div>
+          <div class="cols">
+            <h3 class="h3">Різне</h3>
+            <ul>
+              <li><i class="fas fa-check red-text"></i><p>Каністри</p></li>
+              <li><i class="fas fa-check red-text"></i><p>Окуляри</p></li>
+              <li><i class="fas fa-check red-text"></i><p>Уніформа</p></li>
+              <li><i class="fas fa-check red-text"></i><p>Fenix</p></li>
+              <li><p></p></li>
+              <li style="padding-top: 23px;"><a href=""><p style="color: red; border-bottom: 1px solid red;">Більше товарів</p></a></li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--ПРОДУКТЫ-->
+    <section>
+      <h2 class="h2" style="padding-left: 65px; padding-top: 90px">ПОПУЛЯРНЫЕ ТОВАРЫ</h2>
+
+    <div style="padding-left: 75px" class="mt-5">
+      <div class="products">
+           {% for product in products|slice:"6" %}
+                    <div class="product text-center pb-4">
+                    {% if product.image %}
+                        <a href="{{ product.get_absolute_url }}"><img src="{{ product.image.url }}" width="200" height="200" alt="" style="border:1px solid black"></a>
+                    {% endif %}
+
+                        <p><small>{{ product.manufacturer.category.title }}</small></p>
+                        <p class="font-weight-bold">{{ product.title }}</p>
+                        <p>{{ product.price }} грн</p>
+                        <form action="{% url "cart:cart_add" product.id %}" method="post" style="margin-right: 10px;">
+                            {% csrf_token %}
+                            <div style="display: none">
+                                {{ cart_product_form }}
+                            </div>
+                     <button class="btn btn-danger w-100 " type="submit">В КОРЗИНУ <i class="fas fa-shopping-cart white-text"></i></button>
+                        </form>
+                </div>
+                {% endfor %}
+
+
+
+      </div>
+    </div>
+    </section>
+    <!--  ВЫ СМОТРЕЛИ -->
+
+    <section class="bg-primary w-100" style="margin-top: 70px;" >
+      <div class="cont" style="padding-left: 70px;">
+        <div class="spares" style="" >
+          <div class="spare-text"><h1 class="h1 white-text mt-5">ПОДБЕРЁМ НУЖНЫЕ ЗАПЧАСТИ ИМЕННО ДЛЯ ВАШЕЙ СИТУАЦИИ</h1></div>
+          <div class="spare-form">
+            <div class="form">
+              <form action="" method="post">
+                  {% csrf_token %}
+                <div>
+                  <label for="name" style="padding-right: 100px;" class="white-text">ВАШЕ ИМЯ</label>
+                  <label for="number" class="white-text">ВАШ ТЕЛЕФОН</label>
+
+                  <br>
+                  {{ form.name }}
+                  {{ form.phone }}
+                </div>
+                <div>
+                  <label for="model_one" style="padding-right: 120px;" class="white-text">МОДЕЛЬ</label>
+                  <label for="model_two" class="white-text">МОДЕЛЬ</label>
+
+                  <br>
+                  {{ form.model_one }}
+                  {{ form.model_two }}
+                </div>
+                <button class="btn btn-danger" style="position: relative; left: -5px; top: 10px;" type="submit">ПОДОБРАТЬ</button>
+
+
+
+
+              </form>
+            </div>
+          </div>
+
+          <div class="spare-img">
+            <img src="{% static 'img/index/track.png' %}" style="position:relative; width: 490px; top: -60px;" alt="">
+          </div>
+
+        </div>
+      </div>
+
+
+</section>
+
+
+{% endblock %}

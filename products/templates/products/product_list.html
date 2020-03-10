@@ -1,0 +1,164 @@
+{% extends 'products/base_products.html' %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        .nav ul{
+            display: none;
+        }
+        .nav li:hover ul{
+            display: block;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+<div class="page d-flex" style="margin-left: 60px;">
+        <p class="red-text" style="word-spacing: 5px">Главная    / </p>
+
+        <p class="red-text font-weight-bold" style="word-spacing: 3px">&nbsp;Каталог </p>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-3" style="margin-left: 60px">
+            <ul class="nav flex-column">
+                <li class="nav-item pl-2 bg-danger">
+                    <h3 class="h3 white-text pt-2">ФИЛЬТР</h3></li>
+                <li class="nav-item pl-2 pt-4">
+                    <h3 class="h3" style="font-size: 16pt">ПРОИЗВОДИТЕЛЬ</h3>
+                </li>
+                <li class="nav-item pl-2 pt-2">
+                    <h3 class="h3" style="font-size: 16pt">ТИП ЗАПЧАСТИ</h3>
+                </li>
+                <li class="nav-item pl-2 pt-2">
+                    <form action="" method="post">
+
+                        <input type="checkbox" id="tree" value="First" name="First">
+                        <label for="tree" style="font-size: 16pt">First</label>
+                        <br>
+
+                        <input type="checkbox" id="four" value="First" name="First">
+                        <label for="four" style="font-size: 16pt">Second</label>
+
+                    </form>
+                </li>
+                <li class="nav-item pl-2 pt-2">
+                    <h3 class="h3" style="font-size: 16pt">ЦЕНА</h3>
+                </li>
+                <li class="nav-item pl-2 pt-2">
+                    <form action="{% url 'products:product_list' %}">
+                        {% csrf_token %}
+                        <input type="text" placeholder="от" value="{% if ot %}{{ ot }}{% endif %}"  name="ot" style="width: 167px;">
+                        <input type="text" placeholder="до" value="{% if do %}{{ do }}{% endif %}" name="do" style="width: 167px;">
+                        <button type="submit" class="btn btn-danger w-100" style="position:relative; left: -7px;">SEARCH</button>
+                    </form>
+                </li>
+                {% if category.tite %}
+                     <li class="nav-item pl-2 pt-2 mt-4 bg-danger">
+                    <h3 class="h3 white-text">Генераторы</h3>
+                </li>
+                {% endif %}
+
+                {% for catagory in catagories %}
+                    <li class="nav-item pl-2  ">
+                        <h3 class="h3"><a href="{{ catagory.get_absolute_url }}" class="black-text">
+                            {{ catagory.title }}</a></h3>
+                    <ul class="nav flex-column pt-3 pb-2" style="position:relative; left: -120px; top: 20px;">
+                        {% for man in catagory.manufactures.all %}
+                            <li class="nav-item text-dark">
+                            <a href="{{ man.get_absolute_url }}" class="nav-link-two black-text font-weight-bold">
+                                {{ man.title }}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+
+                    </li>
+
+                {% endfor %}
+
+
+
+            </ul>
+        </div>
+
+        <div class="col-lg-8">
+            <div class="row">
+                {% for product in page_object.object_list %}
+                    <div class="product text-center pb-4">
+                    {% if product.image %}
+                        <a href="{{ product.get_absolute_url }}"><img src="{{ product.image.url }}" width="200" height="200" alt="" style="border:1px solid black"></a>
+                    {% endif %}
+
+                        <p><small>{{ product.manufacturer.category.title }}</small></p>
+                        <p class="font-weight-bold">{{ product.title }}</p>
+                        <p>{{ product.price }} грн</p>
+                        <form action="{% url "cart:cart_add" product.id %}" method="post" style="margin-right: 10px;">
+                            {% csrf_token %}
+                            <div style="display: none">
+                                {{ cart_product_form }}
+                            </div>
+
+
+                     <button class="btn btn-danger w-100 ">В КОРЗИНУ <i class="fas fa-shopping-cart white-text"></i></button>
+                        </form>
+                </div>
+                {% endfor %}
+
+                <div class="col-lg-3 col-md-4 mb-4">
+
+                    </div>
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+    {% if user.is_authenticated %}
+        <div style="margin-left: 60px; margin-top: 40px;">
+        <a href="{% url 'products:add_product' %}" class="btn btn-danger">Add product</a>
+         <a href="{% url 'products:add_category' %}" class="btn btn-danger">Add Category</a>
+         <a href="{% url 'products:add_manufacturer' %}" class="btn btn-danger">Add Manufacturer</a>
+
+        </div>
+
+    {% endif %}
+
+    <div class="pagg" style="height: 50px">
+    <nav aria-label="Page navigation example" style="float: right; margin-right:190px; margin-top: 40px;">
+  <ul class="pagination pagination-circle pg-red">
+    <li class="page-item"><a class="page-link" href="?page=1">First</a></li>
+    <li class="page-item {% if not prev_url %}disabled{% endif %}">
+      <a class="page-link" aria-label="Previous" href="{{ prev_url }}">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+
+       {% for n in page_object.paginator.page_range %}
+           {% if page_object.number == n %}
+                <li class="page-item active"><a class="page-link" href="?page={{ n }}">{{ n }}</a></li>
+               {% elif n > page_object.number|add:-3 and n < page_object.number|add:3 %}
+               <li class="page-item"><a class="page-link" href="?page={{ n }}">{{ n }}</a></li>
+           {% endif %}
+
+      {% endfor %}
+    <li class="page-item">
+      <a class="page-link" href="{{ next_url }}" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link" href="{{ last_url }}">Last</a></li>
+  </ul>
+</nav>
+    </div>
+
+
+{% endblock %}
