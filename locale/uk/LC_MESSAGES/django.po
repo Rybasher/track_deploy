@@ -3,24 +3,21 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#: .\products\templates\products\product_detail.html:97
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-10 10:26+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2020-03-10 15:09+0230\n"
+"Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
-"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
-"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
-"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"X-Translated-Using: django-rosetta 0.9.3\n"
 
 #: .\blog\models.py:17
 msgid "Фото"
@@ -54,8 +51,8 @@ msgstr ""
 
 #: .\blog\templates\blog\about.html:52
 msgid ""
-"\"Трек\" на ринку більше 12 років, через це ми володіємо  великим досвідом і "
-"якісним товаром,"
+"\"Трек\" на ринку більше 12 років, через це ми володіємо  великим досвідом і"
+" якісним товаром,"
 msgstr ""
 
 #: .\blog\templates\blog\about.html:53
@@ -112,11 +109,11 @@ msgstr "Запчастини до вітчизняних автомобілів"
 
 #: .\blog\templates\blog\about.html:77
 msgid ""
-"Предлагаем все, начиная от брелков к ключам и наклеек на машины и мотоциклы, "
-"заканчивая резиной и рессорами"
+"Предлагаем все, начиная от брелков к ключам и наклеек на машины и мотоциклы,"
+" заканчивая резиной и рессорами"
 msgstr ""
-"Пропонуємо всі, починаючи від брелків до ключів і наклейок на машини і мотоцикли,"
-"закінчуючи гумою і ресорами"
+"Пропонуємо всі, починаючи від брелків до ключів і наклейок на машини і "
+"мотоцикли,закінчуючи гумою і ресорами"
 
 #: .\blog\templates\blog\about.html:78
 msgid "Запчасти к мототехнике"
@@ -131,8 +128,8 @@ msgid ""
 "Различные масла как для мото, квадро техники, так и для автомобилей двух и "
 "четырехтактные​"
 msgstr ""
-"Різні масла як для мото, квадро техніки, так і для автомобілів двох і"
-"чотиритактні"
+"Різні масла як для мото, квадро техніки, так і для автомобілів двох "
+"ічотиритактні"
 
 #: .\blog\templates\blog\about.html:81
 msgid "Запчасти  к отечественным и китайским тракторам"
@@ -140,11 +137,11 @@ msgstr "Запчастини до вітчизняних і китайським
 
 #: .\blog\templates\blog\about.html:82
 msgid ""
-"Фонари и прожекторы: ручные, налобные, подводные, (лампочные и светодиодные, "
-"для освещения малой и большой территории)"
+"Фонари и прожекторы: ручные, налобные, подводные, (лампочные и светодиодные,"
+" для освещения малой и большой территории)"
 msgstr ""
-"Ліхтарі й прожектори: ручні, налобні, підводні, (лампочние і світлодіодні,"
-"для освітлення малої і великої території)"
+"Ліхтарі й прожектори: ручні, налобні, підводні, (лампочние і "
+"світлодіодні,для освітлення малої і великої території)"
 
 #: .\blog\templates\blog\about.html:83
 msgid "Флешки, модуляторы, брелки, ключи для ремонта авто, лопаты"
@@ -175,8 +172,10 @@ msgid "Нова Пошта\", \"Ін-Тайм\", \"Делівері"
 msgstr ""
 
 #: .\blog\templates\blog\delivery.html:72
-msgid "Відправки оплатою пысля доставки здійснюються тільки транспортними компанією"
-msgstr "Відправки оплатою пысля доставки здійснюються тільки транспортними компанією"
+msgid ""
+"Відправки оплатою пысля доставки здійснюються тільки транспортними компанією"
+msgstr ""
+"Відправки оплатою пысля доставки здійснюються тільки транспортними компанією"
 
 #: .\blog\templates\blog\delivery.html:73
 msgid "Нова Пошта"
@@ -208,8 +207,7 @@ msgid "Нова Пошта надає послугу \"Грошовий пере
 msgstr ""
 
 #: .\blog\templates\blog\delivery.html:79
-msgid ""
-"Послуга \"Грошовий переказ\" (післяплата) складається з наступних платежів"
+msgid "Послуга \"Грошовий переказ\" (післяплата) складається з наступних платежів"
 msgstr ""
 
 #: .\blog\templates\blog\delivery.html:80
@@ -259,8 +257,8 @@ msgstr ""
 
 #: .\blog\templates\blog\delivery.html:92
 msgid ""
-"розірвану упаковкусліди від падіння помяту упаковки сліди втручання і т.п."
-"Наполягайте"
+"розірвану упаковкусліди від падіння помяту упаковки сліди втручання і "
+"т.п.Наполягайте"
 msgstr ""
 
 #: .\blog\templates\blog\delivery.html:93
@@ -535,7 +533,7 @@ msgstr "НОВІ НАДХОДЖЕННЯ ЗАПЧАСТИН В КАТЕГОРІЇ
 
 #: .\spare\templates\spare\home_page.html:132
 msgid "ПЕРЕЙТИ"
-msgstr ""
+msgstr "ПЕРЕЙТИ"
 
 #: .\spare\templates\spare\home_page.html:144
 msgid "КАТЕГОРИИ"
@@ -547,19 +545,19 @@ msgstr "Запчастини"
 
 #: .\spare\templates\spare\home_page.html:150
 msgid "Мотор"
-msgstr ""
+msgstr "Мотор"
 
 #: .\spare\templates\spare\home_page.html:151
 msgid "Електрика"
-msgstr ""
+msgstr "Електрика"
 
 #: .\spare\templates\spare\home_page.html:152
 msgid "Тормоза"
-msgstr ""
+msgstr "Гальма"
 
 #: .\spare\templates\spare\home_page.html:153
 msgid "Кузов"
-msgstr ""
+msgstr "Кузов"
 
 #: .\spare\templates\spare\home_page.html:154
 msgid "Покрышки"
@@ -570,15 +568,15 @@ msgstr "покришки"
 #: .\spare\templates\spare\home_page.html:179
 #: .\spare\templates\spare\home_page.html:191
 msgid "Більше товарів"
-msgstr ""
+msgstr "Більше товарів"
 
 #: .\spare\templates\spare\home_page.html:160
 msgid "Масла, фільтра"
-msgstr ""
+msgstr "Масла, фільтра"
 
 #: .\spare\templates\spare\home_page.html:162
 msgid "Воздушні фільтра"
-msgstr ""
+msgstr "Воздушні фільтра"
 
 #: .\spare\templates\spare\home_page.html:163
 msgid "Масляні фітльтра"
@@ -659,11 +657,11 @@ msgstr ""
 #: .\spare\templates\spare\home_page.html:247
 #: .\spare\templates\spare\home_page.html:248
 msgid "МОДЕЛЬ"
-msgstr ""
+msgstr "МОДЕЛЬ"
 
 #: .\spare\templates\spare\home_page.html:254
 msgid "ПОДОБРАТЬ"
-msgstr ""
+msgstr "ПІДІБРАТИ"
 
 #: .\spare\views.py:27
 msgid "HomePage"
@@ -683,7 +681,7 @@ msgstr "ДОСТАВКА І ОПЛАТА"
 
 #: .\templates\base.html:99
 msgid "Корзина"
-msgstr ""
+msgstr "Корзина"
 
 #: .\templates\base.html:108
 #: .\venv\Lib\site-packages\django\db\models\fields\files.py:360
@@ -728,11 +726,11 @@ msgstr "Заказ"
 
 #: .\templates\base.html:165
 msgid "м. Сарни, вул.Грушевського,1"
-msgstr ""
+msgstr "м. Сарни, вул.Грушевського,1"
 
 #: .\templates\base.html:171
 msgid "МЕНЮ"
-msgstr ""
+msgstr "МЕНЮ"
 
 #: .\templates\base.html:176
 msgid "НОВОСТИ"
@@ -740,11 +738,11 @@ msgstr "НОВИНИ"
 
 #: .\templates\base.html:183
 msgid "ОПЛАТА"
-msgstr ""
+msgstr "ОПЛАТА"
 
 #: .\templates\base.html:194
 msgid "Зроблено компанією"
-msgstr ""
+msgstr "Зроблено компанією"
 
 #: .\trackdeploy\urls.py:27
 msgid "admin/"
@@ -866,8 +864,8 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\core\validators.py:247
 msgid ""
-"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
-"hyphens."
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or"
+" hyphens."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\core\validators.py:256
@@ -1052,15 +1050,15 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1237
 #, python-format
 msgid ""
-"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
-"uuuuuu]][TZ] format."
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ] format."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1241
 #, python-format
 msgid ""
-"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
-"[TZ]) but it is an invalid date/time."
+"“%(value)s” value has the correct format (YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ]) but it is an invalid date/time."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1245
@@ -1079,8 +1077,8 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1534
 #, python-format
 msgid ""
-"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
-"uuuuuu] format."
+"“%(value)s” value has an invalid format. It must be in [DD] "
+"[[HH:]MM:]ss[.uuuuuu] format."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1537
@@ -1223,7 +1221,8 @@ msgid "Many-to-many relationship"
 msgstr ""
 
 #. Translators: If found as last label character, these punctuation
-#. characters will prevent the default label_suffix to be appended to the label
+#. characters will prevent the default label_suffix to be appended to the
+#. label
 #: .\venv\Lib\site-packages\django\forms\boundfield.py:149
 msgid ":?.!"
 msgstr ""
@@ -1273,7 +1272,8 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:537
 #, python-format
-msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid ""
+"Ensure this filename has at most %(max)d character (it has %(length)d)."
 msgid_plural ""
 "Ensure this filename has at most %(max)d characters (it has %(length)d)."
 msgstr[0] ""
@@ -1369,7 +1369,8 @@ msgid "The inline value did not match the parent instance."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\forms\models.py:1161
-msgid "Select a valid choice. That choice is not one of the available choices."
+msgid ""
+"Select a valid choice. That choice is not one of the available choices."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\forms\models.py:1277
@@ -1832,11 +1833,11 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:124
 msgid ""
-"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
-"including the “Referrer-Policy: no-referrer” header, please remove them. The "
-"CSRF protection requires the “Referer” header to do strict referer checking. "
-"If you’re concerned about privacy, use alternatives like <a rel=\"noreferrer"
-"\" …> for links to third-party sites."
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or"
+" including the “Referrer-Policy: no-referrer” header, please remove them. "
+"The CSRF protection requires the “Referer” header to do strict referer "
+"checking. If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:132
@@ -1887,8 +1888,8 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:589
 #, python-format
 msgid ""
-"Future %(verbose_name_plural)s not available because %(class_name)s."
-"allow_future is False."
+"Future %(verbose_name_plural)s not available because "
+"%(class_name)s.allow_future is False."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:623
@@ -1947,10 +1948,10 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:369
 #, python-format
 msgid ""
-"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
-"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
-"\">DEBUG=True</a> is in your settings file and you have not configured any "
-"URLs."
+"You are seeing this page because <a "
+"href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
+"target=\"_blank\" rel=\"noopener\">DEBUG=True</a> is in your settings file "
+"and you have not configured any URLs."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:384
