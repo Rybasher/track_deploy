@@ -41,13 +41,15 @@ INSTALLED_APPS = [
     'easy_thumbnails',
     'django_cleanup',
     'bootstrap4',
+    'rosetta',
     'blog.apps.BlogConfig',
     'contacts.apps.ContactsConfig',
     'spare.apps.SpareConfig',
     'products.apps.ProductsConfig',
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
-    'payments.apps.PaymentsConfig'
+    'payments.apps.PaymentsConfig',
+
 
 
 ]

@@ -3,23 +3,21 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#: .\products\templates\products\product_detail.html:97
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-10 10:25+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2020-03-10 13:00+0230\n"
+"Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
-"%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Translated-Using: django-rosetta 0.9.3\n"
 
 #: .\blog\models.py:17
 msgid "Фото"
@@ -53,9 +51,11 @@ msgstr "Мы сеть магазинов \"Трек \" в Ровенской о�
 
 #: .\blog\templates\blog\about.html:52
 msgid ""
-"\"Трек\" на ринку більше 12 років, через це ми володіємо  великим досвідом і "
-"якісним товаром,"
-msgstr "\"Трек \"на рынке более 12 лет, поэтому мы обладаем большим опытом и качественным товаром"
+"\"Трек\" на ринку більше 12 років, через це ми володіємо  великим досвідом і"
+" якісним товаром,"
+msgstr ""
+"\"Трек \"на рынке более 12 лет, поэтому мы обладаем большим опытом и "
+"качественным товаром"
 
 #: .\blog\templates\blog\about.html:53
 msgid "клієнт - це наша першочергова задача"
@@ -111,8 +111,8 @@ msgstr ""
 
 #: .\blog\templates\blog\about.html:77
 msgid ""
-"Предлагаем все, начиная от брелков к ключам и наклеек на машины и мотоциклы, "
-"заканчивая резиной и рессорами"
+"Предлагаем все, начиная от брелков к ключам и наклеек на машины и мотоциклы,"
+" заканчивая резиной и рессорами"
 msgstr ""
 
 #: .\blog\templates\blog\about.html:78
@@ -135,8 +135,8 @@ msgstr ""
 
 #: .\blog\templates\blog\about.html:82
 msgid ""
-"Фонари и прожекторы: ручные, налобные, подводные, (лампочные и светодиодные, "
-"для освещения малой и большой территории)"
+"Фонари и прожекторы: ручные, налобные, подводные, (лампочные и светодиодные,"
+" для освещения малой и большой территории)"
 msgstr ""
 
 #: .\blog\templates\blog\about.html:83
@@ -170,7 +170,9 @@ msgstr ""
 #: .\blog\templates\blog\delivery.html:72
 msgid ""
 "Відправки оплатою пысля доставки здійснюються тільки транспортними компанією"
-msgstr "Отправки оплатой после доставки осуществляются только транспортными компанией"
+msgstr ""
+"Отправки оплатой после доставки осуществляются только транспортными "
+"компанией"
 
 #: .\blog\templates\blog\delivery.html:73
 msgid "Нова Пошта"
@@ -199,12 +201,14 @@ msgstr ""
 
 #: .\blog\templates\blog\delivery.html:78
 msgid "Нова Пошта надає послугу \"Грошовий переказ\" (накладений платіж)"
-msgstr "Новая Почта предоставляет услугу \"Денежный перевод \" (наложенный платеж)"
+msgstr ""
+"Новая Почта предоставляет услугу \"Денежный перевод \" (наложенный платеж)"
 
 #: .\blog\templates\blog\delivery.html:79
-msgid ""
-"Послуга \"Грошовий переказ\" (післяплата) складається з наступних платежів"
-msgstr "Услуга \"Денежный перевод \" (наложенный платёж) состоит из следующих платежей"
+msgid "Послуга \"Грошовий переказ\" (післяплата) складається з наступних платежів"
+msgstr ""
+"Услуга \"Денежный перевод \" (наложенный платёж) состоит из следующих "
+"платежей"
 
 #: .\blog\templates\blog\delivery.html:80
 msgid "Оформлення грошового переказу (конверт) - 18 грн."
@@ -220,28 +224,41 @@ msgid "Отримання товару:"
 msgstr "получение товара"
 
 #: .\blog\templates\blog\delivery.html:84
-msgid "Про відправку товару Вас сповістять допомогою SMS-повідомлення, в якому буде"
-msgstr "Об отправке товара Вас известят помощью SMS-сообщение, в котором будет"
+msgid ""
+"Про відправку товару Вас сповістять допомогою SMS-повідомлення, в якому буде"
+msgstr ""
+"Об отправке товара Вас известят помощью SMS-сообщение, в котором будет"
 
 #: .\blog\templates\blog\delivery.html:85
 msgid "вказано № декларації (ТТН)."
 msgstr "указано № декларации (ТТН)."
 
 #: .\blog\templates\blog\delivery.html:86
-msgid "Для отримання вантажу необхідно вказати на перевізнику № декларації (ТТН) і мати при"
-msgstr "Для получения груза необходимо указать на перевозчике № декларации (ТТН) и иметь при"
+msgid ""
+"Для отримання вантажу необхідно вказати на перевізнику № декларації (ТТН) і "
+"мати при"
+msgstr ""
+"Для получения груза необходимо указать на перевозчике № декларации (ТТН) и "
+"иметь при"
 
 #: .\blog\templates\blog\delivery.html:87
-msgid "собі документ, що підтверджує Вашу особу: паспорт або водійське посвідчення."
-msgstr "себе документ, подтверждающий Вашу личность: паспорт или водительское удостоверение."
+msgid ""
+"собі документ, що підтверджує Вашу особу: паспорт або водійське посвідчення."
+msgstr ""
+"себе документ, подтверждающий Вашу личность: паспорт или водительское "
+"удостоверение."
 
 #: .\blog\templates\blog\delivery.html:89
 msgid "ВАЖЛИВО"
 msgstr "ВАЖНО"
 
 #: .\blog\templates\blog\delivery.html:90
-msgid "При отриманні Вашого товару, обов'язково перевірте цілісність упаковки і її вмісту!"
-msgstr "При получении Вашего товара, обязательно проверьте целостность упаковки и ее содержимого!"
+msgid ""
+"При отриманні Вашого товару, обов'язково перевірте цілісність упаковки і її "
+"вмісту!"
+msgstr ""
+"При получении Вашего товара, обязательно проверьте целостность упаковки и ее"
+" содержимого!"
 
 #: .\blog\templates\blog\delivery.html:91
 msgid "Якщо Ви виявили"
@@ -249,47 +266,56 @@ msgstr "Если Вы обнаружили"
 
 #: .\blog\templates\blog\delivery.html:92
 msgid ""
-"розірвану упаковкусліди від падіння помяту упаковки сліди втручання і т.п."
-"Наполягайте"
-msgstr "разорванную упаковкуслиды от падения помять упаковки следы вмешательства и т.п."
-"Настаивайте"
+"розірвану упаковкусліди від падіння помяту упаковки сліди втручання і "
+"т.п.Наполягайте"
+msgstr ""
+"разорванную упаковкуслиды от падения помять упаковки следы вмешательства и "
+"т.п.Настаивайте"
 
 #: .\blog\templates\blog\delivery.html:93
 msgid ""
 "щоб працівники даної філії \"транспортної служби» задокументували всі "
 "візуально видимі"
-msgstr "чтобы работники данного филиала \"транспортной службы» задокументировали все"
-"візуально видимі"
+msgstr ""
+"чтобы работники данного филиала \"транспортной службы» задокументировали "
+"всевізуально видимі"
 
 #: .\blog\templates\blog\delivery.html:94
 msgid ""
 "сліди і негайно зв'яжіться з менеджером, який оформляв відправку Вашого "
 "товару."
-msgstr "следы и немедленно свяжитесь с менеджером, который оформлял отправку Вашего"
-"товара"
+msgstr ""
+"следы и немедленно свяжитесь с менеджером, который оформлял отправку "
+"Вашеготовара"
 
 #: .\blog\templates\blog\delivery.html:95
 #, python-format
-msgid "Відповідальність за цілісність вантажу на 100%% несе транспортна компанія!"
-msgstr "Ответственность за целостность груза на 100 %% несет транспортная компания!"
+msgid ""
+"Відповідальність за цілісність вантажу на 100%% несе транспортна компанія!"
+msgstr ""
+"Ответственность за целостность груза на 100 %% несет транспортная компания!"
 
 #: .\blog\templates\blog\delivery.html:99
 msgid "Доставка в відділення Нової Пошти по Україні"
 msgstr "Доставка в отделение Новой Почты по Украине"
 
 #: .\blog\templates\blog\delivery.html:101
-msgid "Термін доставки товару транспортною службою \"Нова Пошта\" в середньому 1-3 дні. Під час замовлення"
-msgstr "Срок доставки товара транспортной службой \"Новая Почта \" в среднем 1-3. Во время заказа"
+msgid ""
+"Термін доставки товару транспортною службою \"Нова Пошта\" в середньому 1-3 "
+"дні. Під час замовлення"
+msgstr ""
+"Срок доставки товара транспортной службой \"Новая Почта \" в среднем 1-3. Во"
+" время заказа"
 
 #: .\blog\templates\blog\delivery.html:102
 msgid ""
 "Ви можете вказати зручний для Вас день забору товару, наші менеджери "
 "підберуть оптимальний час відправки. Ви можете вказати зручний для Вас день "
 "забору товару, наші менеджери підберуть оптимальний час відправк"
-msgstr "Вы можете указать удобный для Вас день забора товара, наши менеджеры"
-"подберут оптимальное время отправки. Вы можете указать удобный для Вас день"
-"забору товару, наші менеджери підберуть оптимальний час відправк"
-
+msgstr ""
+"Вы можете указать удобный для Вас день забора товара, наши менеджерыподберут"
+" оптимальное время отправки. Вы можете указать удобный для Вас деньзабору "
+"товару, наші менеджери підберуть оптимальний час відправк"
 
 #: .\blog\templates\blog\error_403.html:7
 msgid "Page for stuff"
@@ -418,11 +444,9 @@ msgstr ""
 #: .\products\templates\products\japan_products.html:39
 #: .\products\templates\products\manufacturer_detail.html:39
 #: .\products\templates\products\product_list.html:38
-
 #: .\products\templates\products\japan_products.html:43
 #: .\products\templates\products\manufacturer_detail.html:43
 #: .\products\templates\products\product_list.html:42
-
 #: .\products\templates\products\japan_products.html:60
 msgid "Генераторы"
 msgstr ""
@@ -855,8 +879,8 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\core\validators.py:247
 msgid ""
-"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
-"hyphens."
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or"
+" hyphens."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\core\validators.py:256
@@ -1041,15 +1065,15 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1237
 #, python-format
 msgid ""
-"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
-"uuuuuu]][TZ] format."
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ] format."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1241
 #, python-format
 msgid ""
-"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
-"[TZ]) but it is an invalid date/time."
+"“%(value)s” value has the correct format (YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ]) but it is an invalid date/time."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1245
@@ -1068,8 +1092,8 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1534
 #, python-format
 msgid ""
-"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
-"uuuuuu] format."
+"“%(value)s” value has an invalid format. It must be in [DD] "
+"[[HH:]MM:]ss[.uuuuuu] format."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1537
@@ -1212,7 +1236,8 @@ msgid "Many-to-many relationship"
 msgstr ""
 
 #. Translators: If found as last label character, these punctuation
-#. characters will prevent the default label_suffix to be appended to the label
+#. characters will prevent the default label_suffix to be appended to the
+#. label
 #: .\venv\Lib\site-packages\django\forms\boundfield.py:149
 msgid ":?.!"
 msgstr ""
@@ -1262,7 +1287,8 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:537
 #, python-format
-msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid ""
+"Ensure this filename has at most %(max)d character (it has %(length)d)."
 msgid_plural ""
 "Ensure this filename has at most %(max)d characters (it has %(length)d)."
 msgstr[0] ""
@@ -1358,7 +1384,8 @@ msgid "The inline value did not match the parent instance."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\forms\models.py:1161
-msgid "Select a valid choice. That choice is not one of the available choices."
+msgid ""
+"Select a valid choice. That choice is not one of the available choices."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\forms\models.py:1277
@@ -1821,11 +1848,11 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:124
 msgid ""
-"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
-"including the “Referrer-Policy: no-referrer” header, please remove them. The "
-"CSRF protection requires the “Referer” header to do strict referer checking. "
-"If you’re concerned about privacy, use alternatives like <a rel=\"noreferrer"
-"\" …> for links to third-party sites."
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or"
+" including the “Referrer-Policy: no-referrer” header, please remove them. "
+"The CSRF protection requires the “Referer” header to do strict referer "
+"checking. If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:132
@@ -1876,8 +1903,8 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:589
 #, python-format
 msgid ""
-"Future %(verbose_name_plural)s not available because %(class_name)s."
-"allow_future is False."
+"Future %(verbose_name_plural)s not available because "
+"%(class_name)s.allow_future is False."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:623
@@ -1936,10 +1963,10 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:369
 #, python-format
 msgid ""
-"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
-"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
-"\">DEBUG=True</a> is in your settings file and you have not configured any "
-"URLs."
+"You are seeing this page because <a "
+"href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
+"target=\"_blank\" rel=\"noopener\">DEBUG=True</a> is in your settings file "
+"and you have not configured any URLs."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:384

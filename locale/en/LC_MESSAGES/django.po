@@ -3,21 +3,21 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#: .\products\templates\products\product_detail.html:97
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-10 10:25+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2020-03-10 13:33+0230\n"
+"Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.9.3\n"
 
 #: .\blog\models.py:17
 msgid "Фото"
@@ -39,7 +39,7 @@ msgstr "Data"
 #: .\products\templates\products\japan_products.html:17
 #: .\products\templates\products\product_detail.html:28
 msgid "Главная"
-msgstr ""
+msgstr "Main"
 
 #: .\blog\templates\blog\about.html:43
 msgid "О нас"
@@ -51,8 +51,8 @@ msgstr ""
 
 #: .\blog\templates\blog\about.html:52
 msgid ""
-"\"Трек\" на ринку більше 12 років, через це ми володіємо  великим досвідом і "
-"якісним товаром,"
+"\"Трек\" на ринку більше 12 років, через це ми володіємо  великим досвідом і"
+" якісним товаром,"
 msgstr ""
 
 #: .\blog\templates\blog\about.html:53
@@ -69,27 +69,27 @@ msgstr ""
 
 #: .\blog\templates\blog\about.html:65
 msgid "Мотопомпы"
-msgstr ""
+msgstr "Motor Pumps"
 
 #: .\blog\templates\blog\about.html:66
 msgid "Генераторы и их комплектующие"
-msgstr ""
+msgstr "Generators and their components"
 
 #: .\blog\templates\blog\about.html:67
 msgid "Шланги пожарные (отечественного и зарубежного производства)"
-msgstr ""
+msgstr "Fire hoses (domestic and foreign production)"
 
 #: .\blog\templates\blog\about.html:68
 msgid "Рукава заборные"
-msgstr ""
+msgstr "Sleeves are intaking"
 
 #: .\blog\templates\blog\about.html:69
 msgid "Гайки на шланги и рукава"
-msgstr ""
+msgstr "Hose nuts and sleeves"
 
 #: .\blog\templates\blog\about.html:70
 msgid "Шайбы"
-msgstr ""
+msgstr "Washers"
 
 #: .\blog\templates\blog\about.html:71
 msgid "Хомуты усиленые"
@@ -109,57 +109,63 @@ msgstr ""
 
 #: .\blog\templates\blog\about.html:77
 msgid ""
-"Предлагаем все, начиная от брелков к ключам и наклеек на машины и мотоциклы, "
-"заканчивая резиной и рессорами"
+"Предлагаем все, начиная от брелков к ключам и наклеек на машины и мотоциклы,"
+" заканчивая резиной и рессорами"
 msgstr ""
+"We offer everything from key chains to keys and stickers on cars and "
+"motorcycles, ending with rubber and springs"
 
 #: .\blog\templates\blog\about.html:78
 msgid "Запчасти к мототехнике"
-msgstr ""
+msgstr "Spare parts for motor vehicles"
 
 #: .\blog\templates\blog\about.html:79
 msgid "Для скутеров и мотоциклов (отечественного и китайского производства)."
-msgstr ""
+msgstr "For scooters and motorcycles (domestic and Chinese production)."
 
 #: .\blog\templates\blog\about.html:80
 msgid ""
 "Различные масла как для мото, квадро техники, так и для автомобилей двух и "
 "четырехтактные​"
 msgstr ""
+"Various oils for both moto and quad technology, as well as for two-and four-"
+"stroke cars"
 
 #: .\blog\templates\blog\about.html:81
 msgid "Запчасти  к отечественным и китайским тракторам"
-msgstr ""
+msgstr "Spare parts for domestic and Chinese tractors"
 
 #: .\blog\templates\blog\about.html:82
 msgid ""
-"Фонари и прожекторы: ручные, налобные, подводные, (лампочные и светодиодные, "
-"для освещения малой и большой территории)"
+"Фонари и прожекторы: ручные, налобные, подводные, (лампочные и светодиодные,"
+" для освещения малой и большой территории)"
 msgstr ""
+"Lamps and searchlights: hand, headlamp, underwater (lamp and LED, for "
+"lighting small and large areas)"
 
 #: .\blog\templates\blog\about.html:83
 msgid "Флешки, модуляторы, брелки, ключи для ремонта авто, лопаты"
-msgstr ""
+msgstr "Flash drives, modulators, key chains, auto repair keys, shovels"
 
 #: .\blog\templates\blog\about.html:84
 msgid "Сапоги, временщики и различные костюмы, куртки камуфляжные."
-msgstr ""
+msgstr "Boots, temporary workers and various costumes, camouflage jackets."
 
 #: .\blog\templates\blog\delivery.html:45
 msgid "Главная "
-msgstr ""
+msgstr "Main"
 
 #: .\blog\templates\blog\delivery.html:47
 msgid "Доставка"
-msgstr ""
+msgstr "Delivery"
 
 #: .\blog\templates\blog\delivery.html:69
 msgid "ДОСТАВКА В РЕГИОНЫ"
-msgstr ""
+msgstr "DELIVERY TO REGIONS"
 
 #: .\blog\templates\blog\delivery.html:70
 msgid "Доставка товару по Україні здійснюється транспортними службами"
-msgstr ""
+msgstr "Delivery of goods in Ukraine by transport services"
 
 #: .\blog\templates\blog\delivery.html:71
 msgid "Нова Пошта\", \"Ін-Тайм\", \"Делівері"
@@ -169,6 +175,7 @@ msgstr ""
 msgid ""
 "Відправки оплатою пысля доставки здійснюються тільки транспортними компанією"
 msgstr ""
+"Delivery fees for delivery of goods are delivered by transport companies"
 
 #: .\blog\templates\blog\delivery.html:73
 msgid "Нова Пошта"
@@ -176,7 +183,7 @@ msgstr ""
 
 #: .\blog\templates\blog\delivery.html:74
 msgid "Доставка товару транспортними компаніями"
-msgstr ""
+msgstr "Delivery of goods by transport companies"
 
 #: .\blog\templates\blog\delivery.html:74
 msgid "Ін-Тайм"
@@ -189,70 +196,77 @@ msgstr ""
 #: .\blog\templates\blog\delivery.html:75
 #, python-format
 msgid "здійснюється за 100%% передплатою."
-msgstr ""
+msgstr "Hello for 100 %% overpayment."
 
 #: .\blog\templates\blog\delivery.html:77
 msgid "Способы оплаты"
-msgstr ""
+msgstr "Payment Methods"
 
 #: .\blog\templates\blog\delivery.html:78
 msgid "Нова Пошта надає послугу \"Грошовий переказ\" (накладений платіж)"
-msgstr ""
+msgstr "Nova Poshta nadaє to the servant \"Groshovy perekaz\" (imposing pay)"
 
 #: .\blog\templates\blog\delivery.html:79
-msgid ""
-"Послуга \"Грошовий переказ\" (післяплата) складається з наступних платежів"
+msgid "Послуга \"Грошовий переказ\" (післяплата) складається з наступних платежів"
 msgstr ""
+"The servant \"Groshovy perekaz\" (pay payment) is stored from the next "
+"payments"
 
 #: .\blog\templates\blog\delivery.html:80
 msgid "Оформлення грошового переказу (конверт) - 18 грн."
-msgstr ""
+msgstr "A penny to order (envelope) - 18 UAH"
 
 #: .\blog\templates\blog\delivery.html:81
 #, python-format
 msgid "Комісія за переказ грошей - 2%% від вартості товару."
-msgstr ""
+msgstr "Komіsіya for refusal of pennies - 2 %% v_d vartostі goods"
 
 #: .\blog\templates\blog\delivery.html:83
 msgid "Отримання товару:"
-msgstr ""
+msgstr "Remove product:"
 
 #: .\blog\templates\blog\delivery.html:84
 msgid ""
 "Про відправку товару Вас сповістять допомогою SMS-повідомлення, в якому буде"
 msgstr ""
+"About product delivery, you can be assisted by an additional SMS-message, in"
+" some cases"
 
 #: .\blog\templates\blog\delivery.html:85
 msgid "вказано № декларації (ТТН)."
-msgstr ""
+msgstr "entered declaration number (TTN)."
 
 #: .\blog\templates\blog\delivery.html:86
 msgid ""
 "Для отримання вантажу необхідно вказати на перевізнику № декларації (ТТН) і "
 "мати при"
 msgstr ""
+"For the rejection of the loan, it is necessary to enter the declaration "
+"number of the declaration (ТТН) and the mother at"
 
 #: .\blog\templates\blog\delivery.html:87
 msgid ""
 "собі документ, що підтверджує Вашу особу: паспорт або водійське посвідчення."
 msgstr ""
+"Own a document, scho pіdtverdzhuє Your person: passport abo vodіyske "
+"dedіdchenchenya."
 
 #: .\blog\templates\blog\delivery.html:89
 msgid "ВАЖЛИВО"
-msgstr ""
+msgstr "IMPORTANT"
 
 #: .\blog\templates\blog\delivery.html:90
 msgid "При отриманні Вашого товару, обов"
-msgstr ""
+msgstr "Upon receipt of your item"
 
 #: .\blog\templates\blog\delivery.html:91
 msgid "Якщо Ви виявили"
-msgstr ""
+msgstr "If you found"
 
 #: .\blog\templates\blog\delivery.html:92
 msgid ""
-"розірвану упаковкусліди від падіння помяту упаковки сліди втручання і т.п."
-"Наполягайте"
+"розірвану упаковкусліди від падіння помяту упаковки сліди втручання і "
+"т.п.Наполягайте"
 msgstr ""
 
 #: .\blog\templates\blog\delivery.html:93
@@ -275,13 +289,15 @@ msgstr ""
 
 #: .\blog\templates\blog\delivery.html:99
 msgid "Доставка в відділення Нової Пошти по Україні"
-msgstr ""
+msgstr "Delivery to the branch of Nova Poshta in Ukraine"
 
 #: .\blog\templates\blog\delivery.html:101
 msgid ""
 "Термін доставки товару транспортною службою \"Нова Пошта\" в середньому 1-3 "
 "дні. Під час замовлення"
 msgstr ""
+"The delivery time of the goods by the transport service \"Nova Poshta\" is "
+"on average 1-3 days. When ordering"
 
 #: .\blog\templates\blog\delivery.html:102
 msgid ""
@@ -289,6 +305,9 @@ msgid ""
 "підберуть оптимальний час відправки. Ви можете вказати зручний для Вас день "
 "забору товару, наші менеджери підберуть оптимальний час відправк"
 msgstr ""
+"You can specify a convenient day for picking up the goods, our managers will"
+" choose the optimal time of dispatch. You can specify a convenient day for "
+"picking up the goods, our managers will choose the optimal time of dispatch"
 
 #: .\blog\templates\blog\error_403.html:7
 msgid "Page for stuff"
@@ -322,16 +341,16 @@ msgstr ""
 
 #: .\contacts\templates\contacts\contsct_form.html:13
 msgid "Контакты"
-msgstr ""
+msgstr "Contacts"
 
 #: .\contacts\templates\contacts\contsct_form.html:19 .\templates\base.html:64
 #: .\templates\base.html:160 .\templates\base.html:178
 msgid "КОНТАКТЫ"
-msgstr ""
+msgstr "CONTACTS"
 
 #: .\contacts\templates\contacts\contsct_form.html:34
 msgid "Aдрес"
-msgstr ""
+msgstr "Adress"
 
 #: .\contacts\templates\contacts\contsct_form.html:35
 msgid "М.Сарни, ул Грушевского,1"
@@ -339,15 +358,15 @@ msgstr ""
 
 #: .\contacts\templates\contacts\contsct_form.html:36
 msgid "Украина"
-msgstr ""
+msgstr "Ukraine"
 
 #: .\contacts\templates\contacts\contsct_form.html:39
 msgid "ТЕЛ/ФАКС"
-msgstr ""
+msgstr "PHONE/FAX"
 
 #: .\contacts\templates\contacts\contsct_form.html:50
 msgid "Зв’язок з нами"
-msgstr ""
+msgstr "Contact us"
 
 #: .\contacts\templates\contacts\contsct_form.html:78
 msgid "Submit"
@@ -357,36 +376,36 @@ msgstr ""
 #: .\products\templates\products\japan_products.html:19
 #: .\products\templates\products\product_detail.html:29
 msgid "Каталог"
-msgstr ""
+msgstr "Catalog"
 
 #: .\products\templates\products\categories_detail.html:21
 #: .\products\templates\products\japan_products.html:28
 #: .\products\templates\products\manufacturer_detail.html:28
 #: .\products\templates\products\product_list.html:27
 msgid "ФИЛЬТР"
-msgstr ""
+msgstr "FILTER"
 
 #: .\products\templates\products\categories_detail.html:23
 #: .\products\templates\products\japan_products.html:30
 #: .\products\templates\products\manufacturer_detail.html:30
 #: .\products\templates\products\product_list.html:29
 msgid "ПРОИЗВОДИТЕЛЬ"
-msgstr ""
+msgstr "MANUFACTURER"
 
 #: .\products\templates\products\categories_detail.html:26
 #: .\products\templates\products\japan_products.html:33
 #: .\products\templates\products\manufacturer_detail.html:33
 #: .\products\templates\products\product_list.html:32
 msgid "ТИП ЗАПЧАСТИ"
-msgstr ""
+msgstr "SPARE TYPE"
 
 #: .\products\templates\products\categories_detail.html:32
 msgid "Аналог"
-msgstr ""
+msgstr "Analogue"
 
 #: .\products\templates\products\categories_detail.html:36
 msgid "Оригинал"
-msgstr ""
+msgstr "Original"
 
 #: .\products\templates\products\categories_detail.html:41
 #: .\products\templates\products\japan_products.html:48
@@ -408,7 +427,7 @@ msgstr ""
 #: .\products\templates\products\product_list.html:104
 #: .\spare\templates\spare\home_page.html:218
 msgid "В КОРЗИНУ"
-msgstr ""
+msgstr "ADD TO CARD"
 
 #: .\products\templates\products\japan_products.html:20
 msgid "Японские товары"
@@ -446,35 +465,35 @@ msgstr ""
 
 #: .\products\templates\products\product_detail.html:103
 msgid "Є в наявності"
-msgstr ""
+msgstr "In stock"
 
 #: .\products\templates\products\product_detail.html:105
 msgid "Вид пального"
-msgstr ""
+msgstr "Kind of fuel"
 
 #: .\products\templates\products\product_detail.html:108
 msgid "Номінальна потужність"
-msgstr ""
+msgstr "Capacity"
 
 #: .\products\templates\products\product_detail.html:111
 msgid "Максимальна потужність"
-msgstr ""
+msgstr "Maximum power"
 
 #: .\products\templates\products\product_detail.html:114
 msgid "Система пуску"
-msgstr ""
+msgstr "Start-up system"
 
 #: .\products\templates\products\product_detail.html:118
 msgid "Тип двигуна"
-msgstr ""
+msgstr "Engine type"
 
 #: .\products\templates\products\product_detail.html:121
 msgid "Вага"
-msgstr ""
+msgstr "Weight"
 
 #: .\products\templates\products\product_detail.html:124
 msgid "Цена"
-msgstr ""
+msgstr "Cost"
 
 #: .\products\templates\products\product_detail.html:131
 msgid "Add to Card"
@@ -482,23 +501,23 @@ msgstr ""
 
 #: .\products\templates\products\product_detail.html:146
 msgid "ОПИСАНИЕ"
-msgstr ""
+msgstr "DESCRIPTION"
 
 #: .\products\templates\products\product_detail.html:147
 msgid "ОТЗЫВЫ"
-msgstr ""
+msgstr "REVIEWS"
 
 #: .\products\templates\products\product_detail.html:148
 msgid "ХАРАКТЕРИСТИКИ"
-msgstr ""
+msgstr "CHARACTERISTICS"
 
 #: .\products\templates\products\product_detail.html:160
 msgid "Новый комментарий"
-msgstr ""
+msgstr "New comment"
 
 #: .\products\templates\products\product_detail.html:164
 msgid "ДОБАВИТЬ"
-msgstr ""
+msgstr "ADD"
 
 #: .\products\templates\products\product_detail.html:171
 msgid "Your comment is adding"
@@ -510,12 +529,12 @@ msgstr ""
 
 #: .\products\templates\products\product_detail.html:193
 msgid "Смотреть все"
-msgstr ""
+msgstr "See all"
 
 #: .\products\templates\products\product_detail.html:256
 #: .\templates\base.html:62
 msgid "НОВИНКИ"
-msgstr ""
+msgstr "NOVELTY"
 
 #: .\products\templates\products\product_list.html:127
 msgid "Add Category"
@@ -535,82 +554,82 @@ msgstr "CATEGORIES"
 
 #: .\spare\templates\spare\home_page.html:148
 msgid "Запчасти"
-msgstr ""
+msgstr "Spare parts"
 
 #: .\spare\templates\spare\home_page.html:150
 msgid "Мотор"
-msgstr ""
+msgstr "Motor"
 
 #: .\spare\templates\spare\home_page.html:151
 msgid "Електрика"
-msgstr ""
+msgstr "Electrician"
 
 #: .\spare\templates\spare\home_page.html:152
 msgid "Тормоза"
-msgstr ""
+msgstr "The brakes"
 
 #: .\spare\templates\spare\home_page.html:153
 msgid "Кузов"
-msgstr ""
+msgstr "Body"
 
 #: .\spare\templates\spare\home_page.html:154
 msgid "Покрышки"
-msgstr ""
+msgstr "Tires"
 
 #: .\spare\templates\spare\home_page.html:156
 #: .\spare\templates\spare\home_page.html:168
 #: .\spare\templates\spare\home_page.html:179
 #: .\spare\templates\spare\home_page.html:191
 msgid "Більше товарів"
-msgstr ""
+msgstr "More products"
 
 #: .\spare\templates\spare\home_page.html:160
 msgid "Масла, фільтра"
-msgstr ""
+msgstr "Oils, filter"
 
 #: .\spare\templates\spare\home_page.html:162
 msgid "Воздушні фільтра"
-msgstr ""
+msgstr "Air filter"
 
 #: .\spare\templates\spare\home_page.html:163
 msgid "Масляні фітльтра"
-msgstr ""
+msgstr "Oil Filters"
 
 #: .\spare\templates\spare\home_page.html:164
 msgid "Моторні масла"
-msgstr ""
+msgstr "Engine oils"
 
 #: .\spare\templates\spare\home_page.html:165
 msgid "Охолоджуюча рідина"
-msgstr ""
+msgstr "Coolant"
 
 #: .\spare\templates\spare\home_page.html:166
 msgid "Мастила"
-msgstr ""
+msgstr "Oils"
 
 #: .\spare\templates\spare\home_page.html:172
 msgid "Аксесуари"
-msgstr ""
+msgstr "Accessories"
 
 #: .\spare\templates\spare\home_page.html:174
 msgid "Диски"
-msgstr ""
+msgstr "Disks"
 
 #: .\spare\templates\spare\home_page.html:175
 msgid "Захист рук"
-msgstr ""
+msgstr "Hand protection"
 
 #: .\spare\templates\spare\home_page.html:176
 msgid "Підігрув ручки"
-msgstr ""
+msgstr "I played the pens"
 
 #: .\spare\templates\spare\home_page.html:177
 msgid "Лебідки"
-msgstr ""
+msgstr "Winches"
 
 #: .\spare\templates\spare\home_page.html:183
 msgid "Різне"
-msgstr ""
+msgstr "Different"
 
 #: .\spare\templates\spare\home_page.html:185
 msgid "Каністри"
@@ -630,7 +649,7 @@ msgstr ""
 
 #: .\spare\templates\spare\home_page.html:200
 msgid "НОВЫЕ ТОВАРЫ"
-msgstr ""
+msgstr "NEW GODS"
 
 #: .\spare\templates\spare\home_page.html:212 .\templates\base.html:140
 msgid "грн"
@@ -651,11 +670,11 @@ msgstr ""
 #: .\spare\templates\spare\home_page.html:247
 #: .\spare\templates\spare\home_page.html:248
 msgid "МОДЕЛЬ"
-msgstr ""
+msgstr "MODEL"
 
 #: .\spare\templates\spare\home_page.html:254
 msgid "ПОДОБРАТЬ"
-msgstr ""
+msgstr "TO CHOOSE"
 
 #: .\spare\views.py:27
 msgid "HomePage"
@@ -663,19 +682,19 @@ msgstr ""
 
 #: .\templates\base.html:60
 msgid "КАТАЛОГ"
-msgstr ""
+msgstr "CATALOG"
 
 #: .\templates\base.html:61 .\templates\base.html:175
 msgid "О НАС"
-msgstr ""
+msgstr "ABOUT US"
 
 #: .\templates\base.html:63 .\templates\base.html:177
 msgid "ДОСТАВКА И ОПЛАТА"
-msgstr ""
+msgstr "SHIPPING AND PAYMENT"
 
 #: .\templates\base.html:99
 msgid "Корзина"
-msgstr ""
+msgstr "Cart"
 
 #: .\templates\base.html:108
 #: .\venv\Lib\site-packages\django\db\models\fields\files.py:360
@@ -720,11 +739,11 @@ msgstr ""
 
 #: .\templates\base.html:165
 msgid "м. Сарни, вул.Грушевського,1"
-msgstr ""
+msgstr "Sarny, Grushevskogo str., 1"
 
 #: .\templates\base.html:171
 msgid "МЕНЮ"
-msgstr ""
+msgstr "MENU"
 
 #: .\templates\base.html:176
 msgid "НОВОСТИ"
@@ -732,11 +751,11 @@ msgstr ""
 
 #: .\templates\base.html:183
 msgid "ОПЛАТА"
-msgstr ""
+msgstr "PAYMENT"
 
 #: .\templates\base.html:194
 msgid "Зроблено компанією"
-msgstr ""
+msgstr "Made by"
 
 #: .\trackdeploy\urls.py:27
 msgid "admin/"
@@ -858,8 +877,8 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\core\validators.py:247
 msgid ""
-"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
-"hyphens."
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or"
+" hyphens."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\core\validators.py:256
@@ -1044,15 +1063,15 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1237
 #, python-format
 msgid ""
-"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
-"uuuuuu]][TZ] format."
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ] format."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1241
 #, python-format
 msgid ""
-"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
-"[TZ]) but it is an invalid date/time."
+"“%(value)s” value has the correct format (YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ]) but it is an invalid date/time."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1245
@@ -1071,8 +1090,8 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1534
 #, python-format
 msgid ""
-"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
-"uuuuuu] format."
+"“%(value)s” value has an invalid format. It must be in [DD] "
+"[[HH:]MM:]ss[.uuuuuu] format."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1537
@@ -1215,7 +1234,8 @@ msgid "Many-to-many relationship"
 msgstr ""
 
 #. Translators: If found as last label character, these punctuation
-#. characters will prevent the default label_suffix to be appended to the label
+#. characters will prevent the default label_suffix to be appended to the
+#. label
 #: .\venv\Lib\site-packages\django\forms\boundfield.py:149
 msgid ":?.!"
 msgstr ""
@@ -1265,7 +1285,8 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:537
 #, python-format
-msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid ""
+"Ensure this filename has at most %(max)d character (it has %(length)d)."
 msgid_plural ""
 "Ensure this filename has at most %(max)d characters (it has %(length)d)."
 msgstr[0] ""
@@ -1361,7 +1382,8 @@ msgid "The inline value did not match the parent instance."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\forms\models.py:1161
-msgid "Select a valid choice. That choice is not one of the available choices."
+msgid ""
+"Select a valid choice. That choice is not one of the available choices."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\forms\models.py:1277
@@ -1824,11 +1846,11 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:124
 msgid ""
-"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
-"including the “Referrer-Policy: no-referrer” header, please remove them. The "
-"CSRF protection requires the “Referer” header to do strict referer checking. "
-"If you’re concerned about privacy, use alternatives like <a rel=\"noreferrer"
-"\" …> for links to third-party sites."
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or"
+" including the “Referrer-Policy: no-referrer” header, please remove them. "
+"The CSRF protection requires the “Referer” header to do strict referer "
+"checking. If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:132
@@ -1879,8 +1901,8 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:589
 #, python-format
 msgid ""
-"Future %(verbose_name_plural)s not available because %(class_name)s."
-"allow_future is False."
+"Future %(verbose_name_plural)s not available because "
+"%(class_name)s.allow_future is False."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:623
@@ -1939,10 +1961,10 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:369
 #, python-format
 msgid ""
-"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
-"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
-"\">DEBUG=True</a> is in your settings file and you have not configured any "
-"URLs."
+"You are seeing this page because <a "
+"href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
+"target=\"_blank\" rel=\"noopener\">DEBUG=True</a> is in your settings file "
+"and you have not configured any URLs."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:384

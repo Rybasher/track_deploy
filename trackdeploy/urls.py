@@ -23,8 +23,8 @@ from django.conf.urls import handler404, handler403, handler500
 from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = i18n_patterns(
-      path('i18n/set_language', include('django.conf.urls.i18n')),
       path(_('admin/'), admin.site.urls),
+      path('rosetta/', include('rosetta.urls')),
       path('', include('spare.urls')),
       path('', include('blog.urls')),
       path('', include('cart.urls')),
