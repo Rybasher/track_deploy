@@ -15,6 +15,10 @@ def error_404(request, exception):
     return render(request, 'blog/error_404.html')
 
 
+def error_403(request, exception):
+    return render(request, 'blog/error_403.html')
+
+
 def about(request):
     # cart = Cart(request)
     return render(request, 'blog/about.html')

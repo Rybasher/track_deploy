@@ -18,7 +18,7 @@ from django.urls import path, include
 # from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 from django.conf import settings
-from django.conf.urls import handler404
+from django.conf.urls import handler404, handler403, handler500
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,3 +32,5 @@ urlpatterns = [
 
 
 handler404 = 'blog.views.error_404'
+handler403 = 'blog.views.error_403'
+
