@@ -57,4 +57,9 @@
 
 
     </section>
+    {% if user.is_authenticated %}
+        <a href="{% url 'blog:edit' pk=post.id %}" class="btn btn-danger" style="margin-left: 60px;">Edit post</a>
+        <a href="{% url 'blog:delete' pk=post.id %}" class="btn btn-danger" style="margin-left: 60px;">Delete post</a>
+    {% endif %}
+
 {% endblock %}

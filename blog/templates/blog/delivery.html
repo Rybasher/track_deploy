@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+    <style>
+    .road{
+    width: 100%;
+    height: 300px;
+    background-image: url({% static 'img/del/road.png' %});
+    background-position: center;
+
+}
+
+.first-slide{
+    width: 30%;
+}
+.second-slide{
+    width: 70%;
+}
+.first-slide p{
+
+}
+
+@media screen and (max-width: 1060px){
+    .road{
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 660px){
+    .delivery{
+        display: block;
+    }
+    .img-fluid{
+        display: none;
+    }
+
+}
+    </style>
+{% endblock %}
+{% block content %}
+
+       <div class="page d-flex" style="margin-left: 60px;">
+        <p class="red-text" style="word-spacing: 5px">Главная    /   </p>
+
+        <p class="red-text font-weight-bold" style="word-spacing: 3px">&nbsp;Доставка</p>
+    </div>
+<section>
+    <div class="road">
+        <div class="row">
+            <div class="col post" style="margin-top: 100px; margin-left: 60px;">
+                <img src="{% static 'img/del/npost.png' %}" width="300" alt="">
+            </div>
+            <div class="col post" style="margin-top: 100px;">
+                <img src="{% static 'img/del/intime.png' %}"  width="300" alt="">
+            </div>
+            <div class="col post" style="margin-top: 80px;">
+                <img src="{% static 'img/del/del.png' %}"  width="300" alt="">
+            </div>
+        </div>
+
+
+    </div>
+</section>
+    <section>
+        <div class="delivery d-flex">
+            <div class="first-slide col-md-6" style="margin-left: 60px;">
+                <h3 class="h3 mt-5 mb-3" >ДОСТАВКА В РЕГИОНЫ</h3>
+                <p>Доставка товару по Україні здійснюється транспортними службами:
+                    <b>"Нова Пошта", "Ін-Тайм", "Делівері"</b>,
+                    Відправки оплатою пысля доставки здійснюються тільки транспортними компанією <b>"Нова Пошта"</b>
+                    Доставка товару транспортними компаніями <b>"Ін-Тайм", "Делівері"</b>
+                    здійснюється за 100% передплатою.
+                </p>
+                <h3 class="h3 mt-5 mb-3" >Способы оплаты:</h3>
+                <p>Нова Пошта надає послугу "Грошовий переказ" (накладений платіж)</p>
+                <p>Послуга "Грошовий переказ" (післяплата) складається з наступних платежів:</p>
+                <p>1. Оформлення грошового переказу (конверт) - 18 грн.</p>
+                <p>2. Комісія за переказ грошей - 2% від вартості товару.</p>
+
+                <h3 class="h3 mt-5 mb-3">Отримання товару:</h3>
+                <p>Про відправку товару Вас сповістять допомогою SMS-повідомлення, в якому буде</p>
+                <p>вказано № декларації (ТТН).</p>
+                <p>Для отримання вантажу необхідно вказати на перевізнику № декларації (ТТН) і мати при</p>
+                <p>собі документ, що підтверджує Вашу особу: паспорт або водійське посвідчення.</p>
+
+                <h3 class="h3 mt-5 mb-3">ВАЖЛИВО!!!</h3>
+                <p>При отриманні Вашого товару, обов'язково перевірте цілісність упаковки і її вмісту!</p>
+                <p>Якщо Ви виявили:</p>
+                <p>розірвану упаковкусліди від падінняпом'яту упаковкисліди втручання і т.п.Наполягайте,</p>
+                <p>щоб працівники даної філії "транспортної служби» задокументували всі візуально видимі </p>
+                <p>сліди і негайно зв'яжіться з менеджером, який оформляв відправку Вашого товару.</p>
+                <h3 class="h3 mt-5 mb-3">Відповідальність за цілісність вантажу на 100% несе транспортна компанія!</h3>
+
+            </div>
+            <div class="second-slide col" >
+                <h3 class="h3 mt-5 mb-3">Доставка в відділення
+                    Нової Пошти по Україні</h3>
+                <p>Термін доставки товару транспортною службою "Нова Пошта» в середньому 1-3 дні. Під час замовлення
+                     Ви можете вказати зручний для Вас день забору товару, наші менеджери підберуть оптимальний час відправк
+                </p>
+                <div>
+                    <img src="{% static 'img/del/car.png' %}" width="600" style="margin-left: 70px"  class="img-fluid" alt="">
+                </div>
+                </div>
+
+        </div>
+    </section>
+
+
+
+
+{% endblock %}

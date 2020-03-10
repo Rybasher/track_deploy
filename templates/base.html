@@ -35,9 +35,9 @@
 
           </li>
           <li><a href="#">КАТАЛОГ</a></li>
-          <li><a href="#">О НАС</a></li>
-          <li><a href="#">НОВИНКИ</a></li>
-          <li><a href="#">ДОСТАВКА И ОПЛАТА</a></li>
+          <li><a href="{% url 'blog:about' %}">О НАС</a></li>
+          <li><a href="{% url 'blog:posts_list' %}">НОВИНКИ</a></li>
+          <li><a href="{% url 'blog:delivery' %}">ДОСТАВКА И ОПЛАТА</a></li>
           <li><a href="#">КОНТАКТЫ</a></li>
           <li style="padding-top: 10px"><input type="text" class="q"></li>
 

@@ -28,4 +28,7 @@
                     </div>
                 </div>
     </section>
+   {% if user.is_authenticated %}
+        <a href="{% url 'blog:add' %}" class="btn btn-danger" style="margin-left: 60px;">Add post</a>
+    {% endif %}
 {% endblock %}

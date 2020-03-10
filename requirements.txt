@@ -2,3 +2,4 @@ Django
 pillow
 easy_thumbnails
 django-cleanup
+django-bootstrap4
