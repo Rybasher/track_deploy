@@ -20,37 +20,37 @@ def error_403(request, exception):
     return render(request, 'blog/error_403.html')
 
 
-def about(request):
-    # cart = Cart(request)
-    cart = Cart(request)
-    context = {'cart': cart}
-    return render(request, 'blog/about.html', context)
-
-
-def delivery(request):
-    # cart = Cart(request)
-    cart = Cart(request)
-    context = {'cart': cart}
-    return render(request, 'blog/delivery.html', context)
-
-
 def posts_list(request):
     posts = Post.objects.all()
     cart = Cart(request)
+    path = request.path_info
+    url_split = path.split('/')
+    print (url_split)
+    url = url_split[2:]
+    str_url = "/".join(url)
     context = {
         'posts': posts,
-        'cart': cart
+        'cart': cart,
+        'path': str_url,
     }
+
+
     return render(request, 'blog/posts_list.html', context)
 
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     cart = Cart(request)
+    path = request.path_info
+    url_split = path.split('/')
+    print (url_split)
+    url = url_split[2:]
+    str_url = "/".join(url)
     # cart = Cart(request)
     context = {
         'post': post,
-        'cart': cart
+        'cart': cart,
+        'path': str_url
     }
     return render(request, 'blog/post_detail.html', context)
 

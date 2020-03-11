@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-10 10:25+0200\n"
-"PO-Revision-Date: 2020-03-10 13:33+0230\n"
+"PO-Revision-Date: 2020-03-11 13:12+0230\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -61,11 +61,11 @@ msgstr ""
 
 #: .\blog\templates\blog\about.html:59
 msgid "Для клиентов предлагаем"
-msgstr ""
+msgstr "For customers we offer"
 
 #: .\blog\templates\blog\about.html:64
 msgid "Немалый спектр товаров пожарного оборудования"
-msgstr ""
+msgstr "A considerable range of products of fire equipment"
 
 #: .\blog\templates\blog\about.html:65
 msgid "Мотопомпы"
@@ -93,19 +93,19 @@ msgstr "Washers"
 
 #: .\blog\templates\blog\about.html:71
 msgid "Хомуты усиленые"
-msgstr ""
+msgstr "Reinforced clamps"
 
 #: .\blog\templates\blog\about.html:72
 msgid "Шрайбера"
-msgstr ""
+msgstr "Schreiber"
 
 #: .\blog\templates\blog\about.html:73
 msgid "Тычки"
-msgstr ""
+msgstr "Bumps"
 
 #: .\blog\templates\blog\about.html:76
 msgid "Запчасти к отечественным автомобилям"
-msgstr ""
+msgstr "Spare parts for domestic cars"
 
 #: .\blog\templates\blog\about.html:77
 msgid ""
@@ -265,27 +265,33 @@ msgstr "If you found"
 
 #: .\blog\templates\blog\delivery.html:92
 msgid ""
-"розірвану упаковкусліди від падіння помяту упаковки сліди втручання і "
+"розірвану упаковку, сліди від падіння помяту упаковки сліди втручання і "
 "т.п.Наполягайте"
 msgstr ""
+"torn packaging, traces of falling jam packing traces of intervention, etc. "
+"Insist"
 
 #: .\blog\templates\blog\delivery.html:93
 msgid ""
 "щоб працівники даної філії \"транспортної служби» задокументували всі "
 "візуально видимі"
 msgstr ""
+"so that the employees of this branch of the \"transport service \" document "
+"all the visually visible"
 
 #: .\blog\templates\blog\delivery.html:94
 msgid ""
 "сліди і негайно зв'яжіться з менеджером, який оформляв відправку Вашого "
 "товару."
 msgstr ""
+"traces and immediately contact the manager who arranged the shipment of your"
+" product."
 
 #: .\blog\templates\blog\delivery.html:95
 #, python-format
 msgid ""
 "Відповідальність за цілісність вантажу на 100%% несе транспортна компанія!"
-msgstr ""
+msgstr "The transport company is responsible for 100 %% of cargo integrity!"
 
 #: .\blog\templates\blog\delivery.html:99
 msgid "Доставка в відділення Нової Пошти по Україні"
@@ -311,11 +317,11 @@ msgstr ""
 
 #: .\blog\templates\blog\error_403.html:7
 msgid "Page for stuff"
-msgstr ""
+msgstr "Page for stuff"
 
 #: .\blog\templates\blog\error_404.html:7
 msgid "Page error"
-msgstr ""
+msgstr "Page error"
 
 #: .\blog\templates\blog\post_detail.html:5
 #: .\blog\templates\blog\post_detail.html:15
@@ -633,15 +639,15 @@ msgstr "Different"
 
 #: .\spare\templates\spare\home_page.html:185
 msgid "Каністри"
-msgstr ""
+msgstr "Canisters"
 
 #: .\spare\templates\spare\home_page.html:186
 msgid "Окуляри"
-msgstr ""
+msgstr "Glasses"
 
 #: .\spare\templates\spare\home_page.html:187
 msgid "Уніформа"
-msgstr ""
+msgstr "Uniforms"
 
 #: .\spare\templates\spare\home_page.html:188
 msgid "Fenix"
@@ -657,15 +663,15 @@ msgstr ""
 
 #: .\spare\templates\spare\home_page.html:233
 msgid "ПОДБЕРЁМ НУЖНЫЕ ЗАПЧАСТИ ИМЕННО ДЛЯ ВАШЕЙ СИТУАЦИИ"
-msgstr ""
+msgstr "WE WILL CHOOSE THE NECESSARY SPARE PARTS FOR YOUR SITUATION"
 
 #: .\spare\templates\spare\home_page.html:239
 msgid "ВАШЕ ИМЯ"
-msgstr ""
+msgstr "YOUR NAME"
 
 #: .\spare\templates\spare\home_page.html:240
 msgid "ВАШ ТЕЛЕФОН"
-msgstr ""
+msgstr "YOUR PHONE"
 
 #: .\spare\templates\spare\home_page.html:247
 #: .\spare\templates\spare\home_page.html:248

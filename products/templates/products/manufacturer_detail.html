@@ -63,12 +63,12 @@
 
                 {% for category in categories %}
                     <li class="nav-item pl-2  ">
-                        <h3 class="h3"><a href="{{ category.get_absolute_url }}" class="black-text">
+                        <h3 class="h3"><a href="{% url 'products:category_detail' slug=category.slug %}" class="black-text">
                             {{ category.title }}</a></h3>
                     <ul class="nav flex-column pt-3 pb-2" style="position:relative; left: -120px; top: 20px;">
                         {% for man in category.manufactures.all %}
                             <li style="height: 40px;">
-                            <a href="{{ man.get_absolute_url }}" class="nav-link-two black-text font-weight-bold">
+                            <a href="{% url 'products:manufacturer_detail' slug=man.slug %}" class="nav-link-two black-text font-weight-bold">
                                 {{ man.title }}
                             </a>
                         </li>
@@ -96,11 +96,11 @@
                 {% for product in page_object.object_list %}
                     <div class="product text-center pb-4">
                     {% if product.image %}
-                        <a href="{{ product.get_absolute_url }}"><img src="{{ product.image.url }}" width="200" height="200" alt="" style="border:1px solid black"></a>
+                        <a href="{% url 'products:product_detail' slug=product.slug %}"><img src="{{ product.image.url }}" width="200" height="200" alt="" style="border:1px solid black"></a>
                     {% endif %}
 
                         <p><small>{{ product.manufacturer.category.title }}</small></p>
-                        <p class="font-weight-bold"><a href="{{ product.get_absolute_url }}">{{ product.title }}</a></p>
+                        <p class="font-weight-bold">{{ product.title }}</p>
                         <p>{{ product.price }} грн</p>
                         <form action="{% url "cart:cart_add" product.id %}" method="post">
                             {% csrf_token %}

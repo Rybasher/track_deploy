@@ -42,7 +42,7 @@ class Product(models.Model):
     published_date = models.DateTimeField(auto_now_add=True, verbose_name="Опубликовано", null=True)
 
     def get_absolute_url(self):
-        return "/product/%s" % self.slug
+        return "product/%s" % self.slug
 
     def save(self, *args, **kwargs):
         if not self.id:
@@ -65,7 +65,7 @@ class Manufacturer(models.Model):
     category = models.ForeignKey('Category', related_name='manufactures', on_delete=models.CASCADE)
 
     def get_absolute_url(self):
-        return "/manufacturer/%s" % self.slug
+        return "manufacturer/%s" % self.slug
 
     def save(self, *args, **kwargs):
         if not self.id:
@@ -86,7 +86,7 @@ class Category(models.Model):
     slug = models.SlugField(max_length=50, unique=True, blank=True)
 
     def get_absolute_url(self):
-        return "/category/%s" % self.slug
+        return "category/%s" % self.slug
 
     def save(self, *args, **kwargs):
         if not self.id:

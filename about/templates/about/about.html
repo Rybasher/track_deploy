@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+    .banner{
+    /*background: red;*/
+
+    width: 100%;
+    height: 300px;
+    position: relative;
+
+    background-image: url({% static 'img/about/banner.png'%});
+    background-position: left top;
+    background-repeat: no-repeat;
+}
+    .offers{
+    width: 40%;
+}
+.offers p{
+    font-size: 14pt;
+}
+.offers_two{
+    width: 60%;
+}
+.offers_two p{
+
+    font-weight: normal;
+    font-size: 14pt;
+}
+.offers_two h3{
+    font-size: 16pt;
+    line-height: 30px;
+}
+    </style>
+{% endblock %}
+{% block content %}
+
+     <div class="page d-flex ml-5">
+        <p class="red-text" style="word-spacing: 5px">{% trans 'Главная' %}    /   </p>
+
+        <p class="red-text font-weight-bold" style="word-spacing: 3px">&nbsp;{% trans 'О нас' %}</p>
+    </div>
+<section>
+    <div class="banner">
+        <h1 style="font-family: 'Aldo the Apache'; font-size: 60pt; position:relative; top: 30px; padding-left: 40px;"
+            class="white-text">TRACK</h1>
+        <div style="width: 75%"><h3 class="h3 white-text" style="position: relative; left: 50px; padding-top: 20px;
+            font-size: 20pt">
+            {% trans 'Ми мережа магазинів "Трек" в Рівненській області.' %}
+            {% trans '"Трек" на ринку більше 12 років, через це ми володіємо  великим досвідом і якісним товаром,' %}
+            {% trans 'клієнт - це наша першочергова задача' %}.</h3></div>
+
+    </div>
+
+</section>
+    <section class="mb-5" style="position: relative; margin-left: 40px; top: 40px;">
+        <h3 class="h3">{% trans 'Для клиентов предлагаем' %}:</h3>
+        <div class="all_offers d-flex">
+
+            <div class="offers">
+
+                <h3 class="mt-5 h3" style="font-size: 16pt;">1. {% trans 'Немалый спектр товаров пожарного оборудования' %}:</h3>
+                <p class="font-weight-normal">- {% trans 'Мотопомпы' %};</p>
+                <p class="font-weight-normal">-{% trans 'Генераторы и их комплектующие' %};</p>
+                <p class="font-weight-normal">-{% trans 'Шланги пожарные (отечественного и зарубежного производства)' %};</p>
+                <p class="font-weight-normal">- {% trans 'Рукава заборные' %};</p>
+                <p class="font-weight-normal">- {% trans 'Гайки на шланги и рукава' %};</p>
+                <p class="font-weight-normal">-{% trans 'Шайбы' %};</p>
+                <p class="font-weight-normal">-{% trans 'Хомуты усиленые' %};</p>
+                <p class="font-weight-normal">-{% trans 'Шрайбера' %};</p>
+                <p class="font-weight-normal">-{% trans 'Тычки' %};</p>
+            </div>
+            <div class="offers_two">
+                <h3 class="mt-5 h3" style="font-size: 16pt;">2. {% trans 'Запчасти к отечественным автомобилям' %}:</h3>
+                <p>{% trans 'Предлагаем все, начиная от брелков к ключам и наклеек на машины и мотоциклы, заканчивая резиной и рессорами' %}.</p>
+                <h3 class="h3" style="font-size: 16pt;">3. {% trans 'Запчасти к мототехнике' %}:</h3>
+                <p>{% trans 'Для скутеров и мотоциклов (отечественного и китайского производства).' %}</p>
+                <h3 class="h3" style="font-size: 16pt;">4. {% trans 'Различные масла как для мото, квадро техники, так и для автомобилей двух и четырехтактные​' %}.</h3>
+                <h3 class="h3" style="font-size: 16pt;">5. {% trans 'Запчасти  к отечественным и китайским тракторам' %}</h3>
+                <h3 class="h3" style="font-size: 16pt;">6. {% trans 'Фонари и прожекторы: ручные, налобные, подводные, (лампочные и светодиодные, для освещения малой и большой территории)' %}.</h3>
+                <h3 class="h3" style="font-size: 16pt;">7. {% trans 'Флешки, модуляторы, брелки, ключи для ремонта авто, лопаты' %}.</h3>
+                <h3 class="h3" style="font-size: 16pt;">8. {% trans 'Сапоги, временщики и различные костюмы, куртки камуфляжные.' %}
+                </h3>
+
+            </div>
+        </div>
+
+    </section>
+    <section style="margin-top: 80px; margin-left: 25px; margin-bottom: 100px;">
+        <div class="some" style="display: flex">
+            <div class="col-sm-6">
+                <img src="{% static 'img/about/first.png' %}" class="img-fluid" alt="">
+            </div>
+            <div class="col-md-6">
+                <img src="{% static 'img/about/second.jpg' %}" alt="" class="img-fluid">
+            </div>
+        </div>
+    </section>
+
+
+
+
+{% endblock %}

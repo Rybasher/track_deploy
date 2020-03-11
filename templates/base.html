@@ -15,6 +15,7 @@
   <!-- Material Design Bootstrap -->
   <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style_base.css' %}">
+<script src="https://maps.google.com/maps/api/js"></script>
   <!-- Your custom styles (optional) -->
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -53,14 +54,15 @@
             {% get_available_languages as LANGUAGES %}
             {% get_language_info_list for LANGUAGES as languages %}
             {% for language in languages %}
-                <a href="/{{ language.code }}/" class="black-text" {% if language.code == LANGUAGE_CODE %}
+
+                <a href="/{{ language.code }}/{{ path }}" class="black-text" {% if language.code == LANGUAGE_CODE %}
                    class="selected" style="font-size: 16px; font-weight: bold;" {% endif %}>{{ language.code }}</a>
             {% endfor %}
           </li>
           <li><a href="{% url 'products:product_list' %}">{% trans 'КАТАЛОГ' %}</a></li>
-          <li><a href="{% url 'blog:about' %}">{% trans 'О НАС' %}</a></li>
+          <li><a href="{% url 'about:about' %}">{% trans 'О НАС' %}</a></li>
           <li><a href="{% url 'blog:posts_list' %}">{% trans 'НОВИНКИ' %}</a></li>
-          <li><a href="{% url 'blog:delivery' %}">{% trans 'ДОСТАВКА И ОПЛАТА' %}</a></li>
+          <li><a href="{% url 'delivery:delivery' %}">{% trans 'ДОСТАВКА И ОПЛАТА' %}</a></li>
           <li><a href="{% url 'contacts:contact_create' %}">{% trans 'КОНТАКТЫ' %}</a></li>
           <li style="padding-top: 10px">
               <form action="{% url 'products:product_list' %}">
@@ -147,7 +149,7 @@
     </div>
   </div>
 </div>
-<main>
+<main style="width: 100%;">
     {% block content %}
     
     {% endblock %}
@@ -172,10 +174,10 @@
           </h3>
 
           <ul class="d-block menu">
-            <li><a href="" class="font-weight-bold">{% trans 'О НАС' %}</a></li>
-            <li><a href="" class="font-weight-bold">{% trans 'НОВОСТИ' %}</a></li>
-            <li><a href="" class="font-weight-bold">{% trans 'ДОСТАВКА И ОПЛАТА' %}</a></li>
-            <li><a href="" class="font-weight-bold">{% trans 'КОНТАКТЫ' %}</a></li>
+            <li><a href="{% url 'about:about' %}" class="font-weight-bold">{% trans 'О НАС' %}</a></li>
+            <li><a href="{% url 'blog:posts_list' %}" class="font-weight-bold">{% trans 'НОВОСТИ' %}</a></li>
+            <li><a href="{% url 'delivery:delivery' %}" class="font-weight-bold">{% trans 'ДОСТАВКА И ОПЛАТА' %}</a></li>
+            <li><a href="{% url 'contacts:contact_create' %}" class="font-weight-bold">{% trans 'КОНТАКТЫ' %}</a></li>
           </ul>
         </div>
         <div class="col">

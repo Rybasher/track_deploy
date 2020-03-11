@@ -15,8 +15,10 @@
                 <div class="row">
                     {% for post in posts %}
                         <div class="col-md-4 new-item" style="padding-top: 40px;">
+
                             <a href="{% url 'blog:post_detail' pk=post.pk %}" style="font-size: 16pt; font-weight: bold"
                                class="pb-4 pt-4 black-text"><p>{{ post.title }}</p></a>
+
                             {% if post.image_one %}
                                 <a href="{% url 'blog:post_detail' pk=post.pk %}">
                                     <img src="{{ post.image_one.url }}" class="img-fluid"

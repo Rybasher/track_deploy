@@ -3,6 +3,7 @@ from django.urls import path, include
 from spare.views import *
 from .views import *
 
+
 app_name = "products"
 
 urlpatterns = [

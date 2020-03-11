@@ -14,6 +14,10 @@ from django.contrib import messages
 
 
 def product_list(request):
+    path = request.path_info
+    url_split = path.split('/')
+    url = url_split[2:]
+    str_url = "/".join(url)
     cart = Cart(request)
     search_query = request.GET.get('search', '')
     ot = request.GET.get('ot', '')
@@ -59,13 +63,18 @@ def product_list(request):
                'next_url': next_url,
                'last_url': last_url,
                'ot': ot,
-               'do': do
+               'do': do,
+               'path': str_url
 
                }
     return render(request, 'products/product_list.html', context)
 
 
 def product_detail(request, slug):
+    path = request.path_info
+    url_split = path.split('/')
+    url = url_split[2:]
+    str_url = "/".join(url)
     cart = Cart(request)
     product = Product.objects.get(slug__iexact=slug)
     cart_product_form = CartAddProductForm
@@ -89,18 +98,32 @@ def product_detail(request, slug):
     return render(request, 'products/product_detail.html', {'product': product, 'products': products,
                                                             'cart_product_form': cart_product_form, 'cart': cart,
                                                             'comments': comments, 'form': comment_form,
-                                                            'new_comment': new_comment})
+                                                            'new_comment': new_comment,
+                                                            'path': str_url})
 
 
 def category_detail(request, slug):
+    path = request.path_info
+    url_split = path.split('/')
+    url = url_split[2:]
+    str_url = "/".join(url)
     categories = Category.objects.all()
     category = Category.objects.get(slug__iexact=slug)
+    cart_product_form = CartAddProductForm
+    cart = Cart(request)
 
-    return render(request, 'products/categories_detail.html', {'categories': categories, 'category': category,
+    return render(request, 'products/categories_detail.html', {'categories': categories,
+                                                               'category': category, 'path': str_url,
+                                                               'cart': cart,
+                                                               'cart_product_form': cart_product_form
                                                                })
 
 
 def manufacturer_detail(request, slug):
+    path = request.path_info
+    url_split = path.split('/')
+    url = url_split[2:]
+    str_url = "/".join(url)
     categories = Category.objects.all()
     manufactures = Manufacturer.objects.all()
     manufacturer = Manufacturer.objects.get(slug__iexact=slug)
@@ -146,6 +169,7 @@ def manufacturer_detail(request, slug):
                'last_url': last_url,
                'ot': ot,
                'do': do,
+               'path': str_url
                }
     return render(request, 'products/manufacturer_detail.html', context)
 

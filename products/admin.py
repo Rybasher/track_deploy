@@ -1,11 +1,10 @@
 from django.contrib import admin
 from .models import *
+from modeltranslation.admin import TranslationAdmin
 # Register your models here.
 
 
-
-class ProductAdmin(admin.ModelAdmin):
-
+class ProductTranslationAdmin(TranslationAdmin):
     list_display_links = ('title', )
     search_fields = ('title', 'content')
 
@@ -15,20 +14,20 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ('title', 'content', 'price', 'manufacturer', 'stok', 'available', 'published_date')
 
 
-class CategoryAdmin(admin.ModelAdmin):
+class CategoryTranslationAdmin(TranslationAdmin):
     list_display_links = ('title',)
     list_display = ('title', )
     ordering = ['title']
 
 
-class ManufacturerAdmin(admin.ModelAdmin):
+class ManufacturerTranslationAdmin(TranslationAdmin):
 
     list_display_links = ('title', )
     list_display = ('title', 'category')
     ordering = ['title']
 
 
-admin.site.register(Product, ProductAdmin)
-admin.site.register(Category, CategoryAdmin)
-admin.site.register(Manufacturer, ManufacturerAdmin)
+admin.site.register(Product, ProductTranslationAdmin)
+admin.site.register(Category, CategoryTranslationAdmin)
+admin.site.register(Manufacturer, ManufacturerTranslationAdmin)
 admin.site.register(Comment)
