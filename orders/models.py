@@ -1,5 +1,6 @@
 from django.db import models
 from products.models import Product
+from django.utils import timezone
 # Create your models here.
 
 
@@ -13,6 +14,7 @@ class Order(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     paid = models.BooleanField(default=False)
+    data_one = models.DateField(auto_now=False, auto_now_add=False, verbose_name="Дата получения товара", default=timezone.now)
     braintree_id = models.CharField(max_length=150, blank=True)
 
     class Meta:

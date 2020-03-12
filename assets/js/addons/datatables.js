@@ -970,7 +970,7 @@
 			
 			/* Create the settings object for this table and set some of the default parameters */
 			var oSettings = $.extend( true, {}, DataTable.models.oSettings, {
-				"sDestroyWidth": $this[0].style.width,
+				"sDestroyWidth": $this[0].style_news.width,
 				"sInstance":     sId,
 				"sTableId":      sId
 			} );
@@ -2027,7 +2027,7 @@
 			oCol.sWidthOrig = th.attr('width') || null;
 	
 			// Style attribute
-			var t = (th.attr('style') || '').match(/width:\s*(\d+[pxem%]+)/);
+			var t = (th.attr('style_news.css') || '').match(/width:\s*(\d+[pxem%]+)/);
 			if ( t ) {
 				oCol.sWidthOrig = t[1];
 			}
@@ -2155,7 +2155,7 @@
 			_fnCalculateColumnWidths( settings );
 			for ( var i=0 , iLen=columns.length ; i<iLen ; i++ )
 			{
-				columns[i].nTh.style.width = columns[i].sWidth;
+				columns[i].nTh.style_news.width = columns[i].sWidth;
 			}
 		}
 	
@@ -4735,7 +4735,7 @@
 			column = columns[i];
 	
 			if ( column.sWidth ) {
-				column.nTh.style.width = _fnStringToCss( column.sWidth );
+				column.nTh.style_news.width = _fnStringToCss( column.sWidth );
 			}
 		}
 	
@@ -5220,20 +5220,20 @@
 			scrollY        = scroll.sY,
 			barWidth       = scroll.iBarWidth,
 			divHeader      = $(settings.nScrollHead),
-			divHeaderStyle = divHeader[0].style,
+			divHeaderStyle = divHeader[0].style_news,
 			divHeaderInner = divHeader.children('div'),
-			divHeaderInnerStyle = divHeaderInner[0].style,
+			divHeaderInnerStyle = divHeaderInner[0].style_news,
 			divHeaderTable = divHeaderInner.children('table'),
 			divBodyEl      = settings.nScrollBody,
 			divBody        = $(divBodyEl),
-			divBodyStyle   = divBodyEl.style,
+			divBodyStyle   = divBodyEl.style_news,
 			divFooter      = $(settings.nScrollFoot),
 			divFooterInner = divFooter.children('div'),
 			divFooterTable = divFooterInner.children('table'),
 			header         = $(settings.nTHead),
 			table          = $(settings.nTable),
 			tableEl        = table[0],
-			tableStyle     = tableEl.style,
+			tableStyle     = tableEl.style_news,
 			footer         = settings.nTFoot ? $(settings.nTFoot) : null,
 			browser        = settings.oBrowser,
 			ie67           = browser.bScrollOversize,
@@ -5245,7 +5245,7 @@
 			headerContent=[], footerContent=[],
 			idx, correction, sanityWidth,
 			zeroOut = function(nSizer) {
-				var style = nSizer.style;
+				var style = nSizer.style_news;
 				style.paddingTop = "0";
 				style.paddingBottom = "0";
 				style.borderTopWidth = "0";
@@ -5297,17 +5297,17 @@
 		if ( ! scrollX )
 		{
 			divBodyStyle.width = '100%';
-			divHeader[0].style.width = '100%';
+			divHeader[0].style_news.width = '100%';
 		}
 	
 		$.each( _fnGetUniqueThs( settings, headerCopy ), function ( i, el ) {
 			idx = _fnVisibleToColumnIndex( settings, i );
-			el.style.width = settings.aoColumns[idx].sWidth;
+			el.style_news.width = settings.aoColumns[idx].sWidth;
 		} );
 	
 		if ( footer ) {
 			_fnApplyToChildren( function(n) {
-				n.style.width = "";
+				n.style_news.width = "";
 			}, footerSrcEls );
 		}
 	
@@ -5354,7 +5354,7 @@
 			// Only apply widths to the DataTables detected header cells - this
 			// prevents complex headers from having contradictory sizes applied
 			if ( $.inArray( nToSize, dtHeaderCells ) !== -1 ) {
-				nToSize.style.width = headerWidths[i];
+				nToSize.style_news.width = headerWidths[i];
 			}
 		}, headerTrgEls );
 	
@@ -5371,7 +5371,7 @@
 			}, footerSrcEls );
 	
 			_fnApplyToChildren( function(nToSize, i) {
-				nToSize.style.width = footerWidths[i];
+				nToSize.style_news.width = footerWidths[i];
 			}, footerTrgEls );
 	
 			$(footerSrcEls).height(0);
@@ -5388,18 +5388,18 @@
 		// width to what they currently are
 		_fnApplyToChildren( function(nSizer, i) {
 			nSizer.innerHTML = '<div class="dataTables_sizing">'+headerContent[i]+'</div>';
-			nSizer.childNodes[0].style.height = "0";
-			nSizer.childNodes[0].style.overflow = "hidden";
-			nSizer.style.width = headerWidths[i];
+			nSizer.childNodes[0].style_news.height = "0";
+			nSizer.childNodes[0].style_news.overflow = "hidden";
+			nSizer.style_news.width = headerWidths[i];
 		}, headerSrcEls );
 	
 		if ( footer )
 		{
 			_fnApplyToChildren( function(nSizer, i) {
 				nSizer.innerHTML = '<div class="dataTables_sizing">'+footerContent[i]+'</div>';
-				nSizer.childNodes[0].style.height = "0";
-				nSizer.childNodes[0].style.overflow = "hidden";
-				nSizer.style.width = footerWidths[i];
+				nSizer.childNodes[0].style_news.height = "0";
+				nSizer.childNodes[0].style_news.overflow = "hidden";
+				nSizer.style_news.width = footerWidths[i];
 			}, footerSrcEls );
 		}
 	
@@ -5435,7 +5435,7 @@
 		divHeaderStyle.width = _fnStringToCss( correction );
 	
 		if ( footer ) {
-			settings.nScrollFoot.style.width = _fnStringToCss( correction );
+			settings.nScrollFoot.style_news.width = _fnStringToCss( correction );
 		}
 	
 	
@@ -5454,7 +5454,7 @@
 	
 		/* Finally set the width's of the header and footer tables */
 		var iOuterWidth = table.outerWidth();
-		divHeaderTable[0].style.width = _fnStringToCss( iOuterWidth );
+		divHeaderTable[0].style_news.width = _fnStringToCss( iOuterWidth );
 		divHeaderInnerStyle.width = _fnStringToCss( iOuterWidth );
 	
 		// Figure out if there are scrollbar present - if so then we need a the header and footer to
@@ -5464,9 +5464,9 @@
 		divHeaderInnerStyle[ padding ] = bScrolling ? barWidth+"px" : "0px";
 	
 		if ( footer ) {
-			divFooterTable[0].style.width = _fnStringToCss( iOuterWidth );
-			divFooterInner[0].style.width = _fnStringToCss( iOuterWidth );
-			divFooterInner[0].style[padding] = bScrolling ? barWidth+"px" : "0px";
+			divFooterTable[0].style_news.width = _fnStringToCss( iOuterWidth );
+			divFooterInner[0].style_news.width = _fnStringToCss( iOuterWidth );
+			divFooterInner[0].style_news[padding] = bScrolling ? barWidth+"px" : "0px";
 		}
 	
 		// Correct DOM ordering for colgroup - comes before the thead
@@ -5550,7 +5550,7 @@
 			browser = oSettings.oBrowser,
 			ie67 = browser.bScrollOversize;
 	
-		var styleWidth = table.style.width;
+		var styleWidth = table.style_news.width;
 		if ( styleWidth && styleWidth.indexOf('%') !== -1 ) {
 			tableWidthAttr = styleWidth;
 		}
@@ -5614,7 +5614,7 @@
 			for ( i=0 ; i<visibleColumns.length ; i++ ) {
 				column = columns[ visibleColumns[i] ];
 	
-				headerCells[i].style.width = column.sWidthOrig !== null && column.sWidthOrig !== '' ?
+				headerCells[i].style_news.width = column.sWidthOrig !== null && column.sWidthOrig !== '' ?
 					_fnStringToCss( column.sWidthOrig ) :
 					'';
 	
@@ -5716,7 +5716,7 @@
 				columns[ visibleColumns[i] ].sWidth = _fnStringToCss( bounding - border );
 			}
 	
-			table.style.width = _fnStringToCss( total );
+			table.style_news.width = _fnStringToCss( total );
 	
 			// Finished with the table - ditch it
 			holder.remove();
@@ -5727,7 +5727,7 @@
 		// resized. Use the width attr rather than CSS, since we can't know if the
 		// CSS is a relative value or absolute - DOM read is always px.
 		if ( tableWidthAttr ) {
-			table.style.width = _fnStringToCss( tableWidthAttr );
+			table.style_news.width = _fnStringToCss( tableWidthAttr );
 		}
 	
 		if ( (tableWidthAttr || scrollX) && ! oSettings._reszEvt ) {

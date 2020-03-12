@@ -132,6 +132,7 @@ LANGUAGES = [
     ('uk', 'Ukrainian')
 ]
 
+MODELTRANSLATION_LANGUAGES = ('en', 'ru', 'uk')
 TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True

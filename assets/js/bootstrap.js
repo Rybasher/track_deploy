@@ -1287,7 +1287,7 @@
       var dimension = this._getDimension();
 
       $(this._element).removeClass(ClassName$3.COLLAPSE).addClass(ClassName$3.COLLAPSING);
-      this._element.style[dimension] = 0;
+      this._element.style_news[dimension] = 0;
 
       if (this._triggerArray.length) {
         $(this._triggerArray).removeClass(ClassName$3.COLLAPSED).attr('aria-expanded', true);
@@ -1297,7 +1297,7 @@
 
       var complete = function complete() {
         $(_this._element).removeClass(ClassName$3.COLLAPSING).addClass(ClassName$3.COLLAPSE).addClass(ClassName$3.SHOW);
-        _this._element.style[dimension] = '';
+        _this._element.style_news[dimension] = '';
 
         _this.setTransitioning(false);
 
@@ -1308,7 +1308,7 @@
       var scrollSize = "scroll" + capitalizedDimension;
       var transitionDuration = Util.getTransitionDurationFromElement(this._element);
       $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
-      this._element.style[dimension] = this._element[scrollSize] + "px";
+      this._element.style_news[dimension] = this._element[scrollSize] + "px";
     };
 
     _proto.hide = function hide() {
@@ -1327,7 +1327,7 @@
 
       var dimension = this._getDimension();
 
-      this._element.style[dimension] = this._element.getBoundingClientRect()[dimension] + "px";
+      this._element.style_news[dimension] = this._element.getBoundingClientRect()[dimension] + "px";
       Util.reflow(this._element);
       $(this._element).addClass(ClassName$3.COLLAPSING).removeClass(ClassName$3.COLLAPSE).removeClass(ClassName$3.SHOW);
       var triggerArrayLength = this._triggerArray.length;
@@ -1355,7 +1355,7 @@
         $(_this2._element).removeClass(ClassName$3.COLLAPSING).addClass(ClassName$3.COLLAPSE).trigger(Event$3.HIDDEN);
       };
 
-      this._element.style[dimension] = '';
+      this._element.style_news[dimension] = '';
       var transitionDuration = Util.getTransitionDurationFromElement(this._element);
       $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
     };
@@ -2249,7 +2249,7 @@
         document.body.appendChild(this._element);
       }
 
-      this._element.style.display = 'block';
+      this._element.style_news.display = 'block';
 
       this._element.removeAttribute('aria-hidden');
 
@@ -2334,7 +2334,7 @@
     _proto._hideModal = function _hideModal() {
       var _this7 = this;
 
-      this._element.style.display = 'none';
+      this._element.style_news.display = 'none';
 
       this._element.setAttribute('aria-hidden', true);
 
@@ -2439,17 +2439,17 @@
       var isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
 
       if (!this._isBodyOverflowing && isModalOverflowing) {
-        this._element.style.paddingLeft = this._scrollbarWidth + "px";
+        this._element.style_news.paddingLeft = this._scrollbarWidth + "px";
       }
 
       if (this._isBodyOverflowing && !isModalOverflowing) {
-        this._element.style.paddingRight = this._scrollbarWidth + "px";
+        this._element.style_news.paddingRight = this._scrollbarWidth + "px";
       }
     };
 
     _proto._resetAdjustments = function _resetAdjustments() {
-      this._element.style.paddingLeft = '';
-      this._element.style.paddingRight = '';
+      this._element.style_news.paddingLeft = '';
+      this._element.style_news.paddingRight = '';
     };
 
     _proto._checkScrollbar = function _checkScrollbar() {
@@ -2468,13 +2468,13 @@
         var stickyContent = [].slice.call(document.querySelectorAll(Selector$5.STICKY_CONTENT)); // Adjust fixed content padding
 
         $(fixedContent).each(function (index, element) {
-          var actualPadding = element.style.paddingRight;
+          var actualPadding = element.style_news.paddingRight;
           var calculatedPadding = $(element).css('padding-right');
           $(element).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + _this9._scrollbarWidth + "px");
         }); // Adjust sticky content margin
 
         $(stickyContent).each(function (index, element) {
-          var actualMargin = element.style.marginRight;
+          var actualMargin = element.style_news.marginRight;
           var calculatedMargin = $(element).css('margin-right');
           $(element).data('margin-right', actualMargin).css('margin-right', parseFloat(calculatedMargin) - _this9._scrollbarWidth + "px");
         }); // Adjust body padding
@@ -2493,7 +2493,7 @@
       $(fixedContent).each(function (index, element) {
         var padding = $(element).data('padding-right');
         $(element).removeData('padding-right');
-        element.style.paddingRight = padding ? padding : '';
+        element.style_news.paddingRight = padding ? padding : '';
       }); // Restore sticky content
 
       var elements = [].slice.call(document.querySelectorAll("" + Selector$5.STICKY_CONTENT));

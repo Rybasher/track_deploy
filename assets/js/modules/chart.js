@@ -10610,7 +10610,7 @@ function readUsedSize(element, property) {
  * to determine the aspect ratio to apply in case no explicit height has been specified.
  */
 function initCanvas(canvas, config) {
-	var style = canvas.style;
+	var style = canvas.style_news;
 
 	// NOTE(SB) canvas.getAttribute('width') !== canvas.width: in the first case it
 	// returns null or '' if no explicit value has been set to the canvas attribute.
@@ -10643,7 +10643,7 @@ function initCanvas(canvas, config) {
 	}
 
 	if (renderHeight === null || renderHeight === '') {
-		if (canvas.style.height === '') {
+		if (canvas.style_news.height === '') {
 			// If no explicit render height and style height, let's apply the aspect ratio,
 			// which one can be specified by the user but also by charts as default option
 			// (i.e. options.aspectRatio). If not specified, use canvas aspect ratio of 2.
@@ -10860,7 +10860,7 @@ function removeResizeListener(node) {
 
 function injectCSS(platform, css) {
 	// http://stackoverflow.com/q/3922139
-	var style = platform._style || document.createElement('style');
+	var style = platform._style || document.createElement('style_news.css');
 	if (!platform._style) {
 		platform._style = style;
 		css = '/* Chart.js */\n' + css;

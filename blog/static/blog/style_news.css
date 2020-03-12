@@ -15,4 +15,10 @@
 .news_detail p{
     font-weight: normal;
 }
+@media screen and (max-width: 420px){
+    .news{
+        margin-left: 20px   ;
+    }
+
+}
 

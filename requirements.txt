@@ -6,3 +6,4 @@ django-bootstrap4
 braintree==3.45.0
 django-rosetta
 django-modeltranslation
+WeasyPrint

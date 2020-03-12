@@ -50,8 +50,15 @@
     .img-fluid{
         display: none;
     }
-
 }
+    @media screen and (max-width: 420px) {
+        #reg{
+            font-size: 20px;
+            justify-content: center;
+
+        }
+
+    }
     </style>
 {% endblock %}
 {% block content %}
@@ -81,7 +88,7 @@
     <section>
         <div class="delivery row">
             <div class="col first-slide" style="margin-left: 60px;">
-                <h3 class="h3 mt-5 mb-3" >{% trans 'ДОСТАВКА В РЕГИОНЫ' %}</h3>
+                <h3 class="h3 mt-5 mb-3" id="reg">{% trans 'ДОСТАВКА В РЕГИОНЫ' %}</h3>
                 <p>{% trans 'Доставка товару по Україні здійснюється транспортними службами' %}:
                     <b>"{% trans 'Нова Пошта", "Ін-Тайм", "Делівері' %}"</b>,
                     {% trans 'Відправки оплатою пысля доставки здійснюються тільки транспортними компанією' %}
