@@ -3,6 +3,7 @@ from .models import *
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
 from django.views.generic.edit import CreateView
+from django.views.generic import ListView
 from .forms import *
 from django.urls import reverse_lazy
 from cart.forms import CartAddProductForm
@@ -25,12 +26,7 @@ def product_list(request):
 
     if search_query:
         products = Product.objects.filter(Q(title__contains=search_query) | Q(content__icontains=search_query))
-    elif ot and do:
-        products = Product.objects.filter(price__gte=ot, price__lte=do).all()
-    elif ot:
-        products = Product.objects.filter(price__gte=ot)
-    elif do:
-        products = Product.objects.filter(price__lte=do)
+
     else:
         products = Product.objects.all()
     paginator = Paginator(products, 4)
@@ -65,10 +61,31 @@ def product_list(request):
                'ot': ot,
                'do': do,
                'path': str_url
-
                }
     return render(request, 'products/product_list.html', context)
 
+
+def filter_products(request):
+    ot = request.GET.get('ot')
+    do = request.GET.get('do')
+    if request.method == "GET":
+
+        if not ot and not do:
+            ot = 0.0
+            do = 20000.0
+        elif not ot:
+            ot = 0.0
+        elif not do:
+            do = 20000.0
+
+        products = Product.objects.filter(Q(Q(price__gte=ot) & Q(price__lte=do)) & Q(kind__iexact=request.GET.get("kind")))
+        print(ot, do)
+    else:
+        products = Product.objects.all()
+    paginator = Paginator(products, 4)
+    page_number = request.GET.get('page', 1)
+    page = paginator.get_page(page_number)
+    return render(request, 'products/product_list.html', {'page_object': page})
 
 def product_detail(request, slug):
     path = request.path_info

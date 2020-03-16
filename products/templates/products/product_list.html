@@ -31,24 +31,18 @@
                 <li class="nav-item pl-2 pt-2">
                     <h3 class="h3" style="font-size: 16pt">{% trans 'ТИП ЗАПЧАСТИ' %}</h3>
                 </li>
-                <li class="nav-item pl-2 pt-2">
-                    <form action="" method="post">
 
-                        <input type="checkbox" id="tree" value="First" name="First">
-                        <label for="tree" style="font-size: 16pt">{% trans 'First' %}</label>
+
+                <li class="nav-item pl-2 pb-3">
+                    <form action="{% url 'products:filter_products' %}" method="get">
+                    {% csrf_token %}
+                        <input type="checkbox" name="kind" value="a">
+                        <span style="font-weight: normal; font-size: 16pt;">Аналог</span>
                         <br>
 
-                        <input type="checkbox" id="four" value="First" name="First">
-                        <label for="four" style="font-size: 16pt">{% trans 'Second' %}</label>
-
-                    </form>
-                </li>
-                <li class="nav-item pl-2 pt-2">
-                    <h3 class="h3" style="font-size: 16pt">{% trans 'ЦЕНА' %}</h3>
-                </li>
-                <li class="nav-item pl-2 pt-2">
-                    <form action="{% url 'products:product_list' %}">
-                        {% csrf_token %}
+                        <input type="checkbox" name="kind" value="o">
+                        <span style="font-weight: normal; font-size: 16pt;">Оригинал</span>
+                         <h3 class="h3" style="font-size: 16pt; margin-top: 15px;">{% trans 'ЦЕНА' %}</h3>
                         <input type="text" placeholder="от" value="{% if ot %}{{ ot }}{% endif %}"  name="ot" style="width: 167px;">
                         <input type="text" placeholder="до" value="{% if do %}{{ do }}{% endif %}" name="do" style="width: 167px;">
                         <button type="submit" class="btn btn-danger w-100" style="position:relative; left: -7px; top: 6px;">{% trans 'SEARCH' %}</button>

@@ -15,6 +15,10 @@ def upload_location(instance, filename):
 
 
 class Product(models.Model):
+    KINDS = (
+        ('a', 'Аналог'),
+        ('o', 'Оригинал')
+    )
     title = models.CharField(max_length=50, db_index=True, verbose_name='Имя Товара')
     slug = models.SlugField(max_length=50, unique=True, blank=True)
     image = models.ImageField(null=True, blank=True, verbose_name="фото продукта", height_field="height_field",
@@ -37,6 +41,7 @@ class Product(models.Model):
     weight = models.DecimalField(max_digits=10, decimal_places=0, verbose_name='Вес',null=True, blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Цена")
     manufacturer = models.ForeignKey('Manufacturer', related_name='products', on_delete=models.CASCADE)
+    kind = models.CharField(max_length=1, choices=KINDS)
     stok = models.PositiveIntegerField(verbose_name='На складе')
     available = models.BooleanField(default=True, verbose_name="Доступен")
     published_date = models.DateTimeField(auto_now_add=True, verbose_name="Опубликовано", null=True)
