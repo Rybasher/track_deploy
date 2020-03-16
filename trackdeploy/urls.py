@@ -24,7 +24,6 @@ from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = i18n_patterns(
       path(_('admin/'), admin.site.urls),
-      path('rosetta/', include('rosetta.urls')),
       path('', include('spare.urls')),
       path('news/', include('blog.urls')),
       path('about/', include('about.urls')),
@@ -34,6 +33,7 @@ urlpatterns = i18n_patterns(
       path('cart/order/payment', include('payments.urls')),
       path('', include('products.urls')),
       path('', include('contacts.urls')),
+      path('rosetta/', include('rosetta.urls')),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
