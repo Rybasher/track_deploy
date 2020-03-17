@@ -153,29 +153,9 @@ article
             <p id='first' style="display: block; text-align: justify; font-weight: normal; font-size: 14pt">
                 {{ product.content }}
             </p>
-
-            <div id='second' style="display: none;width: 900px" >
-
-                <div class="col-md-4">
-                    <h4>{% trans "Новый комментарий" %}</h4>
-                        <form action="" method="post">
-                            {% csrf_token %}
-                            {%  bootstrap_form form layput='horizontal' %}
-                            <button class="btn btn-danger w-100" type="submit">{% trans "ДОБАВИТЬ" %}</button>
-                        </form>
-                </div>
-            <div class="col-md-5">
-            <div class="card-body">
-                    {% if new_comment %}
-                        <div class="alert alert-success" role="alert">
-                          {% trans "Your comment is add" %}
-                        </div>
-                        {% else %}
-                    {% endif %}
-                            </div>
-                <p id='third' style="display: none" >
-                    {% if product.available %}
-
+            <div id="third" style="display: none">
+                 {% if product.available %}
+article
                 {% endif %}
                 <p class="font-weight-normal black-text"><i class="fas fa-check-circle"></i>{% trans "Є в наявності" %}  &nbsp;{{ product.available }}</p>
                 {% if product.fuel %}
@@ -200,6 +180,26 @@ article
                 {% if product.price %}
                     <p class="font-weight-normal black-text"><b class="font-weight-bold black-text pr-2">{% trans "Цена" %}: &nbsp;{{ product.price }}</b>грн</p>
                 {% endif %}
+            </div>
+            <div id='second' style="display: none;width: 900px" >
+
+                <div class="col-md-4">
+                    <h4>{% trans "Новый комментарий" %}</h4>
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            {%  bootstrap_form form layput='horizontal' %}
+                            <button class="btn btn-danger w-100" type="submit">{% trans "ДОБАВИТЬ" %}</button>
+                        </form>
+                </div>
+            <div class="col-md-5">
+            <div class="card-body">
+                    {% if new_comment %}
+                        <div class="alert alert-success" role="alert">
+                          {% trans "Your comment is add" %}
+                        </div>
+                        {% else %}
+                    {% endif %}
+                            </div>
 
 
                 </div>
