@@ -6,6 +6,7 @@ from cart.cart import Cart
 from cart.forms import CartAddProductForm
 from products.models import *
 import re
+from django.db.models import Q
 from urllib.parse import urlsplit, urlunsplit
 
 from django.conf import settings
@@ -42,7 +43,8 @@ def spare_create(request):
 
 
 def japan_products(request):
-    manufacturers = Manufacturer.objects.filter(country__iexact="Япония")
+    manufacturers = Manufacturer.objects.filter(Q(country__iexact="Япония") | Q(country__iexact='Japanise') |
+                                                Q(country__iexact='Японія'))
     return render(request, 'products/japan_products.html', {'manufacturers': manufacturers})
     # template_name = 'spare/home_page.html'
     # form_class = SpareForm
