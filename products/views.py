@@ -90,6 +90,7 @@ def filter_products(request):
     return render(request, 'products/product_list.html', {'page_object': page, 'cart': cart,
                                                           'cart_product_form': cart_product_form})
 
+
 def product_detail(request, slug):
     path = request.path_info
     url_split = path.split('/')
