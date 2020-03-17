@@ -43,21 +43,19 @@ msgstr "Main"
 
 #: .\blog\templates\blog\about.html:43
 msgid "О нас"
-msgstr ""
+msgstr "About us"
 
 #: .\blog\templates\blog\about.html:51
 msgid "Ми мережа магазинів \"Трек\" в Рівненській області."
-msgstr ""
+msgstr "We are a network of \"Track \" stores in Rivne region."
 
 #: .\blog\templates\blog\about.html:52
-msgid ""
-"\"Трек\" на ринку більше 12 років, через це ми володіємо  великим досвідом і"
-" якісним товаром,"
-msgstr ""
+msgid "\"Трек\" на ринку більше 12 років, через це ми володіємо  великим досвідом і якісним товаром,"
+msgstr "\"Track \" in the market for more than 12 years, because of this we have extensive experience and quality goods,"
 
 #: .\blog\templates\blog\about.html:53
 msgid "клієнт - це наша першочергова задача"
-msgstr ""
+msgstr "customer is our top priority"
 
 #: .\blog\templates\blog\about.html:59
 msgid "Для клиентов предлагаем"
