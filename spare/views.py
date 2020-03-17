@@ -26,6 +26,7 @@ def spare_create(request):
     # if translation.LANGUAGE_SESSION_KEY in request.session:
     #     del request.session[translation.LANGUAGE_SESSION_KEY]
     title = _("HomePage")
+
     cart = Cart(request)
     cart_product_form = CartAddProductForm
     products = Product.objects.order_by('-published_date')
@@ -43,9 +44,12 @@ def spare_create(request):
 
 
 def japan_products(request):
+    cart = Cart(request)
+    cart_product_form = CartAddProductForm
     manufacturers = Manufacturer.objects.filter(Q(country__iexact="Япония") | Q(country__iexact='Japanise') |
                                                 Q(country__iexact='Японія'))
-    return render(request, 'products/japan_products.html', {'manufacturers': manufacturers})
+    return render(request, 'products/japan_products.html', {'manufacturers': manufacturers, 'cart': cart,
+                                                            'cart_product_form': cart_product_form})
     # template_name = 'spare/home_page.html'
     # form_class = SpareForm
     # success_url = reverse_lazy('spare:home_page')
