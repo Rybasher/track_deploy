@@ -4,6 +4,9 @@
 {% block style %}
     <link rel="stylesheet" href="{% static 'css/style_news.css' %}">
     <style>
+    .page{
+        display: flex;
+    }
     .banner{
     /*background: red;*/
 
@@ -15,6 +18,9 @@
     background-position: left top;
     background-repeat: no-repeat;
 }
+    .about{
+        position: relative; margin-left: 60px; top: 40px;
+    }
     .offers{
     width: 40%;
 }
@@ -34,8 +40,26 @@
     line-height: 30px;
 }
     @media screen and (max-width: 420px){
+        .page{
+            display: none;
+        }
+        .banner{
+            height: 500px;
+            background-repeat: repeat-y;
+        }
+        .about{
+            position: relative;
+            margin-left: 30px;
+            top: 40px;
+        }
+        #offers_two{
+            width: 90%;
+        }
         #offers_two p{
             text-align: justify;
+            width: 100%;
+        }
+        .photos .photo img{
             width: 100%;
         }
 
@@ -44,7 +68,7 @@
 {% endblock %}
 {% block content %}
 
-     <div class="page d-flex" style="margin-left: 60px;">
+     <div class="page" style="margin-left: 60px;">
         <p class="red-text" style="word-spacing: 5px">{% trans 'Главная' %}    /   </p>
 
         <p class="red-text font-weight-bold" style="word-spacing: 3px">&nbsp;{% trans 'О нас' %}</p>
@@ -62,7 +86,7 @@
     </div>
 
 </section>
-    <section class="mb-5" style="position: relative; margin-left: 60px; top: 40px;">
+    <section class="mb-5 about">
         <h3 class="h3">{% trans 'Для клиентов предлагаем' %}:</h3>
         <div class="row">
 
@@ -96,11 +120,11 @@
 
     </section>
     <section style="margin-top: 80px; margin-left: 25px; margin-bottom: 100px;">
-        <div class="some" style="display: flex">
-            <div class="col-sm-6">
+        <div class="photos" style="display: flex">
+            <div class="col-sm-6 photo">
                 <img src="{% static 'img/about/first.png' %}" class="img-fluid" alt="">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 photo">
                 <img src="{% static 'img/about/second.jpg' %}" alt="" class="img-fluid">
             </div>
         </div>

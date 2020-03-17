@@ -14,13 +14,15 @@
     bottom: 80px;
     right: 190px;
 }
-
+.prod{
+    padding-left: 75px
+}
 .categories{
     width: 100%;
     /*display: flex;*/
 
     /*margin: 0 auto;*/
-    justify-content: left;
+
     padding-left: 9px;
 }
 .categories .cols{
@@ -56,7 +58,13 @@
 }
 .product{
     margin-right: 18px;
+    width: 15%;
 }
+.product .prod_image{
+       width: 200px;
+       height: 200px;
+   }
+
 
 
 .spares{
@@ -91,6 +99,9 @@
     /*padding-top: -2px;*/
     /*width: 65%;*/
 }
+.track{
+    position:relative; width: 490px; top: -60px;
+}
 
 .spare-form .form{
     position: relative;
@@ -114,10 +125,191 @@ footer a{
     color: black;
 
 }
+h2{
+    padding-left: 65px;
+}
+.main-spares{
+    background: dodgerblue;
+}
 .menu li{
     padding-bottom: 15px;
 }
+#next{
+    width: 200px;
+}
+.nad-cat{
+    padding-left: 75px
+}
+.h2{
+    padding-left: 65px;
+    padding-top: 90px
+}
 
+    @media screen and (max-width: 420px) {
+        .main-sections {
+            width: 80%;
+        }
+        .main-spares{
+            position: relative;
+            top: -200px;
+            background: red;
+            height: 450px;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        .container h1 {
+            font-size: 20px;
+            padding-left: 130px;
+        }
+
+        .container .main-banner {
+            width: 100%;
+            left: 300px;
+            top: -300px;
+        }
+
+        .container .main-banner_photo {
+            width: 180px;
+            height: 180px;
+
+        }
+
+        .container .but_next {
+            position: relative;
+            left: 120px;
+            top: -40px;
+        }
+
+        #next {
+            width: 130px;
+        }
+
+        #next1 {
+            width: 50px;
+        }
+
+        .cat {
+            position: relative;
+            top: -200px;
+        }
+
+        .categories {
+            position: relative;
+            top: -200px;
+        }
+
+        .categories .cols {
+
+            width: 100%;
+            border: 1px solid black;
+            margin-top: 10px;
+            position: relative;
+            left: 20px;
+        }
+
+        .h2 {
+            padding-left: 22px;
+        }
+
+        .nad-cat {
+            padding-left: 30px
+        }
+
+        .products .product {
+            width: 100%;
+            position: relative;
+            left: -20px;
+        }
+
+        .product .prod_image {
+            width: 315px;
+            height: 300px;
+        }
+
+        .tov {
+            padding-left: 25px;
+            position: relative;
+            top: -200px;
+        }
+
+        .prod {
+            position: relative;
+            top: -200px;
+        }
+
+        .spare-text {
+            position: relative;
+
+            background: red;
+            width: 400px;
+        }
+
+        .spare-text h1 {
+            font-size: 20px;
+            color: black;
+            background: red;
+        }
+
+        .track {
+            position: relative;
+            width: 200px;
+            top: 40px;
+        }
+
+        .spare-img {
+            position: relative;
+            top: 0px;
+            float: right;
+            left: -313px;
+            width: 100%;
+            height: 240px;
+            background: red;
+        }
+
+        .track {
+            position: relative;
+            top: 50px;
+            float: right;
+            left: 20px;
+
+        }
+
+
+        .spare-form {
+            position: relative;
+            top: 220px;
+            left: -250px;
+            background: red;
+            {#transform: skew(80deg, 0deg);#}
+
+           width: 100%;
+            height: 50px;
+
+
+            {#-webkit-transform: skewX(80deg);#}
+            {#-moz-transform: skewX(80deg);#}
+            {#-ms-transform: skewX(80deg);#}
+            {#-o-transform: skewX(80deg);#}
+        }
+
+        .spare-form .form {
+            background: black;
+            position: relative;
+            left:-12px;
+            top: 60px;
+            padding-left: 20px;
+            width:  405px;
+            height: 200px;
+            {#-webkit-transform: skewX(-80deg);#}
+            {#-moz-transform: skewX(-80deg);#}
+            {#-ms-transform: skewX(-80deg);#}
+            {#-o-transform: skewX(-80deg);#}
+            {#transform: skewX(-80deg);#}
+        }
+    }
     </style>
 {% endblock %}
 {% block content %}
@@ -128,22 +320,22 @@ footer a{
         <div class="row">
           <div class="col-md-8">
             <h1 class="h1" style="font-weight: bold; line-height: 1.2em">{% trans "НОВЫЕ ПОСТУПЛЕНИЯ ЗАПЧАСТЕЙ В КАТЕГОРИИ ЯПОНСКИХ ПРОИЗВОДИТЕЛЕЙ" %}</h1>
-            <div style="margin-top: 80px; padding-right: 15px;">
-              <a class="btn btn-danger" style="width: 200px;" href="{% url 'products:japan_products' %}">{% trans "ПЕРЕЙТИ" %}</a>
-              <a class="btn btn-black" style="position:relative;left: -16px;" href="{% url 'products:japan_products' %}"><i class="fas fa-arrow-right"></i></a></div>
+            <div style="margin-top: 80px; padding-right: 15px;" class="but_next">
+              <a class="btn" id="next" style="background:red; color: white"  href="{% url 'products:japan_products' %}">{% trans "ПЕРЕЙТИ" %}</a>
+              <a class="btn btn-black" id="next1" style="position:relative;left: -16px;" href="{% url 'products:japan_products' %}"><i class="fas fa-arrow-right"></i></a></div>
 
           </div>
           <div class="col-md-2 main-banner" style="margin-right: 40px;">
-            <img src="{% static 'img/index/X10_orange1.png' %}" alt="">
+            <img src="{% static 'img/index/X10_orange1.png' %}" class="main-banner_photo" alt="">
           </div>
         </div>
         </div>
     </section>
     <!--CATEGORIES-->
     <section>
-      <h2 style="padding-left: 65px;" class="h2">{% trans "КАТЕГОРИИ" %}</h2>
-      <div style="padding-left: 75px" class="mt-5">
-        <div class="row categories"  >
+      <h2 class="h2 cat">{% trans "КАТЕГОРИИ" %}</h2>
+      <div class="mt-5 nad-cat">
+        <div class="row categories" >
           <div class="cols">
             <h3 class="h3">{% trans 'Запчасти' %}</h3>
               <ul>
@@ -197,14 +389,14 @@ footer a{
     </section>
     <!--ПРОДУКТЫ-->
     <section>
-      <h2 class="h2" style="padding-left: 65px; padding-top: 90px">{% trans 'НОВЫЕ ТОВАРЫ' %}</h2>
+      <h2 class="h2 tov">{% trans 'НОВЫЕ ТОВАРЫ' %}</h2>
 
-    <div style="padding-left: 75px" class="mt-5">
-      <div class="products">
+    <div class="mt-5 prod">
+      <div class="row products">
            {% for product in products|slice:"6" %}
                     <div class="product text-center pb-4">
                     {% if product.image %}
-                        <a href="{{ product.get_absolute_url }}"><img src="{{ product.image.url }}" width="200" height="200" alt="" style="border:1px solid black"></a>
+                        <a href="{{ product.get_absolute_url }}"><img src="{{ product.image.url }}" class="prod_image" alt="" style="border:1px solid black"></a>
                     {% endif %}
 
                         <p><small>{{ product.manufacturer.category.title }}</small></p>
@@ -215,7 +407,7 @@ footer a{
                             <div style="display: none">
                                 {{ cart_product_form }}
                             </div>
-                     <button class="btn btn-danger w-100 " type="submit">{% trans 'В КОРЗИНУ' %} <i class="fas fa-shopping-cart white-text"></i></button>
+                     <button class="btn w-100" style="background:red; color: white;" type="submit">{% trans 'В КОРЗИНУ' %} <i class="fas fa-shopping-cart white-text"></i></button>
                         </form>
                 </div>
                 {% endfor %}
@@ -227,10 +419,10 @@ footer a{
     </section>
     <!--  ВЫ СМОТРЕЛИ -->
 
-    <section class="bg-primary w-100" style="margin-top: 70px;" >
+    <section class="w-100 main-spares" style="margin-top: 70px;" >
       <div class="cont" style="padding-left: 70px;">
-        <div class="spares" style="" >
-          <div class="spare-text"><h1 class="h1 white-text mt-5">{% trans 'ПОДБЕРЁМ НУЖНЫЕ ЗАПЧАСТИ ИМЕННО ДЛЯ ВАШЕЙ СИТУАЦИИ' %}</h1></div>
+        <div class="spares" >
+          <div class="spare-text"><h1 class="h1 mt-5">{% trans 'ПОДБЕРЁМ НУЖНЫЕ ЗАПЧАСТИ ИМЕННО ДЛЯ ВАШЕЙ СИТУАЦИИ' %}</h1></div>
           <div class="spare-form">
             <div class="form">
               <form action="" method="post">
@@ -259,9 +451,8 @@ footer a{
               </form>
             </div>
           </div>
-
           <div class="spare-img">
-            <img src="{% static 'img/index/track.png' %}" style="position:relative; width: 490px; top: -60px;" alt="">
+            <img src="{% static 'img/index/track.png' %}" class="track" alt="">
           </div>
 
         </div>

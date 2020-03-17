@@ -4,10 +4,34 @@
 {% load static %}
 {% block style %}
     <link rel="stylesheet" href="{% static 'contacts/style.css' %}">
+    <style>
+    .row{
+        margin-left: 47px
+    }
+    .page{
+        display: flex;
+    }
+    #map{
+        position:relative;
+        left: -10px;
+    }
+    @media screen and (max-width: 420px){
+        .page{
+            display: none;
+        }
+        .row{
+            position: relative;
+            left: -20px;
+        }
+        #map{
+            left: 0px;
+        }
+    }
+    </style>
 {% endblock %}
 {% block content %}
     <!--Section: Contact v.1-->
-<div class="page d-flex" style="margin-left: 60px;">
+<div class="page" style="margin-left: 60px;">
         <p class="red-text" style="word-spacing: 5px">{% trans "Главная" %}    /   </p>
 
         <p class="red-text font-weight-bold" style="word-spacing: 3px">&nbsp;{% trans "Контакты" %}</p>
@@ -19,7 +43,7 @@
         <h2 class="section-heading h1 pt-4" style="margin-left: 60px;">{% trans "КОНТАКТЫ" %}</h2>
         <!--Section description-->
 
-        <div class="row" style="margin-left: 47px">
+        <div class="row">
 
             <!--Grid column-->
             <div class="col-lg-5 mb-4">
@@ -89,7 +113,7 @@
             <!--Grid column-->
 
             <!--Grid column-->
-            <div class="col-lg-7" style="position:relative; left: -10px;">
+            <div class="col-lg-7"  id="map">
 
                 <!--Google map-->
                 <div id="map-container-google-11" class="z-depth-1-half map-container-6" style="height: 755px">

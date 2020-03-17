@@ -12,10 +12,12 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
   <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
   <!-- Material Design Bootstrap -->
   <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/style_base.css' %}">
+
 <script src="https://maps.google.com/maps/api/js"></script>
+{#    <link rel="stylesheet" href="{% static 'css/base_style.css' %}">#}
   <!-- Your custom styles (optional) -->
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -29,6 +31,324 @@
         crossorigin="anonymous"></script>
 <style>
 
+.languages_list a{
+            text-transform: uppercase;
+            font-weight: normal;
+        }
+    .languages_list{
+        position: relative;
+        left: -20px;
+    }
+    *{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style: none;
+    display: flex;
+
+}
+.languages_list p{
+    text-transform: uppercase;
+}
+a{
+    text-decoration: none;
+}
+header{
+    background: #ffffff;
+    padding: 21px 0;
+}
+.header-container{
+    width: 100%;
+    margin: 0 auto; /* расположить по середине */
+    display: flex; /* расположить блоки */
+    justify-content: left;
+    padding-left: 60px;
+    border-bottom: 1px solid black;
+    height: 90px;
+}
+.header-container a{
+    color: #000000;
+    font-size: 11pt;
+    margin-right: 25px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.header-container p{
+    color: #000000;
+    font-size: 11.5pt;
+    margin-right: 30px;
+    margin-top: 20px;
+}
+.header-container a:hover{
+    font-size: 12pt;
+}
+#menu-checkbox{
+    display: none;
+}
+ul{
+    display: flex;
+}
+nav{
+
+}
+.q{
+    border: none;
+    border-bottom: 1px solid black;
+    height: 30px;
+
+
+}
+
+.numbers {
+    position: relative;
+    top: -43px;
+    height: 112px;
+    background: red;
+    margin-left: 40px;
+    /*transform: skew(0deg, -15deg);*/
+    -webkit-transform:skewX(-30deg);
+    -moz-transform:skewX(-30deg);
+    -ms-transform:skewX(-30deg);
+    -o-transform:skewX(-30deg);
+    transform:skewX(-30deg);
+    display: block;
+    width: 200px;
+    padding-top: -2px;
+}
+.number{
+    position: relative;
+    top: 40px;
+    color: white;
+    font-weight: bold;
+    font-family: Roboto, serif;
+}
+.main-sections{
+    position: relative;
+    left: -120px;
+}
+.main-banner{
+    position: relative;
+    bottom: 80px;
+    right: 190px;
+}
+
+.categories{
+    width: 100%;
+    /*display: flex;*/
+
+    /*margin: 0 auto;*/
+    justify-content: left;
+    padding-left: 9px;
+}
+.categories .cols{
+    float: left;
+    width: 20%;
+    border: 1px solid black;
+    margin-right: 48px;
+
+}
+.categories .cols h3{
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.categories .cols ul{
+    display: block;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+.categories .cols p{
+    padding-left: 10px;
+    font-weight: bold;
+}
+.products{
+    width: 100%;
+    margin: 0 auto; /* расположить по середине */
+    display: flex; /* расположить блоки */
+
+
+    position: relative;
+    left: -20px;
+
+
+}
+.product{
+    margin-right: 18px;
+}
+
+
+.spares{
+    width: 100%;
+    margin: 0 auto; /* расположить по середине */
+    display: flex; /* расположить блоки */
+    position: relative;
+    left: -20px;
+    height: 350px;
+}
+.spare-text{
+    width: 35%;
+}
+.spare-form{
+    position: relative;
+    background: black;
+    width: 45%;
+    left: 130px;
+    height: 370px;
+    top: -20px;
+    transform: skew(30deg, 0deg);
+    -webkit-transform:skewX(30deg);
+    -moz-transform:skewX(30deg);
+    -ms-transform:skewX(30deg);
+    -o-transform:skewX(30deg);
+
+
+
+
+    /*display: block;*/
+    /*width: 200px;*/
+    /*padding-top: -2px;*/
+    /*width: 65%;*/
+}
+.cart{
+    display: none;
+}
+.spare-form .form{
+    position: relative;
+    left: 80px;
+    top: 60px;
+    -webkit-transform:skewX(-30deg);
+    -moz-transform:skewX(-30deg);
+    -ms-transform:skewX(-30deg);
+    -o-transform:skewX(-30deg);
+    transform:skewX(-30deg);
+}
+.spare-img{
+    height: 370px;
+    top: -20px;
+    position: relative;
+    left: 20px;
+    background: black;
+    width: 35%;
+}
+footer a{
+    color: black;
+
+}
+.menu li{
+    padding-bottom: 15px;
+}
+.search_min{
+    display: none;
+}
+
+.toggle-button{
+    display: none;
+}
+.menu-footer{
+    display: block;
+}
+.menu-footer li{
+    padding-bottom: 15px;
+}
+.menu-footer a:hover{
+    color: red;
+}
+
+@media screen and (max-width: 420px) {
+    .header-container{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        border-bottom: none;
+        height: auto;
+    }
+    .menu-footer{
+        display: none;
+    }
+
+    main{
+        position: relative;
+        z-index: 0;
+    }
+    .q{
+        display: none;
+    }
+    .numbers{
+        display: none;
+    }
+    .main-menu{
+        display: none;
+    }
+    .main-menu li{
+        width: 100%;
+        display: block;
+        font-size: 12pt;
+    }
+    .main-menu a{
+        display: block;
+        padding: 8px;
+    }
+    .toggle-button{
+        text-align: center;
+        display: block;
+        cursor: pointer;
+        color: #000000;
+        margin-left: -60px;
+    }
+    .cart{
+        display: block;
+    }
+    .toggle-button:after{
+        content: attr(data-open);
+        display: block;
+        margin-top: 20px;
+        margin-left: -80px;
+    }
+    .search_nav{
+        display: none;
+    }
+    .main-menu .nav_cart{
+        display: none;
+    }
+    .menu-h{
+        display: none;
+    }
+
+    .search_min{
+        display: block;
+        width: 100%;
+        margin-left: 25px;
+    }
+    .payment-h{
+        padding-left: 50px;
+    }
+
+    #menu-checkbox:checked + nav[role='navigation'] .main-menu{
+        display: block;
+        margin-top: 40px;
+        margin-left: -20px;
+
+    }
+    #menu-checkbox:checked + nav[role='navigation'] .toggle-button{
+        position: relative;
+        left: 40px;
+        margin-left: 40px;
+    }
+    footer li{
+        justify-content: center;
+
+    }
+    .table{
+        width: 100%;
+    }
+
+
+    /*.header-container a{*/
+        /*margin-right: -55px;*/
+    /*}*/
+
+}
 
     </style>
 {% block style %}
@@ -38,21 +358,31 @@
 <body>
 
 <header>
+{% get_current_language as LANGUAGE_CODE %}
+ {% get_available_languages as LANGUAGES %}
+    {% get_language_info_list for LANGUAGES as languages %}
     <div class="header-container">
+     <label for="menu-checkbox" class="toggle-button"  data-close="Close" onclick>
+    <i class="fas fa-bars"></i>
+
+         </label>
       <div class="logo">
           <a href="{% url 'spare:home_page' %}"><img src="{% static 'img/index/logo.PNG' %}" alt="logo"></a>
       </div>
+
       <input type="checkbox" id="menu-checkbox">
       <nav role="navigation" class="navbar-nav">
-        <label for="menu-checkbox" class="toggle-button" data-open="Menu" data-close="Close" onclick>
-         </label>
+
+
+      <a href="" data-toggle="modal" data-target="#centralModalSm" class="cart"><i class="fas fa-shopping-cart"></i>
+                      <span class="">{{ cart.len }}</span>
+                    </a>
+
+
         <ul class="main-menu">
 
-        <li style="display: flex" class="languages">
+        <li style="display: flex" class="languages_list">
             <i class="fas fa-language"></i>
-            {% get_current_language as LANGUAGE_CODE %}
-            {% get_available_languages as LANGUAGES %}
-            {% get_language_info_list for LANGUAGES as languages %}
             {% for language in languages %}
 
                 <a href="/{{ language.code }}/{{ path }}" class="black-text" {% if language.code == LANGUAGE_CODE %}
@@ -65,8 +395,9 @@
           <li><a href="{% url 'delivery:delivery' %}">{% trans 'ДОСТАВКА И ОПЛАТА' %}</a></li>
           <li><a href="{% url 'contacts:contact_create' %}">{% trans 'КОНТАКТЫ' %}</a></li>
           <li style="padding-top: 10px">
-              <form action="{% url 'products:product_list' %}">
-                        <input type="text" name="search" style="border: none;border-bottom: 1px solid black;" class="search"> </form>
+              <form action="{% url 'products:product_list' %}" class="search_nav">
+                        <input type="text" name="search" style="border: none;border-bottom: 1px solid black;">
+              </form>
 
 
             <li class="text-center">
@@ -75,7 +406,7 @@
 
             </li>
           <li style="padding-left: 10px;">
-            <a href="" data-toggle="modal" data-target="#centralModalSm"><i class="fas fa-shopping-cart"></i>
+            <a href="" data-toggle="modal" data-target="#centralModalSm" class="nav_cart"><i class="fas fa-shopping-cart"></i>
                       <span class="">{{ cart.len }}{% if cart.len == 1 %} item {% else %} items{% endif %}
                       </span>
                     </a>
@@ -89,6 +420,11 @@
       </nav>
     </div>
   </header>
+<div class="search_min pb-3">
+     <form action="{% url 'products:product_list' %}" >
+         <input type="text" name="search" style="border: none;border-bottom: 1px solid black; width: 90%" placeholder="Search">
+     </form>
+</div>
 <div class="modal fade" id="centralModalSm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
 
@@ -158,7 +494,7 @@
     <section>
       <div class="row">
         <div class="col-sm-4" style="position:relative; left: 50px">
-          <h3>
+          <h3 class="h3 pb-2">
             {% trans 'КОНТАКТЫ' %}
           </h3>
           <ul class="d-block">
@@ -169,11 +505,11 @@
           </ul>
         </div>
         <div class="col-sm-4">
-          <h3>
+          <h3 class="menu-h">
             {% trans 'МЕНЮ' %}
           </h3>
 
-          <ul class="d-block menu">
+          <ul class="menu-footer">
             <li><a href="{% url 'about:about' %}" class="font-weight-bold">{% trans 'О НАС' %}</a></li>
             <li><a href="{% url 'blog:posts_list' %}" class="font-weight-bold">{% trans 'НОВОСТИ' %}</a></li>
             <li><a href="{% url 'delivery:delivery' %}" class="font-weight-bold">{% trans 'ДОСТАВКА И ОПЛАТА' %}</a></li>
@@ -181,12 +517,16 @@
           </ul>
         </div>
         <div class="col">
-          <h3>
+          <h3 class="payment-h">
             {% trans 'ОПЛАТА' %}
           </h3>
           <ul class="d-flex">
-            <li class="pr-5"><i class="fab fa-cc-visa"></i></li>
-            <li><i class="fab fa-cc-mastercard"></i></li>
+                    <li class="pr-5">
+                        <img src="{% static 'img/visa-512.png'%}"  width="100" height="100" alt="">
+                    </li>
+                    <li style="margin-top: 15px;">
+                        <img src="{% static 'img/master.png' %}" width="100" height="75" alt="">
+                    </li>
           </ul>
         </div>
       </div>
@@ -198,11 +538,15 @@
       </div>
     </section>
 
-
-
-
-
-
   </footer>
+  <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
+  <!-- Your custom scripts (optional) -->
+  <script type="text/javascript"></script>
 </body>
 </html>

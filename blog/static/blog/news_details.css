@@ -5,3 +5,8 @@
 .news_detail p{
     font-weight: normal;
 }
+@media screen and (max-width: 420px){
+    body{
+        background: green;
+    }
+}

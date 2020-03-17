@@ -6,10 +6,24 @@
 {% endblock %}
 {% block style %}
     <link rel="stylesheet" href="{% static 'blog/news_details.css' %}">
+    <style>
+    .page{
+        display: flex;
+    }
+    @media screen and (max-width: 420px){
+        .page{
+            display: none;
+        }
+        .news_detail{
+            position: relative;
+            left: -30px;
+        }
+}
+    </style>
 {% endblock %}
 
 {% block content %}
-    <div class="page d-flex" style="margin-left: 60px;">
+    <div class="page" style="margin-left: 60px;">
         <a href="" class="red-text"><p style="word-spacing: 5px">{% trans 'Главная' %}    /   </p></a>
         <a href="{% url  'blog:posts_list' %}"><p class="red-text" style="word-spacing: 3px">&nbsp {% trans 'Новости' %} /</p></a>
         <p class="red-text font-weight-bold">&nbsp;{% trans 'Новость' %}</p>
