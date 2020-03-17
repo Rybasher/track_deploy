@@ -66,6 +66,8 @@ def product_list(request):
 
 
 def filter_products(request):
+    cart = Cart(request)
+    cart_product_form = CartAddProductForm
     ot = request.GET.get('ot')
     do = request.GET.get('do')
     if request.method == "GET":
@@ -85,7 +87,8 @@ def filter_products(request):
     paginator = Paginator(products, 4)
     page_number = request.GET.get('page', 1)
     page = paginator.get_page(page_number)
-    return render(request, 'products/product_list.html', {'page_object': page})
+    return render(request, 'products/product_list.html', {'page_object': page, 'cart': cart,
+                                                          'cart_product_form': cart_product_form})
 
 def product_detail(request, slug):
     path = request.path_info
