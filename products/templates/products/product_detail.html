@@ -154,10 +154,7 @@ article
                 {{ product.content }}
             </p>
             <div id="third" style="display: none">
-                 {% if product.available %}
-article
-                {% endif %}
-                <p class="font-weight-normal black-text"><i class="fas fa-check-circle"></i>{% trans "Є в наявності" %}  &nbsp;{{ product.available }}</p>
+
                 {% if product.fuel %}
                     <p class="font-weight-normal black-text"><b class="font-weight-bold black-text">{% trans "Вид пального" %}:</b> &nbsp;{{ product.fuel }}</p>
                 {% endif %}
@@ -177,9 +174,7 @@ article
                 {% if product.weight %}
                     <p class="font-weight-normal black-text"><b class="font-weight-bold black-text">{% trans "Вага" %}:</b> &nbsp;{{ product.weight }}</p>
                 {% endif %}
-                {% if product.price %}
-                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text pr-2">{% trans "Цена" %}: &nbsp;{{ product.price }}</b>грн</p>
-                {% endif %}
+
             </div>
             <div id='second' style="display: none;width: 900px" >
 
