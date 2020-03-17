@@ -173,7 +173,34 @@ article
                         {% else %}
                     {% endif %}
                             </div>
-                <p id='third' style="display: none" >{% trans "som text" %}</p>
+                <p id='third' style="display: none" >
+                    {% if product.available %}
+
+                {% endif %}
+                <p class="font-weight-normal black-text"><i class="fas fa-check-circle"></i>{% trans "Є в наявності" %}  &nbsp;{{ product.available }}</p>
+                {% if product.fuel %}
+                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text">{% trans "Вид пального" %}:</b> &nbsp;{{ product.fuel }}</p>
+                {% endif %}
+                {% if product.rated_power %}
+                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text">{% trans "Номінальна потужність" %}:</b> &nbsp;{{ product.rated_power }}</p>
+                {% endif %}
+                {% if product.max_power %}
+                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text">{% trans "Максимальна потужність" %}: &nbsp;</b>{{ product.max_power }}</p>
+                {% endif %}
+                {% if product.launch_sys %}
+                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text">{% trans "Система пуску" %}: &nbsp;</b>{{ product.launch_sys }}</p>
+                {% endif %}
+
+                {% if product.engine %}
+                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text">{% trans "Тип двигуна" %}:</b> &nbsp;{{ product.engine }}</p>
+                {% endif %}
+                {% if product.weight %}
+                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text">{% trans "Вага" %}:</b> &nbsp;{{ product.weight }}</p>
+                {% endif %}
+                {% if product.price %}
+                    <p class="font-weight-normal black-text"><b class="font-weight-bold black-text pr-2">{% trans "Цена" %}: &nbsp;{{ product.price }}</b>грн</p>
+                {% endif %}
+
 
                 </div>
                 {% if comments %}

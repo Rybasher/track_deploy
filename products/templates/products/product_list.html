@@ -19,12 +19,39 @@
         color: white;
         padding-top: -10px;
     }
+    .nav-cat{
+        {#border: 1px solid black;#}
+        height: 30px;
+
+    }
+
      .nav ul{
             display: none;
+            width: 200px;
+         float: left;
+             {#margin-top: 20px;#}
         }
-        .nav li:hover ul{
+        .nav .nav-cat:hover{
+            height: auto;
+
+        }
+        .nav .nav-cat:hover a{
+            font-size: 14px;
+
+        }
+         .nav .nav-cat:hover ul{
             display: block;
         }
+         .manuf{
+             {#position:relative; left: -120px; top: 20px;#}
+             margin-top:40px;
+             float: left;
+             {#margin-left: -30px;#}
+         }
+         .li_man{
+             {#border: 1px solid black;#}
+
+         }
         .cat{
             font-size: 20px;
         }
@@ -113,51 +140,17 @@
                     <h3 class="h3 white-text">{{ categoty.title }}</h3>
                 </li>
                 {% endif %}
-{#                {% for catagory in catagories %}#}
-{#                    <!--Navbar-->#}
-{#                    <nav class="navbar navbar-light white lighten-4">#}
-{##}
-{#                      <!-- Navbar brand -->#}
-{#                      <h3 class="h3"><a class="navbar-brand" href="{% url 'products:category_detail' slug=catagory.slug %}">{{ catagory.title }}</a></h3>#}
-{##}
-{#                      <!-- Collapse button -->#}
-{#                      <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"#}
-{#                        aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><span class="dark-blue-text"><i#}
-{#                            class="fas fa-bars fa-1x"></i></span></button>#}
-{##}
-{#                      <!-- Collapsible content -->#}
-{#                      <div class="collapse navbar-collapse" id="navbarSupportedContent1">#}
-{##}
-{#                        <!-- Links -->#}
-{#                        <ul class="navbar-nav mr-auto">#}
-{#                          <li class="nav-item active">#}
-{#                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>#}
-{#                          </li>#}
-{#                          <li class="nav-item">#}
-{#                            <a class="nav-link" href="#">Features</a>#}
-{#                          </li>#}
-{#                          <li class="nav-item">#}
-{#                            <a class="nav-link" href="#">Pricing</a>#}
-{#                          </li>#}
-{#                        </ul>#}
-{#                        <!-- Links -->#}
-{##}
-{#                      </div>#}
-{#                      <!-- Collapsible content -->#}
-{##}
-{#                    </nav>#}
-{#                    <!--/.Navbar-->#}
-{#                {% endfor %}#}
+
 
 
                 {% for catagory in catagories %}
                     <li class="nav-item pl-2 nav-cat">
                         <h3 class="h3 cat"><a href="{% url 'products:category_detail' slug=catagory.slug %}" class="black-text">
                             {{ catagory.title }}</a></h3>
-                    <ul class="nav flex-column pt-3 pb-2" style="position:relative; left: -120px; top: 20px;">
+                    <ul class="nav flex-column manuf">
                     {% if catagory.manufactures.all %}
                         {% for man in catagory.manufactures.all %}
-                                <li class="nav-item text-dark">
+                                <li class="nav-item text-dark li_man">
                                 <a href="{% url 'products:manufacturer_detail' slug=man.slug %}" class="nav-link-two black-text font-weight-bold">
                                     {{ man.title }}
                                 </a>
