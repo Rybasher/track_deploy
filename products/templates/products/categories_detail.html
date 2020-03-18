@@ -16,19 +16,41 @@
         color: white;
         padding-top: -10px;
     }
+     .nav-cat{
+        {#border: 1px solid black;#}
+        height: 30px;
+
+    }
+
      .nav ul{
             display: none;
+            width: 200px;
+         float: left;
+             {#margin-top: 20px;#}
         }
-        .nav li:hover ul{
+        .nav .nav-cat:hover{
+            height: auto;
+
+        }
+        .nav .nav-cat:hover a{
+            font-size: 14px;
+
+        }
+         .nav .nav-cat:hover ul{
             display: block;
         }
+         .manuf{
+             {#position:relative; left: -120px; top: 20px;#}
+             margin-top:40px;
+             float: left;
+             {#margin-left: -30px;#}
+         }
+         .li_man{
+             {#border: 1px solid black;#}
+
+         }
         .cat{
             font-size: 20px;
-        }
-        .man-ul{
-            position:relative;
-            left: -120px;
-            top: 20px;
         }
         .page{
             display: flex;
@@ -125,10 +147,10 @@
                     <h3 class="h3 white-text">{{ category.title }}</h3>
                 </li>
                 {% for category in categories %}
-                    <li class="nav-item pl-2 pt-2 pb-4">
+                    <li class="nav-item pl-2 nav-cat">
                         <h3 class="h3 cat"><a href="{% url 'products:category_detail' slug=category.slug %}" class="black-text">
                             {{ category.title }}</a></h3>
-                    <ul class="nav flex-column pt-3 man-ul">
+                    <ul class="nav flex-column manuf">
                     {% if category.manufactures.all %}
                         {% for man in category.manufactures.all %}
                                 <li class="nav-item text-dark">

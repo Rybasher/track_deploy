@@ -159,7 +159,7 @@ def manufacturer_detail(request, slug):
         products = manufacturer.products.filter(price__lte=do)
     else:
         products = manufacturer.products.all()
-    paginator = Paginator(products, 3)
+    paginator = Paginator(products, 4)
     page_number = request.GET.get('page', 1)
     page = paginator.get_page(page_number)
     is_paginated = page.has_other_pages()

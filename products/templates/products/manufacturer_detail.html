@@ -21,10 +21,27 @@
     }
      .nav ul{
             display: none;
+            width: 200px;
+         float: left;
+             {#margin-top: 20px;#}
         }
-        .nav li:hover ul{
+        .nav .nav-cat:hover{
+            height: auto;
+
+        }
+        .nav .nav-cat:hover a{
+            font-size: 14px;
+
+        }
+         .nav .nav-cat:hover ul{
             display: block;
         }
+         .manuf{
+             {#position:relative; left: -120px; top: 20px;#}
+             margin-top:40px;
+             float: left;
+             {#margin-left: -30px;#}
+         }
         .cat{
             font-size: 20px;
         }
@@ -123,9 +140,9 @@
                     <li class="nav-item pl-2 nav-cat">
                         <h3 class="h3 cat"><a href="{% url 'products:category_detail' slug=category.slug %}" class="black-text">
                             {{ category.title }}</a></h3>
-                    <ul class="nav flex-column pt-3 pb-2" style="position:relative; left: -120px; top: 20px;">
+                    <ul class="nav flex-column manuf">
                         {% for man in category.manufactures.all %}
-                            <li style="height: 40px;">
+                            <li class="nav-item text-dark li_man">
                             <a href="{% url 'products:manufacturer_detail' slug=man.slug %}" class="nav-link-two black-text font-weight-bold">
                                 {{ man.title }}
                             </a>
