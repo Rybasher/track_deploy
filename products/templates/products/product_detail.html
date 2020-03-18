@@ -46,6 +46,10 @@
             width: 180px;
             height: 180px;
         }
+        .btn-cart{
+            margin-left: 4px;
+            width: 180px;
+        }
         @media screen and (max-width: 420px){
             .expImg{
                  width:350px;
@@ -369,16 +373,16 @@ article
 
                     <div class="product text-center">
                     {% if product.image %}
-                        <img src="{{ product.image.url }}" width="180" height="180" alt="" style="border:1px solid black">
+                        <a href="{% url 'products:product_detail' slug=product.slug %}"><img src="{{ product.image.url }}" width="180" height="180" alt="" style="border:1px solid black"></a>
                     {% endif %}
 
                         <p><small>{{ product.manufacturer.category.title }}</small></p>
                         <p class="font-weight-bold">{{ product.title }}</p>
                         <p>{{ product.price }} грн</p>
-                         <form action="{% url "cart:cart_add" product.id %}" method="post" class="d-flex justify-content-left">
+                         <form action="{% url "cart:cart_add" product.id %}" method="post" style="width: 200px;" class="d-flex justify-content-left">
                             <div style="display: none">{{ cart_product_form }}</div>
                             {% csrf_token %}
-                            <button type="submit" class="btn btn-danger btn-md my-0 p btn-cart">
+                            <button type="submit" class="btn btn-danger btn-md my-0 btn-cart">
                                Add to Card <i class="fas fa-shopping-cart white-text"></i>
                          </button>
                     </form>

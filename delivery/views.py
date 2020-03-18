@@ -10,4 +10,4 @@ def delivery(request):
     print (url_split)
     url = url_split[2:]
     str_url = "/".join(url)
-    return render(request, 'delivery/delivery.html', {'path': str_url, 'catt': cart})
+    return render(request, 'delivery/delivery.html', {'path': str_url, 'cart': cart})
