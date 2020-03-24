@@ -168,6 +168,7 @@ THUMBNAIL_ALIASES = {
 THUMBNAIL_BASEDIR = 'thumbnails'
 
 CART_SESSION_ID = 'cart'
+# VIEWED_SESSION_ID = 'viewed'
 
 BRAINTREE_MERCHANT_ID = '4kxxbbhmmpwhfsxk'  # ID продавца.
 BRAINTREE_PUBLIC_KEY = 'byncwh5cskytjhpt' # Публичный ключ.

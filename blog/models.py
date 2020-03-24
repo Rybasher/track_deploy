@@ -20,6 +20,7 @@ class Post(models.Model):
                                   width_field='width_field', upload_to=upload_location)
     height_field = models.IntegerField(default=0)
     width_field = models.IntegerField(default=0)
+    views = models.IntegerField('Просмотры', default=0)
     published_date = models.DateTimeField(auto_now_add=True, verbose_name=_('Дата'), db_index=True)
 
     def clean(self):

@@ -77,6 +77,10 @@
 }
 .spare-text{
     width: 35%;
+    
+}
+.spare-text h1{
+    font-size: 35pt;
 }
 .spare-form{
     position: relative;
@@ -128,7 +132,7 @@ h2{
     padding-left: 65px;
 }
 .main-spares{
-    background: dodgerblue;
+    background: #000eb3;
 }
 .menu li{
     padding-bottom: 15px;
@@ -391,7 +395,7 @@ h2{
     </section>
     <!--ПРОДУКТЫ-->
     <section>
-      <h2 class="h2 tov">{% trans 'НОВЫЕ ТОВАРЫ' %}</h2>
+      <h2 class="h2 tov">{% trans 'ПОПУЛЯРНЫЕ ТОВАРЫ' %}</h2>
 
     <div class="mt-5 prod">
       <div class="row products">
@@ -420,11 +424,42 @@ h2{
     </div>
     </section>
     <!--  ВЫ СМОТРЕЛИ -->
+    <section>
+{#      <h2 class="h2 tov">{% trans 'ВЫ СМОТРЕЛИ' %}</h2>#}
+{##}
+{#    <div class="mt-5 prod">#}
+{#      <div class="row products">#}
+{#           {% for item in viewed|slice:"6" %}#}
+{#                {% with product=item.product %}#}
+{#                    <div class="product text-center pb-4">#}
+{#                    {% if product.image %}#}
+{#                        <a href="{{ product.get_absolute_url }}"><img src="{{ product.image.url }}" class="prod_image" alt="" style="border:1px solid black"></a>#}
+{#                    {% endif %}#}
+{##}
+{#                        <p><small>{{ product.manufacturer.category.title }}</small></p>#}
+{#                        <p class="font-weight-bold">{{ product.title }}</p>#}
+{#                        <p>{{ product.price }} {% trans 'грн' %}</p>#}
+{#                        <form action="{% url "cart:cart_add" product.id %}" method="post" style="margin-right: 10px;">#}
+{#                            {% csrf_token %}#}
+{#                            <div style="display: none">#}
+{#                                {{ cart_product_form }}#}
+{#                            </div>#}
+{#                     <button class="btn w-100" style="background:red; color: white;" type="submit">{% trans 'В КОРЗИНУ' %} <i class="fas fa-shopping-cart white-text"></i></button>#}
+{#                        </form>#}
+{#                </div>#}
+{#               {% endwith %}#}
+{#                {% endfor %}#}
+{##}
+{##}
+{##}
+{#      </div>#}
+{#    </div>#}
+{#    </section>#}
 
     <section class="w-100 main-spares" style="margin-top: 70px;" >
       <div class="cont" style="padding-left: 70px;">
-        <div class="spares" >
-          <div class="spare-text"><h1 class="h1 mt-5">{% trans 'ПОДБЕРЁМ НУЖНЫЕ ЗАПЧАСТИ ИМЕННО ДЛЯ ВАШЕЙ СИТУАЦИИ' %}</h1></div>
+        <div class="spares">
+          <div class="spare-text"><h1 class="h1 mt-5 white-text">{% trans 'ПОДБЕРЁМ НУЖНЫЕ ЗАПЧАСТИ ИМЕННО ДЛЯ ВАШЕЙ СИТУАЦИИ' %}</h1></div>
           <div class="spare-form">
             <div class="form">
               <form action="" method="post" class="form-spare">

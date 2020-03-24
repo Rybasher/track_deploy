@@ -5,7 +5,7 @@ from modeltranslation.admin import TranslationAdmin
 
 
 class PostTranslationAdmin(TranslationAdmin):
-    list_display = ('title', 'content', 'content_two')
+    list_display = ('title', 'content', 'content_two', 'views')
     list_display_links = ('title',)
 
 

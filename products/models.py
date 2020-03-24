@@ -45,6 +45,7 @@ class Product(models.Model):
     stok = models.PositiveIntegerField(verbose_name='На складе')
     available = models.BooleanField(default=True, verbose_name="Доступен")
     published_date = models.DateTimeField(auto_now_add=True, verbose_name="Опубликовано", null=True)
+    views = models.IntegerField('Просмотры', default=0)
 
     def get_absolute_url(self):
         return "product/%s" % self.slug

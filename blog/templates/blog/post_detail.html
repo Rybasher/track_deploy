@@ -32,22 +32,29 @@
         <h3 class="h3">{{ post.title }}</h3>
         {% if post.image_two and post.content_two %}
 
-            <div class="row">
-            <div class="col-md-6">
-                <p class="font-weight-normal" style="text-align: justify">
+            <div class="row pt-4">
+                <div class="col">
+                     <p class="font-weight-normal pb-5" style="text-align: justify">
                     {{ post.content }}
                 </p>
-                {% if post.image_one %}
-                    <img src="{{ post.image_one.url }}" class="img-fluid" alt="">
+                </div>
+                <div class="col">
+                     {% if post.image_one %}
+                    <img src="{{ post.image_one.url }}" class="img-fluid" style="width: 750px; height: 400px" alt="">
                 {% endif %}
+                </div>
             </div>
 
-        <div class="col-md-6">
-                    <img src="{{ post.image_two.url }}" class="img-fluid" alt="">
 
-                    <p class="font-weight-normal" style="text-align: justify; padding-top: 40px;">{{ post.content_two }}</p>
-        </div>
-        </div>
+
+            <div class="row pt-5">
+                <div class="col">
+                      <img src="{{ post.image_two.url }}" class="img-fluid" style="width: 750px; height: 400px" alt="">
+                </div>
+            <div class="col">
+                <p class="font-weight-normal" style="text-align: justify; padding-top: 40px;">{{ post.content_two }}</p>
+            </div>
+            </div>
             {% else %}
             <div class="row">
             <div class="col-md-6">

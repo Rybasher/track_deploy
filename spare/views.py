@@ -4,6 +4,8 @@ from django.views.generic.edit import CreateView, UpdateView
 from .forms import *
 from cart.cart import Cart
 from cart.forms import CartAddProductForm
+# from viewed.viewed import Viewed
+# from viewed.forms import ViewedAddProductForm
 from products.models import *
 import re
 from django.db.models import Q
@@ -29,7 +31,9 @@ def spare_create(request):
 
     cart = Cart(request)
     cart_product_form = CartAddProductForm
-    products = Product.objects.order_by('-published_date')
+    # viewed = Viewed(request)
+    # viewed_product_form = ViewedAddProductForm
+    products = Product.objects.order_by('-views')
 
     if request.method == "POST":
         form = SpareForm(request.POST)
@@ -40,7 +44,7 @@ def spare_create(request):
     else:
         form = SpareForm()
     return render(request, 'spare/home_page.html', {'form': form, 'cart': cart, 'products': products,
-                                                    'cart_product_form':  cart_product_form, "title": title})
+                                                    'cart_product_form':  cart_product_form, "title": title, })
 
 
 def japan_products(request):

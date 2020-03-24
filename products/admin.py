@@ -11,7 +11,7 @@ class ProductTranslationAdmin(TranslationAdmin):
     # def category(self, rec):
     #     return '%s (%s)' % (rec.manufacturer.title, rec.category.title)
     # category.short_description = "Название и рубрика"
-    list_display = ('title', 'content', 'price', 'manufacturer', 'stok', 'available', 'published_date')
+    list_display = ('title', 'content', 'price', 'manufacturer', 'stok', 'available', 'published_date', 'views')
 
 
 class CategoryTranslationAdmin(TranslationAdmin):

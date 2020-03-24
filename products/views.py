@@ -8,6 +8,8 @@ from .forms import *
 from django.urls import reverse_lazy
 from cart.forms import CartAddProductForm
 from cart.cart import Cart
+# from viewed.viewed import Viewed
+# from viewed.forms import ViewedAddProductForm
 from django.core.paginator import Paginator
 from django.contrib import messages
 
@@ -20,6 +22,8 @@ def product_list(request):
     url = url_split[2:]
     str_url = "/".join(url)
     cart = Cart(request)
+    # viewed = Viewed(request)
+    # viewed_product_form = ViewedAddProductForm
     search_query = request.GET.get('search', '')
     ot = request.GET.get('ot', '')
     do = request.GET.get('do', '')
@@ -60,7 +64,9 @@ def product_list(request):
                'last_url': last_url,
                'ot': ot,
                'do': do,
-               'path': str_url
+               'path': str_url,
+               # 'viewed': viewed,
+               # 'viewed_product_form': viewed_product_form
                }
     return render(request, 'products/product_list.html', context)
 
@@ -98,11 +104,15 @@ def product_detail(request, slug):
     str_url = "/".join(url)
     cart = Cart(request)
     product = Product.objects.get(slug__iexact=slug)
+    product.views += 1
+    product.save(update_fields=['views'])
     cart_product_form = CartAddProductForm
     products = product.manufacturer.products.all()
     comments = product.comments.all()
     form_class = GuestCommentForm
     new_comment = None
+    # viewed = Viewed(request)
+    # viewed_product_form = ViewedAddProductForm
     # Comment posted
     if request.method == 'POST':
         comment_form = form_class(data=request.POST)
@@ -119,8 +129,7 @@ def product_detail(request, slug):
     return render(request, 'products/product_detail.html', {'product': product, 'products': products,
                                                             'cart_product_form': cart_product_form, 'cart': cart,
                                                             'comments': comments, 'form': comment_form,
-                                                            'new_comment': new_comment,
-                                                            'path': str_url})
+                                                            'new_comment': new_comment, 'path': str_url})
 
 
 def category_detail(request, slug):

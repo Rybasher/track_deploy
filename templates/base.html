@@ -71,7 +71,7 @@ header{
     color: #000000;
     font-size: 11pt;
     margin-right: 25px;
-    margin-top: 20px;
+    margin-top: 15px;
     font-weight: bold;
 }
 
@@ -100,19 +100,24 @@ nav{
 
 
 }
+#language{
+    position: relative;
+    top: 17px;
+    padding-right: 5px;
+}
 
 .numbers {
     position: relative;
     top: -43px;
-    height: 112px;
+    height: 118px;
     background: red;
     margin-left: 40px;
     /*transform: skew(0deg, -15deg);*/
-    -webkit-transform:skewX(-30deg);
-    -moz-transform:skewX(-30deg);
-    -ms-transform:skewX(-30deg);
-    -o-transform:skewX(-30deg);
-    transform:skewX(-30deg);
+    {#-webkit-transform:skewX(-30deg);#}
+    {#-moz-transform:skewX(-30deg);#}
+    {#-ms-transform:skewX(-30deg);#}
+    {#-o-transform:skewX(-30deg);#}
+    transform:skewX(-20deg);
     display: block;
     width: 200px;
     padding-top: -2px;
@@ -123,6 +128,15 @@ nav{
     color: white;
     font-weight: bold;
     font-family: Roboto, serif;
+    margin-left: -20px;
+    {# -webkit-transform:skewX(-30deg);#}
+    {#-moz-transform:skewX(-30deg);#}
+    {#-ms-transform:skewX(-30deg);#}
+    {#-o-transform:skewX(-30deg);#}
+    transform:skewX(20deg);
+}
+#number2{
+    margin-left: -5px;
 }
 .main-sections{
     position: relative;
@@ -380,7 +394,7 @@ footer a{
     <i class="fas fa-bars"></i>
 
          </label>
-      <div class="logo">
+      <div class="logo pr-3">
           <a href="{% url 'spare:home_page' %}"><img src="{% static 'img/index/logo.PNG' %}" alt="logo"></a>
       </div>
 
@@ -396,7 +410,7 @@ footer a{
         <ul class="main-menu">
 
         <li style="display: flex" class="languages_list">
-            <i class="fas fa-language"></i>
+            <i class="fas fa-language" id="language"></i>
             {% for language in languages %}
 
                 <a href="/{{ language.code }}/{{ path }}" class="black-text" {% if language.code == LANGUAGE_CODE %}
@@ -415,8 +429,9 @@ footer a{
 
 
             <li class="text-center">
-              <div class="numbers "><h5 class="number"><small>098 721 22 71</small></h5>
-                <h5 class="number" style="margin-top: -10px;"><small> 095 489 32 04</small></h5></div>
+              <div class="numbers">
+                  <h5 class="number"><small>098 721 22 71</small></h5>
+                <h5 class="number" id="number2" style="margin-top: -10px;"><small> 095 489 32 04</small></h5></div>
 
             </li>
           <li style="padding-left: 10px;">
@@ -536,12 +551,12 @@ footer a{
           </h3>
           <ul class="d-flex pay">
                     <li class="pr-5" style="margin-top: 15px;">
-                        <i class="fab fa-cc-visa"></i>
-{#                        <img src="{% static 'img/visa-512.png'%}"  width="100" height="100" alt="">#}
+{#                        <i class="fab fa-cc-visa"></i>#}
+                        <img class="visa" src="https://academie.boutique/wa-data/public/site/themes/lux1/img/visa-isc.png"  width="100" height="120" alt="">
                     </li>
-                    <li style="margin-top: 15px;">
-                        <i class="fab fa-cc-mastercard"></i>
-{#                        <img src="{% static 'img/master.png' %}" width="100" height="75" alt="">#}
+                    <li style="margin-top: 40px;">
+{#                        <i class="fab fa-cc-mastercard"></i>#}
+                        <img class="mastercard" src="https://cdn.onlinewebfonts.com/svg/img_569012.png" width="100" height="70" alt="">
                     </li>
           </ul>
         </div>

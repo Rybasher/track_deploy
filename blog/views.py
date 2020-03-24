@@ -43,10 +43,12 @@ def post_detail(request, pk):
     cart = Cart(request)
     path = request.path_info
     url_split = path.split('/')
-    print (url_split)
+    # print(url_split)
     url = url_split[2:]
     str_url = "/".join(url)
     # cart = Cart(request)
+    post.views += 1
+    post.save(update_fields=['views'])
     context = {
         'post': post,
         'cart': cart,
