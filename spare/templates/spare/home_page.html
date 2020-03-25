@@ -149,7 +149,7 @@ h2{
 }
 
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 450px) {
         .main-sections {
             width: 80%;
         }
@@ -278,42 +278,57 @@ h2{
             top: 50px;
              width: 200px;
             float: right;
-            left: 160px;
+            left: 112px;
 
         }
 
 
-        {#.spare-form {#}
-        {#    border: 1px solid black;#}
-        {#    position: relative;#}
-        {#    top: 220px;#}
-        {#    left: -250px;#}
-        {#    background: red;#}
+        .spare-form {
+            {#border: 1px solid black;#}
+            {#position: relative;#}
+            {#top: 220px;#}
+            {#left: -250px;#}
+            {#background: red;#}
             {#transform: skew(80deg, 0deg);#}
-        {##}
-        {#   width: 100%;#}
-        {#    height: 50px;#}
-
-
+            {##}
+            {#width: 100%;#}
+            {#height: 50px;#}
+            {##}
+            {##}
             {#-webkit-transform: skewX(80deg);#}
             {#-moz-transform: skewX(80deg);#}
             {#-ms-transform: skewX(80deg);#}
-            {#-o-transform: skewX(80deg);#}
+            {#-o-transform: skewX(80deg);#} display: none;
 
-
-        .spare-form .form {
+        }
+        .form1{
             background: black;
-            position: relative;
-            left:-460px;
-            top: 290px;
+            {#position: relative;#}
+            {#left:-460px;#}
+            {#top: 1200px;#} margin-top: 300px;
+            margin-left: -210px;
             padding-left: 20px;
-            width:  410px;
+            width:  480px;
             height: 200px;
+
             {#-webkit-transform: skewX(-80deg);#}
             {#-moz-transform: skewX(-80deg);#}
             {#-ms-transform: skewX(-80deg);#}
             {#-o-transform: skewX(-80deg);#}
             {#transform: skewX(-80deg);#}
+        }
+        .form-spare{
+            background: black;
+            width: 385px;
+            position: relative;
+            {#top: -40px;#}
+            {#left: -200px;#}
+        }
+        .form1 input{
+            width: 180px;
+            {#-ms-margin-top: 20px;#}
+            {#-ms-margin-left: 10px;#}
+
         }
     }
     </style>
@@ -486,6 +501,30 @@ h2{
               </form>
             </div>
           </div>
+            <div class="form1">
+              <form action="" method="post" class="form-spare">
+                  {% csrf_token %}
+                <div>
+                  <label for="name" style="padding-right: 100px;" class="white-text">{% trans 'ВАШЕ ИМЯ' %}</label>
+                  <label for="number" class="white-text">{% trans 'ВАШ ТЕЛЕФОН' %}</label>
+
+                  <br>
+                  {{ form.name }}
+                  {{ form.phone }}
+                </div>
+                <div>
+                  <label for="model_one" style="padding-right: 120px;" class="white-text">{% trans 'МОДЕЛЬ' %}</label>
+                  <label for="model_two" style="padding-left: 15px;" class="white-text">{% trans 'МОДЕЛЬ' %}</label>
+
+                  <br>
+                  {{ form.model_one }}
+                  {{ form.model_two }}
+                </div>
+
+                <button class="btn btn-danger" style="position: relative; left: -5px; top: 10px;" type="submit">{% trans 'ПОДОБРАТЬ' %}</button>
+
+              </form>
+            </div>
           <div class="spare-img">
             <img src="{% static 'img/index/track.png' %}" class="track" alt="">
           </div>
