@@ -378,7 +378,7 @@ msgstr "Contact us"
 
 #: .\contacts\templates\contacts\contsct_form.html:78
 msgid "Submit"
-msgstr ""
+msgstr "Отправить"
 
 #: .\products\templates\products\categories_detail.html:12
 #: .\products\templates\products\japan_products.html:19
