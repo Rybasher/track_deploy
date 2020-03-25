@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-10 10:25+0200\n"
-"PO-Revision-Date: 2020-03-10 13:00+0230\n"
+"PO-Revision-Date: 2020-03-25 03:37+0230\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -869,7 +869,7 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\core\validators.py:166
 msgid "Enter a valid email address."
-msgstr ""
+msgstr "Введите действительный адрес электронной почты."
 
 #. Translators: "letters" means latin letters: a-z and A-Z.
 #: .\venv\Lib\site-packages\django\core\validators.py:240
@@ -1102,7 +1102,7 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1587
 msgid "Email address"
-msgstr ""
+msgstr "Емайл адрес "
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1610
 msgid "File path"

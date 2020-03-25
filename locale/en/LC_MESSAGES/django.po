@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-10 10:25+0200\n"
-"PO-Revision-Date: 2020-03-11 13:12+0230\n"
+"PO-Revision-Date: 2020-03-25 03:36+0230\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -50,8 +50,12 @@ msgid "Ми мережа магазинів \"Трек\" в Рівненські
 msgstr "We are a network of \"Track \" stores in Rivne region."
 
 #: .\blog\templates\blog\about.html:52
-msgid "\"Трек\" на ринку більше 12 років, через це ми володіємо  великим досвідом і якісним товаром,"
-msgstr "\"Track \" in the market for more than 12 years, because of this we have extensive experience and quality goods,"
+msgid ""
+"\"Трек\" на ринку більше 12 років, через це ми володіємо  великим досвідом і"
+" якісним товаром,"
+msgstr ""
+"\"Track \" in the market for more than 12 years, because of this we have "
+"extensive experience and quality goods,"
 
 #: .\blog\templates\blog\about.html:53
 msgid "клієнт - це наша першочергова задача"
@@ -871,7 +875,7 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\core\validators.py:166
 msgid "Enter a valid email address."
-msgstr ""
+msgstr "Enter a valid email address."
 
 #. Translators: "letters" means latin letters: a-z and A-Z.
 #: .\venv\Lib\site-packages\django\core\validators.py:240
@@ -1104,7 +1108,7 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1587
 msgid "Email address"
-msgstr ""
+msgstr "Email address"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1610
 msgid "File path"

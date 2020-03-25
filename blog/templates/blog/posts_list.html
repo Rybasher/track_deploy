@@ -4,6 +4,21 @@
 {% block style %}
     <link rel="stylesheet" href="{% static 'blog/style_news.css' %}">
     <style>
+    .new-item:hover:after{
+         content: "";
+      position: absolute;
+      bottom: -10px;
+
+      width: 250px;
+      height: 3px;
+      background-color: red;
+      {#right: 0;#}
+      margin: 0 auto;
+      display: block;
+    }
+    .new-item:hover a p{
+        color: red;
+    }
 
     </style>
 {% endblock %}
@@ -35,6 +50,6 @@
                 </div>
     </section>
    {% if user.is_authenticated %}
-        <a href="{% url 'blog:add' %}" class="btn btn-danger" style="margin-left: 60px;">{% trans 'Add post' %}</a>
+        <a href="{% url 'blog:add' %}" class="btn btn-danger mt-5" style="margin-left: 60px;">{% trans 'Add post' %}</a>
     {% endif %}
 {% endblock %}

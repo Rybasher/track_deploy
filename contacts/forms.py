@@ -2,6 +2,7 @@ from .models import *
 from django import forms
 from django.forms import ModelForm
 from django import forms
+from django.utils.translation import gettext_lazy as _
 
 
 class ContactCreate(forms.Form):
@@ -9,9 +10,10 @@ class ContactCreate(forms.Form):
     email = forms.EmailField(max_length=50)
     content = forms.CharField(widget=forms.Textarea)
 
-    name.widget.attrs.update({'class': 'form-control', 'id': 'form-name', 'placeholder': 'name'})
-    email.widget.attrs.update({'class': 'form-control', 'id': 'form-email', 'placeholder': 'email'})
-    content.widget.attrs.update({'class': 'form-control md-textarea', 'id': 'form-text', 'rows': '3', 'placeholder': 'message'})
+    name.widget.attrs.update({'class': 'form-control', 'id': 'form-name', 'placeholder': _('name')})
+    email.widget.attrs.update({'class': 'form-control', 'id': 'form-email', 'placeholder': _('email')})
+    content.widget.attrs.update({'class': 'form-control md-textarea', 'id': 'form-text', 'rows': '3',
+                                 'placeholder': _('message')})
 
     def save(self):
         new_contact = Contact.objects.create(
