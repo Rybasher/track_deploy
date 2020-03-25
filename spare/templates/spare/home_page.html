@@ -4,6 +4,9 @@
 {% load i18n %}
 {% block style %}
     <style>
+    html, body{
+        overflow-x: hidden;
+    }
     .main-sections{
         margin-top: 110px;
 
@@ -152,7 +155,7 @@ h2{
 }
 
 
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 320px) {
         .main-sections {
             width: 80%;
         }
@@ -174,7 +177,7 @@ h2{
 
         .container .main-banner {
             width: 100%;
-            left: 300px;
+            left: 310px;
             top: -300px;
         }
 
