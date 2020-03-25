@@ -70,11 +70,11 @@
         }
         .products{
             padding-top: 20px;
-            margin-left: 150px;
+            margin-left: 70px;
         }
         .pagination_main{
             position: relative;
-            left: 70px;
+            left: 100px;
         }
         .nav-cat{
             width: 100%;
@@ -165,7 +165,7 @@
                 {% for product in page_object.object_list %}
                     <div class="product text-center pb-4">
                     {% if product.image %}
-                        <a href="{% url 'products:product_detail' slug=product.slug %}"><img src="{{ product.image.url }}" width="200" height="200" alt="" style="border:1px solid black"></a>
+                        <a href="{% url 'products:product_detail' slug=product.slug %}"><img src="{{ product.image.url }}" class="prod-image" alt="" style="border:1px solid black"></a>
                     {% endif %}
 
                         <p><small>{{ product.manufacturer.category.title }}</small></p>
