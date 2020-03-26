@@ -85,19 +85,17 @@
                 left: 0;
             }
             .expImg{
-                width: 310px;
+                width:350px;
                 height: 250px;
                 border: 1px solid black;
                 margin-left: -18px;
             }
             .photos{
                 display: flex;
-                margin-left: -40px;
+                margin-left: -35px;
                 padding-left: 10px;
             }
             .photos img{
-                width: 80px;
-                height: 80px;
                 margin-left: 30px;
             }
 
@@ -129,11 +127,11 @@
             }
             .product{
                 width: 100%;
-                margin-left: -10px;
+                margin-left: -30px;
                 margin-top: 20px;
             }
             .product img{
-                width: 300px;
+                width: 350px;
                 height: 250px;
             }
             .row{
@@ -144,9 +142,6 @@
                 position: relative;
                 left: 80px;
 
-            }
-            #first{
-                width: 300px;
             }
 
         }
@@ -169,7 +164,7 @@
 
                 <div class="photos col-md-2">
                     {% if product.image_two %}
-                        <img src="{{ product.image_two.url }}" onclick="tryImage(this);"
+                        <img src="{{ product.image_two.url }}" onclick="tryImage(this);" width="90" height="90"
                          style="display:table-cell; border: 1px solid black; margin-bottom: 10px;">
                     {% endif %}
                     {% if product.image_three %}
