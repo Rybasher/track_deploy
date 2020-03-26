@@ -60,6 +60,14 @@
         .cat{
             font-size: 20px;
         }
+         .prod-image{
+            width: 200px;
+            height: 200px;
+        }
+ {#.products{#}
+ {#           padding-top: 20px;#}
+ {#           margin-left: 70px;#}
+ {#       }#}
     @media screen and (max-width: 420px){
         .page-path{
             display: none;
@@ -203,7 +211,7 @@
 {#                        <form action="{% url 'viewed:view_add' product.id%}" method="post">#}
 {#                        {% csrf_token %}#}
                              {% if product.image %}
-                        <a href="{% url 'products:product_detail' slug=product.slug %}"><img src="{{ product.image.url }}" class="prod-image" alt=""
+                        <a href="{% url 'products:product_detail' slug=product.slug %}"><img src="{{ product.image.url }}" width="200" height="200" class="prod-image" alt=""
                                                                                              style="border:1px solid black"></a>
                     {% endif %}
 {#                         <div style="display: none">#}

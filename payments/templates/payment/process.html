@@ -1,72 +1,103 @@
 {% extends 'base.html' %}
+{% block style %}
+ <script src="http://api.fondy.eu/static_common/v1/checkout/ipsp.js"></script>
+{% endblock %}
 
 {% block content %}
-  <h1 class="text-center">Pay by credit card</h1>
-
-  <form action="." id="payment" method="post">
-  <div class="row">
-      <div class="col-md-4 offset-sm-4">
-
-          <label for="card-number" style="align-self: center">Card Number</label>
-          <i class="fab fa-cc-visa"></i>&nbsp;<i class="fab fa-cc-mastercard"></i>
-            <div id="card-number" class="field" style="border-bottom: 1px solid black; height: 30px"></div>
-            <label for="cvv">CVV</label>
-            <div id="cvv" class="field" style="border-bottom: 1px solid black; height: 30px"></div>
-            <label for="expiration-date">Expiration Date</label>
-            <div id="expiration-date" class="field" style="border-bottom: 1px solid black; height: 30px; margin-bottom: 20px;"></div>
-            <input type="hidden" id="nonce" name="payment_method_nonce" value="">
-            {% csrf_token %}
-            <input type="submit"  class="btn-danger btn-danger w-100" value="Pay">
-      </div>
-  </div>
-
-  </form>
-  <!—Подключаем клиента Braintree. -->
-  <script src="https://js.braintreegateway.com/web/3.29.0/js/client.min.js"></script>
-  <!—Подключаем компонент Hosted Fields. -->
-  <script src="https://js.braintreegateway.com/web/3.29.0/js/hosted-fields.min.js"></script>
-  <script>
-    var form = document.querySelector('#payment');
-    var submit = document.querySelector('input[type="submit"]');
-    braintree.client.create({
-      authorization: '{{ client_token }}'
-    }, function (clientErr, clientInstance) {
-      if (clientErr) {
-        console.error(clientErr);
-        return;
-      }
-      braintree.hostedFields.create({
-        client: clientInstance,
-        styles: {
-          'input': {'font-size': '13px'},
-          'input.invalid': {'color': 'red'},
- 'input.valid': {'color': 'green'}
-        },
-      fields: {
-        number: {selector: '#card-number'},
-        cvv: {selector: '#cvv'},
-        expirationDate: {selector: '#expiration-date'}
-      }
-    }, function (hostedFieldsErr, hostedFieldsInstance) {
-        if (hostedFieldsErr) {
-          console.error(hostedFieldsErr);
-          return;
-        }
-        submit.removeAttribute('disabled');
-        form.addEventListener('submit', function (event) {
-          event.preventDefault();
-          hostedFieldsInstance.tokenize(function (tokenizeErr, payload) {
-            if (tokenizeErr) {
-              console.error(tokenizeErr);
-              return;
+    <div id="checkout"></div>
+<script>
+var button = $ipsp.get("button");
+button.setHost("api.fondy.eu");
+button.addParam("order_desc","Платежная кнопка");
+button.addParam("lang","ru");
+button.setProtocol("https");
+button.setMerchantId(1442005);
+button.setAmount("{{ total_cost }}","UAH",false);
+button.setResponseUrl("{response_url}");
+button.addParam("order_desc","Платеж за товары  ");
+var url = button.getUrl();
+$ipsp("checkout").config({
+    "wrapper": "#checkout",
+        "styles": {
+            "body": {
+                "overflow": "hidden"
             }
-            // Задаем значение поля для отправки токена на сервер.
-            document.getElementById('nonce').value = payload.nonce;
-            // Отправляем форму на сервер.
-            document.getElementById('payment').submit();
-          });
-        }, false);
-      });
-    });
-  </script>
+        }
+}).scope(function () {
+    this.width("100%");
+    this.height(480);
+    this.action("resize", function (data) {
+        this.setCheckoutHeight(data.height);
+    })
+    this.loadUrl(url);
+});
+</script>
+{#  <h1 class="text-center">Pay by credit card</h1>#}
+{##}
+{#  <form action="." id="payment" method="post">#}
+{#  <div class="row">#}
+{#      <div class="col-md-4 offset-sm-4">#}
+{##}
+{#          <label for="card-number" style="align-self: center">Card Number</label>#}
+{#          <i class="fab fa-cc-visa"></i>&nbsp;<i class="fab fa-cc-mastercard"></i>#}
+{#            <div id="card-number" class="field" style="border-bottom: 1px solid black; height: 30px"></div>#}
+{#            <label for="cvv">CVV</label>#}
+{#            <div id="cvv" class="field" style="border-bottom: 1px solid black; height: 30px"></div>#}
+{#            <label for="expiration-date">Expiration Date</label>#}
+{#            <div id="expiration-date" class="field" style="border-bottom: 1px solid black; height: 30px; margin-bottom: 20px;"></div>#}
+{#            <input type="hidden" id="nonce" name="payment_method_nonce" value="">#}
+{#            {% csrf_token %}#}
+{#            <input type="submit"  class="btn-danger btn-danger w-100" value="Pay">#}
+{#      </div>#}
+{#  </div>#}
+{##}
+{#  </form>#}
+{#  <!—Подключаем клиента Braintree. -->#}
+{#  <script src="https://js.braintreegateway.com/web/3.29.0/js/client.min.js"></script>#}
+{#  <!—Подключаем компонент Hosted Fields. -->#}
+{#  <script src="https://js.braintreegateway.com/web/3.29.0/js/hosted-fields.min.js"></script>#}
+{#  <script>#}
+{#    var form = document.querySelector('#payment');#}
+{#    var submit = document.querySelector('input[type="submit"]');#}
+{#    braintree.client.create({#}
+{#      authorization: '{{ client_token }}'#}
+{#    }, function (clientErr, clientInstance) {#}
+{#      if (clientErr) {#}
+{#        console.error(clientErr);#}
+{#        return;#}
+{#      }#}
+{#      braintree.hostedFields.create({#}
+{#        client: clientInstance,#}
+{#        styles: {#}
+{#          'input': {'font-size': '13px'},#}
+{#          'input.invalid': {'color': 'red'},#}
+{# 'input.valid': {'color': 'green'}#}
+{#        },#}
+{#      fields: {#}
+{#        number: {selector: '#card-number'},#}
+{#        cvv: {selector: '#cvv'},#}
+{#        expirationDate: {selector: '#expiration-date'}#}
+{#      }#}
+{#    }, function (hostedFieldsErr, hostedFieldsInstance) {#}
+{#        if (hostedFieldsErr) {#}
+{#          console.error(hostedFieldsErr);#}
+{#          return;#}
+{#        }#}
+{#        submit.removeAttribute('disabled');#}
+{#        form.addEventListener('submit', function (event) {#}
+{#          event.preventDefault();#}
+{#          hostedFieldsInstance.tokenize(function (tokenizeErr, payload) {#}
+{#            if (tokenizeErr) {#}
+{#              console.error(tokenizeErr);#}
+{#              return;#}
+{#            }#}
+{#            // Задаем значение поля для отправки токена на сервер.#}
+{#            document.getElementById('nonce').value = payload.nonce;#}
+{#            // Отправляем форму на сервер.#}
+{#            document.getElementById('payment').submit();#}
+{#          });#}
+{#        }, false);#}
+{#      });#}
+{#    });#}
+{#  </script>#}
 {% endblock %}

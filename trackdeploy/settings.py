@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'orders.apps.OrdersConfig',
     'payments.apps.PaymentsConfig',
     'about.apps.AboutConfig',
-    'delivery.apps.DeliveryConfig'
+    'delivery.apps.DeliveryConfig',
+
 
 
 

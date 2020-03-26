@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 {% load bootstrap4 %}
+{% block style %}
+    <link rel="stylesheet" href="http://portal.fondy.eu/mportal/static/css/button.css">
+
+{% endblock %}
 {% block content %}
+
+
 
 
     <section>
@@ -8,10 +14,11 @@
      <h1 class="h1">Checkout</h1>
         <div class="row">
         <div class="col-md-5">
-            <form action="." method="post" class="order-form">
+            <form action="" method="post" class="order-form">
                 {% csrf_token %}
                 {% bootstrap_form form %}
-        <input type="submit" class="btn btn-danger" value="Place order">
+                <button type="submit" class="btn btn-danger" value="Place order"><i data-brand="visa"></i><i data-brand="mastercard"></i></button>
+
         {% csrf_token %}
     </form>
         </div>
