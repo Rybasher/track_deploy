@@ -4,6 +4,46 @@
 {% block style %}
     <link rel="stylesheet" href="{% static 'products/style_news.css' %}">
     <style>
+button.accordion{
+        background-color: white;
+        color: #444;
+        cursor: poiner;
+        padding: 18px;
+        {#padding-bottom: 0px;#}
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+
+}
+    .accordion:after{
+        content: '\25be';
+        float: right;
+        {#background: #000;#}
+    }
+button.accordion.active,
+button.accordion:hover{
+	background-color: #faf7f7;
+}
+button.accordion.active:after{
+    content: '\25b4';
+}
+
+div.panel{
+	padding: 0 18px;
+	background-color: white;
+	display: none;
+}
+div.panel.show{
+	display: block;
+}
+.manuf-list{
+    padding-bottom: 10px;
+}
+.manuf-list a{
+    font-size: 14px;
+}
         .ot{
         width: 167px;
     }
@@ -127,53 +167,67 @@
                 <li class="nav-item pl-2 pt-2">
                     <h3 class="h3 type" style="font-size: 16pt">{% trans 'ТИП ЗАПЧАСТИ' %}</h3>
                 </li>
-                <li class="nav-item pl-2 pt-2">
-                    <form action="" method="post">
-
-                        <input type="checkbox" id="tree" name="Analog">
-                        <label for="tree" style="font-size: 16pt">{% trans 'Аналог' %}</label>
+                  <li class="nav-item pl-2 pb-3">
+                    <form action="{% url 'products:filter_products' %}" method="get">
+                    {% csrf_token %}
+                        <input type="checkbox" name="kind" value="a">
+                        <span style="font-weight: normal; font-size: 16pt;">Аналог</span>
                         <br>
 
-                        <input type="checkbox" id="four" name="Original">
-                        <label for="four" style="font-size: 16pt">{% trans 'Оригинал' %}</label>
+                        <input type="checkbox" name="kind" value="o">
+                        <span style="font-weight: normal; font-size: 16pt;">Оригинал</span>
+                         <h3 class="h3" style="font-size: 16pt; margin-top: 15px;">{% trans 'ЦЕНА' %}</h3>
+                        <input type="text" placeholder="от" id="amount1" value="{% if ot %}{{ ot }}{% endif %}"  name="ot" class="ot">
+                        <input type="text" placeholder="до" id="amount2" value="{% if do %}{{ do }}{% endif %}" name="do" class="do">
+                        <div id="slider-range" style="width: 300px;"></div>
+                     <script>
+         $(function() {
+        $("#slider-range").slider({
+          range: true,
+          min: 0,
+          max: 500,
+          values: [ 75, 300 ],
+          slide: function( event, ui ) {
+            $( "#amount1" ).val( ui.values[ 0 ]);
+            $( "#amount2" ).val( ui.values[ 1 ]);
+          }
+        });
+        $( "#amount1" ).val( $("#slider-range").slider( "values", 0 ));
+         $( "#amount2" ).val( $("#slider-range").slider( "values", 1 ) );
 
-                    </form>
-                </li>
-                <li class="nav-item pl-2 pt-2">
-                    <h3 class="h3" style="font-size: 16pt">{% trans 'ЦЕНА' %}</h3>
-                </li>
-                <li class="nav-item pl-2 pt-2">
-                    <form action="" method="post">
-                        <input type="text" placeholder="от"  class="ot" >
-                        <input type="text" placeholder="до" class="do">
-                        <button type="submit" class="btn w-100" style="position:relative; left: -15px; background:red;">
-                            {% trans 'SEARCH' %}</button>
+      } );
+  </script>
+                        <button type="submit" class="btn btn-light-red w-100 white-text"
+                                style="position:relative; left: -7px; top: 6px; background: red;">{% trans 'SEARCH' %}</button>
                     </form>
                 </li>
 
                 <li class="nav-item pl-2 pt-2 mt-4" style="background:red;">
                     <h3 class="h3 white-text">{{ category.title }}</h3>
                 </li>
-                {% for category in categories %}
-                    <li class="nav-item pl-2 nav-cat">
-                        <h3 class="h3 cat"><a href="{% url 'products:category_detail' slug=category.slug %}" class="black-text">
-                            {{ category.title }}</a></h3>
-                    <ul class="nav flex-column manuf">
-                    {% if category.manufactures.all %}
-                        {% for man in category.manufactures.all %}
-                                <li class="nav-item text-dark">
+              {% for catagory in categories %}
+        <button class="accordion"><b><a href="{% url 'products:category_detail' slug=catagory.slug %}" class="black-text">
+                {{ catagory.title }}</a></b></button>
+
+        {% if catagory.manufactures.all %}
+
+                    <div class="panel">
+                        <ul style="display: table">
+                            {% for man in catagory.manufactures.all %}
+                            <li class="manuf-list">
                                 <a href="{% url 'products:manufacturer_detail' slug=man.slug %}" class="nav-link-two black-text font-weight-bold">
-                                    {{ man.title }}
-                                </a>
+                        {{ man.title }}
+                    </a>
                             </li>
                             {% endfor %}
-                    {% endif %}
+                        </ul>
+                    </div>
 
-                    </ul>
 
-                    </li>
 
-                {% endfor %}
+        {% endif %}
+
+    {% endfor %}
 
 
 
@@ -219,6 +273,17 @@
 
 
     </div>
+    <script>
+    var acc = document.getElementsByClassName("accordion");
+var i;
 
+for(i=0; i < acc.length; i++){
+	acc[i].onclick = function(){
+		this.classList.toggle("active");
+
+		this.nextElementSibling.classList.toggle("show");
+	}
+}
+    </script>
 
 {% endblock %}

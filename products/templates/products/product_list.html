@@ -9,6 +9,47 @@
 
     <link rel="stylesheet" href="{% static 'css/style_news.css' %}">
     <style>
+    button.accordion{
+        background-color: white;
+        color: #444;
+        cursor: poiner;
+        padding: 18px;
+        {#padding-bottom: 0px;#}
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+
+}
+    .accordion:after{
+        content: '\25be';
+        float: right;
+        {#background: #000;#}
+    }
+button.accordion.active,
+button.accordion:hover{
+	background-color: #faf7f7;
+}
+button.accordion.active:after{
+    content: '\25b4';
+}
+
+div.panel{
+	padding: 0 18px;
+	background-color: white;
+	display: none;
+}
+div.panel.show{
+	display: block;
+}
+.manuf-list{
+    padding-bottom: 10px;
+}
+.manuf-list a{
+    font-size: 14px;
+}
+
     .page-path{
         display: flex;
     }
@@ -116,6 +157,8 @@
     </style>
 {% endblock %}
 {% block content %}
+
+
 <div class="page-path" style="margin-left: 60px;">
         <p class="red-text" style="word-spacing: 5px">Главная    / </p>
 
@@ -176,28 +219,29 @@
                 </li>
                 {% endif %}
 
+{% for catagory in catagories %}
+        <button class="accordion"><b><a href="{% url 'products:category_detail' slug=catagory.slug %}" class="black-text">
+                {{ catagory.title }}</a></b></button>
 
+        {% if catagory.manufactures.all %}
 
-                {% for catagory in catagories %}
-                    <li class="nav-item pl-2 nav-cat">
-                        <h3 class="h3 cat"><a href="{% url 'products:category_detail' slug=catagory.slug %}" class="black-text">
-                            {{ catagory.title }}</a></h3>
-                    <ul class="nav flex-column manuf">
-                    {% if catagory.manufactures.all %}
-                        {% for man in catagory.manufactures.all %}
-                                <li class="nav-item text-dark li_man">
+                    <div class="panel">
+                        <ul style="display: table">
+                            {% for man in catagory.manufactures.all %}
+                            <li class="manuf-list">
                                 <a href="{% url 'products:manufacturer_detail' slug=man.slug %}" class="nav-link-two black-text font-weight-bold">
-                                    {{ man.title }}
-                                </a>
+                        {{ man.title }}
+                    </a>
                             </li>
                             {% endfor %}
-                    {% endif %}
+                        </ul>
+                    </div>
 
-                    </ul>
 
-                    </li>
 
-                {% endfor %}
+        {% endif %}
+
+    {% endfor %}
 
 
 
@@ -250,15 +294,15 @@
 
 
     </div>
-    {% if user.is_authenticated %}
-        <div style="margin-left: 60px; margin-top: 40px;">
-        <a href="{% url 'products:add_product' %}" class="btn btn-danger">{% trans "Add product" %}</a>
-         <a href="{% url 'products:add_category' %}" class="btn btn-danger">{% trans "Add Category" %}</a>
-         <a href="{% url 'products:add_manufacturer' %}" class="btn btn-danger">{% trans "Add Manufacturer" %}</a>
-
-        </div>
-
-    {% endif %}
+{#    {% if user.is_authenticated %}#}
+{#        <div style="margin-left: 60px; margin-top: 40px;">#}
+{#        <a href="{% url 'products:add_product' %}" class="btn btn-danger">{% trans "Add product" %}</a>#}
+{#         <a href="{% url 'products:add_category' %}" class="btn btn-danger">{% trans "Add Category" %}</a>#}
+{#         <a href="{% url 'products:add_manufacturer' %}" class="btn btn-danger">{% trans "Add Manufacturer" %}</a>#}
+{##}
+{#        </div>#}
+{##}
+{#    {% endif %}#}
 
     <div class="pagination_main" style="height: 50px">
     <nav aria-label="Page navigation example" style="float: right; margin-right:190px; margin-top: 40px;">
@@ -291,7 +335,22 @@
     </div>
 
 
-<div id="slider-range" style="width: 300px;"></div>
+
+
+{#<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>#}
+
+    <script>
+    var acc = document.getElementsByClassName("accordion");
+var i;
+
+for(i=0; i < acc.length; i++){
+	acc[i].onclick = function(){
+		this.classList.toggle("active");
+
+		this.nextElementSibling.classList.toggle("show");
+	}
+}
+    </script>
 <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
   <!-- Bootstrap tooltips -->
   <script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>

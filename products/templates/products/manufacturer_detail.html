@@ -4,10 +4,50 @@
 {% block style %}
 
     <style>
-    .page-path{
+   button.accordion{
+        background-color: white;
+        color: #444;
+        cursor: poiner;
+        padding: 18px;
+        {#padding-bottom: 0px;#}
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+
+}
+    .accordion:after{
+        content: '\25be';
+        float: right;
+        {#background: #000;#}
+    }
+button.accordion.active,
+button.accordion:hover{
+	background-color: #faf7f7;
+}
+button.accordion.active:after{
+    content: '\25b4';
+}
+
+div.panel{
+	padding: 0 18px;
+	background-color: white;
+	display: none;
+}
+div.panel.show{
+	display: block;
+}
+.manuf-list{
+    padding-bottom: 10px;
+}
+.manuf-list a{
+    font-size: 14px;
+}
+     .page-path{
         display: flex;
     }
-     .ot{
+    .ot{
         width: 167px;
     }
     .do{
@@ -19,6 +59,12 @@
         color: white;
         padding-top: -10px;
     }
+    .nav-cat{
+        {#border: 1px solid black;#}
+        height: 30px;
+
+    }
+
      .nav ul{
             display: none;
             width: 200px;
@@ -42,8 +88,16 @@
              float: left;
              {#margin-left: -30px;#}
          }
+         .li_man{
+             {#border: 1px solid black;#}
+
+         }
         .cat{
             font-size: 20px;
+        }
+         .prod-image{
+            width: 200px;
+            height: 200px;
         }
     @media screen and (max-width: 420px){
         .page-path{
@@ -130,29 +184,35 @@
                         <button type="submit" class="btn  w-100" style="position:relative; left: -7px; top: 6px; background: red;">{% trans 'SEARCH' %}</button>
                     </form>
                 </li>
-                {% if category.tite %}
-                     <li class="nav-item pl-2 pt-2 mt-4 bg-danger">
+                {% if manufacturer.category.title %}
+                     <li class="nav-item pl-2 pt-2 mt-4" style="background:red;">
                     <h3 class="h3 white-text">{{ manufacturer.category.title }}</h3>
                 </li>
                 {% endif %}
 
-                {% for category in categories %}
-                    <li class="nav-item pl-2 nav-cat">
-                        <h3 class="h3 cat"><a href="{% url 'products:category_detail' slug=category.slug %}" class="black-text">
-                            {{ category.title }}</a></h3>
-                    <ul class="nav flex-column manuf">
-                        {% for man in category.manufactures.all %}
-                            <li class="nav-item text-dark li_man">
-                            <a href="{% url 'products:manufacturer_detail' slug=man.slug %}" class="nav-link-two black-text font-weight-bold">
-                                {{ man.title }}
-                            </a>
-                        </li>
-                        {% endfor %}
-                    </ul>
+              {% for catagory in categories %}
+        <button class="accordion"><b><a href="{% url 'products:category_detail' slug=catagory.slug %}" class="black-text">
+                {{ catagory.title }}</a></b></button>
 
-                    </li>
+        {% if catagory.manufactures.all %}
 
-                {% endfor %}
+                    <div class="panel">
+                        <ul style="display: table">
+                            {% for man in catagory.manufactures.all %}
+                            <li class="manuf-list">
+                                <a href="{% url 'products:manufacturer_detail' slug=man.slug %}" class="nav-link-two black-text font-weight-bold">
+                        {{ man.title }}
+                    </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+
+
+        {% endif %}
+
+    {% endfor %}
 
 
 
@@ -226,5 +286,17 @@
   </ul>
 </nav>
     </div>
+        <script>
+    var acc = document.getElementsByClassName("accordion");
+var i;
+
+for(i=0; i < acc.length; i++){
+	acc[i].onclick = function(){
+		this.classList.toggle("active");
+
+		this.nextElementSibling.classList.toggle("show");
+	}
+}
+    </script>
 
 {% endblock %}
