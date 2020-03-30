@@ -72,6 +72,7 @@ def product_list(request):
 
 
 def filter_products(request):
+    categories = Category.objects.all()
     cart = Cart(request)
     cart_product_form = CartAddProductForm
     ot = request.GET.get('ot')
@@ -94,7 +95,7 @@ def filter_products(request):
     page_number = request.GET.get('page', 1)
     page = paginator.get_page(page_number)
     return render(request, 'products/product_list.html', {'page_object': page, 'cart': cart,
-                                                          'cart_product_form': cart_product_form})
+                                                          'cart_product_form': cart_product_form, 'catagories': categories})
 
 
 def product_detail(request, slug):
