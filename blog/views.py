@@ -8,12 +8,32 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseForbidden
 from django.http import HttpResponse
 from cart.cart import Cart
-
+from django.utils.translation import gettext as _
+from cart.forms import CartAddProductForm
+from products.models import *
+from spare.forms import *
 # Create your views here.
 
 
 def error_404(request, exception):
-    return render(request, 'blog/error_404.html')
+    title = _("HomePage")
+
+    cart = Cart(request)
+    cart_product_form = CartAddProductForm
+    # viewed = Viewed(request)
+    # viewed_product_form = ViewedAddProductForm
+    products = Product.objects.order_by('-views')
+
+    if request.method == "POST":
+        form = SpareForm(request.POST)
+        if form.is_valid():
+            spare = form.save()
+            spare.save()
+
+    else:
+        form = SpareForm()
+    return render(request, 'spare/home_page.html', {'form': form, 'cart': cart, 'products': products,
+                                                    'cart_product_form': cart_product_form, "title": title, })
 
 
 def error_403(request, exception):
