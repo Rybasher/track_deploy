@@ -1,20 +1,24 @@
- .main-sections{
+    html, body{
+        overflow-x: hidden;
+        /*background: green;*/
+    }
+    .main-sections{
         margin-top: 110px;
-
-
 }
 .main-banner{
     position: relative;
     bottom: 80px;
     right: 190px;
 }
-
+.prod{
+    padding-left: 75px
+}
 .categories{
     width: 100%;
     /*display: flex;*/
 
     /*margin: 0 auto;*/
-    justify-content: left;
+
     padding-left: 9px;
 }
 .categories .cols{
@@ -50,7 +54,13 @@
 }
 .product{
     margin-right: 18px;
+    width: 15%;
 }
+.product .prod_image{
+       width: 200px;
+       height: 200px;
+   }
+
 
 
 .spares{
@@ -63,6 +73,10 @@
 }
 .spare-text{
     width: 35%;
+
+}
+.spare-text h1{
+    font-size: 32pt;
 }
 .spare-form{
     position: relative;
@@ -77,25 +91,26 @@
     -ms-transform:skewX(30deg);
     -o-transform:skewX(30deg);
 
-
-
-
     /*display: block;*/
     /*width: 200px;*/
     /*padding-top: -2px;*/
     /*width: 65%;*/
 }
-
 .spare-form .form{
     position: relative;
     left: 80px;
-    top: 60px;
+    top: 80px;
     -webkit-transform:skewX(-30deg);
     -moz-transform:skewX(-30deg);
     -ms-transform:skewX(-30deg);
     -o-transform:skewX(-30deg);
     transform:skewX(-30deg);
+
 }
+.track{
+    position:relative; width: 490px; top: -60px;
+}
+
 
 .spare-img{
     height: 370px;
@@ -109,6 +124,211 @@ footer a{
     color: black;
 
 }
+h2{
+    padding-left: 65px;
+}
+.main-spares{
+    background: #000eb3;
+}
 .menu li{
     padding-bottom: 15px;
 }
+#next{
+    width: 200px;
+}
+.nad-cat{
+    padding-left: 75px
+}
+.h2{
+    padding-left: 65px;
+    padding-top: 90px
+}
+.form1{
+    display: none;
+}
+
+
+    @media screen and (max-width: 420px) {
+        .main-sections {
+            width: 80%;
+        }
+        .main-spares{
+            position: relative;
+            top: -200px;
+            background: red;
+            height: 450px;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        .container h1 {
+            font-size: 20px;
+            padding-left: 130px;
+        }
+
+        .container .main-banner {
+            width: 100%;
+            left: 310px;
+            top: -300px;
+        }
+
+        .container .main-banner_photo {
+            width: 180px;
+            height: 180px;
+
+        }
+
+        .container .but_next {
+            position: relative;
+            left: 120px;
+            top: -40px;
+        }
+
+        #next {
+            width: 130px;
+        }
+
+        #next1 {
+            width: 50px;
+        }
+
+        .cat {
+            position: relative;
+            top: -200px;
+        }
+
+        .categories {
+            position: relative;
+            top: -200px;
+        }
+
+        .categories .cols {
+
+            width: 100%;
+            border: 1px solid black;
+            margin-top: 10px;
+            position: relative;
+            left: 20px;
+        }
+
+        .h2 {
+            padding-left: 22px;
+        }
+
+        .nad-cat {
+            padding-left: 30px
+        }
+
+        .products .product {
+            width: 100%;
+            position: relative;
+            left: -20px;
+        }
+
+        .product .prod_image {
+            width: 250px;
+            height: 250px;
+        }
+
+        .tov {
+            padding-left: 25px;
+            position: relative;
+            top: -200px;
+        }
+
+        .prod {
+            position: relative;
+            top: -200px;
+        }
+
+        .spare-text {
+            position: relative;
+            /*{#border: 1px solid black;#}*/
+            /*{#top: -0px;#}*/
+            background: red;
+            width: 450px;
+            z-index: 1;
+            height: 250px;
+            left: -80px;
+        }
+
+        .spare-text h1 {
+            font-size: 20px;
+            color: black;
+            background: red;
+        }
+
+
+
+        .spare-img {
+            position: relative;
+            top: 0px;
+            float: right;
+            left: -313px;
+            width: 100%;
+            height: 240px;
+            background: red;
+        }
+
+        .track {
+            position: relative;
+            top: 50px;
+             width: 200px;
+            float: right;
+            left: 100px;
+
+        }
+
+
+        .spare-form {
+            /*{#border: 1px solid black;#}*/
+            /*{#position: relative;#}*/
+            /*{#top: 220px;#}*/
+            /*{#left: -250px;#}*/
+            /*{#background: red;#}*/
+            /*{#transform: skew(80deg, 0deg);#}*/
+            /*{##}*/
+            /*{#width: 100%;#}*/
+            /*{#height: 50px;#}*/
+            /*{##}*/
+            /*{##}*/
+            /*{#-webkit-transform: skewX(80deg);#}*/
+            /*{#-moz-transform: skewX(80deg);#}*/
+            /*{#-ms-transform: skewX(80deg);#}*/
+            /*{#-o-transform: skewX(80deg);#} display: none;*/
+
+        }
+        .form1{
+            display: block;
+            background: black;
+            /*{#position: relative;#}*/
+            /*{#left:-460px;#}*/
+            /*{#top: 1200px;#} */
+            margin-top: 300px;
+            margin-left: -210px;
+            padding-left: 20px;
+            width:  420px;
+            height: 200px;
+
+            /*{#-webkit-transform: skewX(-80deg);#}*/
+            /*{#-moz-transform: skewX(-80deg);#}*/
+            /*{#-ms-transform: skewX(-80deg);#}*/
+            /*{#-o-transform: skewX(-80deg);#}*/
+            /*{#transform: skewX(-80deg);#}*/
+        }
+        .form-spare{
+            background: black;
+            width: 360px;
+            position: relative;
+            /*{#top: -40px;#}*/
+            /*{#left: -200px;#}*/
+        }
+        .form1 input{
+            width: 160px;
+            /*{#-ms-margin-top: 20px;#}*/
+            /*{#-ms-margin-left: 10px;#}*/
+
+        }
+    }
