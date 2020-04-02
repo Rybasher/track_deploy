@@ -1,9 +1,6 @@
 import braintree
 from django.shortcuts import render, redirect, get_object_or_404
 from orders.models import Order
-import liqpay
-from cloudipsp import Api, Checkout
-
 
 # api = Api(merchant_id=1396424,
 #           secret_key='test')
@@ -13,6 +10,8 @@ from cloudipsp import Api, Checkout
 #     "amount": 10000
 # }
 # url = checkout.url(data).get('checkout_url')
+
+
 def payment_process(request):
     order_id = request.session.get('order_id')
     order = get_object_or_404(Order, id=order_id)
